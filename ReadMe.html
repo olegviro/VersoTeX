@@ -1,0 +1,847 @@
+   <!DOCTYPE html><html> <head> <title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="vo.css" type="text/css">
+<link rel="stylesheet" href=
+"https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+<script type = "text/javascript" src =
+"https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.js"> </script>
+<script type = "text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js">
+</script>
+<script type = "text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+inlineMath: [ ['$','$'] ],
+displayMath: [ ['$$','$$'] ],
+processEscapes: true
+}});
+MathJax.Hub.Register.StartupHook("End", function() {
+var spinner = document.getElementById("spinner");
+spinner.parentNode.removeChild(spinner);
+});
+</script>
+<script src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=
+TeX-AMS-MML_HTMLorMML" type = "text/javascript">
+</script>
+<script src = "vo.js"></script>
+<script>
+$( function() {
+$(".uidraggable").draggable();
+});
+</script>
+</head>
+<body>
+<div id = "spinner" class = "loader">MathJax is loading, please wait</div>
+<div id = "versoCell">
+<div id = "verso">
+   <p style="clear: both;"> <div class="TitleDocument" > VersoTeX, a
+LaTeX style for producing a dynamic HTML</div>
+<div class="authors"> Oleg Viro</div>
+<span> </span>
+</p>
+   <p> VersoTeX prepares dynamical HTML documents for reading in a web-
+browser. A source file looks like a usual source LaTeX file. </p>
+   <p> VersoTeX can be applied to a paper written in a plain LaTeX article
+style. If you write your papers in TeX, you can adjust any of them to
+
+
+VersoTeX. Although most of more sophisticated styles are not yet supported,
+virtually any LaTeX file after appropriate adjustments can be handled by
+VersoTeX. Indeed, the last 15 articles published in the <a
+href="http://armj.math.stonybrook.edu">Arnold Mathematical Journal</a>
+have been transformed into a dynamical HTML format by VersoTeX, and
+most of articles published in the first two years in the Arnold Mathematical
+Journal were transformed by a similar package. </p>
+    <p> VersoTeX has a number of features. They are described below. The
+main purpose of them is to make reading and a careful study of text convenient.
+Dynamic HTML provides opportunities for this, which are not available for
+paper publishing or pdf. </p>
+    <p> When reading a mathematical text, we meet numerous references: to
+literature, to formulas, definitions and statements of theorems from other parts
+of the text, etc. Often the reader wants to see some of them simultaneously
+with each other and the text which is currently read. On the other hand, at first
+reading we prefer to move out of the sight some details, like proofs. VersoTeX
+allows to do all of this.
+    <section id="S1" class="Section"> <div id="s1"> <h2 class="Title
+TitleSection">
+<span id="heads1" onclick="ReverseDisplay('bOdYS1')"> <span class="Tag
+TagSection">1. </span> Instructions to a VersoTeX reader </span>
+<span onclick="Cp2Recto('s1')" class="rectolk"> <img
+src="icons/bubble.png" class="rectolk" height=13 width=12></span>
+</h2> <div id="bOdYS1"; class="bOdY "> <section id="Ss1.1"
+class="Subsection"> <div id="s1.1"> <h3 class="Title TitleSubsection
+Runin">
+<span onclick="ReverseDisplay('bOdYSs1.1')">
+<span class="Tag TagSubsection">1.1. </span> Three fields.</span>
+<span onclick="Cp2Recto('s1.1')" class="rectolk"><img
+src="icons/bubble.png" class="rectolk" height=13 width=12></span>
+</h3> <span id="bOdYSs1.1" class="bOdY ">
+&nbsp; When you open in a web browser window (which is wide enough) an
+HTML document prepared as a TeX file with VersoTeX, you see a picture like
+this:<br> <img src="figs/page-1.png"> </p>
+    <p> The page is divided into three fields. The leftmost one is narrow, just
+about 40 pixels wide, the middle one is of about 740 pixels. If the browser
+window is narrow, then the fields overlap. </p>
+    <p> On the top of the narrow field, there is an icon <img
+src="icons/menu.png" class="icon">. Usually such an icon hides a
+drop-down menu. Indeed, clicking the icon unrolls a menu. We will describe
+its items later. <div class="lpict"> <img src="figs/menu.png"></div>
+    <div class="rpict"> <img src="figs/rectoAndVerso.png"></div> The
+other two fields have names: the central one is called <span class="emph" >
+verso </span>
+and the rightmost is called <span class="emph" > recto </span>
+. These are the names of left and right pages in an open book. See <a
+
+
+href=" https://en.wikipedia.org/wiki/Recto_and_verso">Wikipedia, Recto and verso</a> </p>
+    <p> When you open an HTML document, the recto field is empty.
+    <div onclick= "ReverseDisplay('bOdYSs1.1')"
+class="hline"></div> </span></div></section>
+       <section id="Ss1.2" class="Subsection"> <div id="s1.2"> <h3
+class="Title TitleSubsection Runin">
+<span onclick="ReverseDisplay('bOdYSs1.2')">
+<span class="Tag TagSubsection">1.2. </span> Verso.</span> <span
+onclick="Cp2Recto('s1.2')" class="rectolk"><img src="icons/bubble.png"
+class="rectolk" height=13 width=12></span> </h3> <span
+id="bOdYSs1.2" class="bOdY ">
+&nbsp; The verso field looks like the beginning of a mathematical paper
+(including its abstract) followed by a table of contents. In fact, this is not a
+table of contents, but rather the whole article folded down. Its blue lines are
+clickable. A click on the word "Abstract" folds down the text of abstract
+leaving visible out of it only the word Abstract. </p>
+    <p> The lines below the abstract are titles of sections. A click on each of
+them unrolls the section. If the section contains subsections, then each of the
+subsections is still folded and is represented by its title. Clicking the title unfold
+their content. Clicking the title of an open fold folds it down. </p>
+    <p> This folding format is broadly used in programmer editors and in online
+tables of content. It allows to keep out of sight parts of the text that are not of
+interest at the moment. </p>
+    <p> It takes time to unfold a text section by section. An inpatient reader
+may open all the folds by at most two mouse clicks. Open the menu (this
+requires a click if the menu was not open) and click the icon <img
+src="icons/goBottom.png" style="height:19px" class="icon"> The next icon
+<img src="icons/goTop.png" style="height:19px" class="icon"> closes all
+the folds (including the abstract) at a single click. </p>
+    <p> At the bottom of each open fold there is a thin (one pixel thick) blue
+line. Under mouse it becomes thicker. When clicked, it folds down the fold
+above it. So, if you have read a section (or a subsection) and want to close the
+fold, you can use this line instead of clicking the title of the section after going
+all the way up to it. </p>
+    <p> In addition to sections, subsections and subsubsections, there are other
+parts of the text which can be folded and which by default are folded when you
+open the document. These are special sections, like <span class="emph" >
+References, Acknowledgements, Keywords, Mathematics Subject Classification
+</span>
+, and, besides, folds of a different nature: proofs. Of course, proofs are very
+important, but at the first reading we often do not want to go into details.
+</p>
+    <p> The title of a proof is blue and clickable. The click unfolds the proof.
+At the end of an unfolded proof, we see a square <span
+class="qed">&#11036</span> symbolizing the end of the proof. Clicking
+the square closes the text of the proof.
+
+
+    Literature references are also blue and clickable. A click at a reference raises
+a small window with the relevant bibliographical data. The next click at the
+same reference deletes the window. </p>
+    <p> The window is draggable. Draggability is handy, because when you
+click several references that are close to each other on the page the windows
+may overlap, and you have to separate them by dragging. </p>
+    <p> A similar mechanism is implemented for footnotes. Thus a footnote
+becomes a flying note and flies quite close to the place where you clicked to the
+reference (so, you do not need to look at the bottom of the page or even at the
+bottom of the next page).
+    <div onclick= "ReverseDisplay('bOdYSs1.2')"
+class="hline"></div> </span></div></section>
+       <section id="Ss1.3" class="Subsection"> <div id="s1.3"> <h3
+class="Title TitleSubsection Runin">
+<span onclick="ReverseDisplay('bOdYSs1.3')">
+<span class="Tag TagSubsection">1.3. </span> Recto.</span> <span
+onclick="Cp2Recto('s1.3')" class="rectolk"><img src="icons/bubble.png"
+class="rectolk" height=13 width=12></span> </h3> <span
+id="bOdYSs1.3" class="bOdY ">
+&nbsp; At the opening of a document, the rightmost field of the browser page,
+the <span class="emph" > recto </span>
+is empty. It's your choice, what to bring there. After a while, it may look like
+this.<br> <img src="figs/page-2.png" style="width:600px">
+    <section id="Sss1.3.1" class="Subsubsection"> <div id="s1.3.1"> <h4
+class="Title TitleSubsubsection Runin">
+<span onclick="ReverseDisplay('bOdYSss1.3.1')">
+<span class="Tag TagSubsubsection">1.3.1. </span> Table of
+Contents.</span> <span onclick="Cp2Recto('s1.3.1')"
+class="rectolk"><img src="icons/bubble.png" class="rectolk" height=13
+width=12></span> </h4> <span id="bOdYSss1.3.1"; class="bOdY
+hide">
+&nbsp; A click on the bottom icon ToC in the menu brings up a Table of
+Contents window at the right upper corner of the recto. The table of contents
+is folded and can be unfolded either gradually by clicking on triangles <img
+src="icons/panStart.png" style="height:12px" class="icon"> next to each
+item, or by a single click on the icon <img src="icons/goBottom.png"
+style="height:15px" class="icon"> on the right side of the table of contents
+window. </p>
+    <p> A click on an item of the table of contents effects the verso: it brings
+up the title of the corresponding part to the article. If the part was hidden in
+a closed fold, then the click opens all the folds that hide this part. </p>
+    <p> Besides sections, subsections and subsubsections, the table of contents
+lists also all the theorems, lemmas, corollaries, figures, tables, etc.
+    <div onclick= "ReverseDisplay('bOdYSss1.3.1')"
+class="hline"></div> </span></div></section>
+    <section id="Sss1.3.2" class="Subsubsection"> <div id="s1.3.2"> <h4
+
+
+class="Title TitleSubsubsection Runin">
+<span onclick="ReverseDisplay('bOdYSss1.3.2')">
+<span class="Tag TagSubsubsection">1.3.2. </span> From verso to
+recto.</span> <span onclick="Cp2Recto('s1.3.2')" class="rectolk"><img
+src="icons/bubble.png" class="rectolk" height=13 width=12></span>
+</h4> <span id="bOdYSss1.3.2"; class="bOdY ">
+&nbsp; On verso, there are elements colored with dark violet. These are the
+numbers in references to sections, theorems, lemmas, and references to
+mathematical formulas. Clicking at any violet element creates on the recto a
+window with the copy of the corresponding part of the text. Those windows
+are draggable and resizable. A repeated click on the same violet element of the
+verso closes the window on the recto. </p>
+    <p> On the verso, at the end of a title of a
+section/subsection/subsubsection, there is an icon <img
+src="icons/bubble.png" style="height:12px" class="icon">. A click on that
+icon creates on the recto a window with a copy of the
+section/subsection/subsubsection.
+    <div onclick= "ReverseDisplay('bOdYSss1.3.2')"
+class="hline"></div> </span></div></section>
+<div onclick= "ReverseDisplay('bOdYSs1.3')"
+class="hline"></div> </span></div></section>
+       <section id="Ss1.4" class="Subsection"> <div id="s1.4"> <h3
+class="Title TitleSubsection Runin">
+<span onclick="ReverseDisplay('bOdYSs1.4')">
+<span class="Tag TagSubsection">1.4. </span> Menu.</span> <span
+onclick="Cp2Recto('s1.4')" class="rectolk"><img src="icons/bubble.png"
+class="rectolk" height=13 width=12></span> </h3> <span
+id="bOdYSs1.4" class="bOdY ">
+&nbsp; You can open a copy of the whole document on the recto, by clicking
+the icon <img src="figs/double.png" class="icon"> in the menu. This gives
+a useful opportunity to reed side by side different parts of the document.
+</p>
+    <p> The icon Bib in the menu creates on the recto a window with a copy
+of the whole bibliography. </p>
+    <p> If you have got tired of these windows flying on recto or verso, you
+may kill all of them by a single click on the icon <img
+src="icons/crossedBubble.png" style="width:15px" class="icon"> in the
+menu. Killing of a single window can be done also by clicking a cross icon on
+its upper right corner. </p>
+    <p> The menu icon <img src="icons/HL.png" style="height:15"
+class="icon"> highlights all the pieces emphasized in the source tex file by the
+command
+\em
+    <div onclick= "ReverseDisplay('bOdYSs1.4')"
+class="hline"></div> </span></div></section>
+
+
+        <section id="Ss1.5" class="Subsection"> <div id="s1.5"> <h3
+class="Title TitleSubsection Runin">
+<span onclick="ReverseDisplay('bOdYSs1.5')">
+<span class="Tag TagSubsection">1.5. </span> The environment for
+reading VersoTeX html article.</span> <span onclick="Cp2Recto('s1.5')"
+class="rectolk"><img src="icons/bubble.png" class="rectolk" height=13
+width=12></span> </h3> <span id="bOdYSs1.5" class="bOdY ">
+&nbsp; Of course, a modern web-browser is needed. This may be Firefox or
+any other clone of Mozilla, Chrome, Safari, Opera, Microsoft Edge, or even
+Internet Explorer. </p>
+    <p> The VersoTeX relies on MathJax, an open source display engine for
+mathematical formulas. MathJax can work from a distributed network service,
+but, in order to use it in this way, one needs a web access. Also, one can
+install MathJax in a local computer. See <a
+href="https://www.mathjax.org/">www.mathjax.org</a> </p>
+    <p> To a much lesser extent, VersoTeX uses jquery javascript library. They
+also can work directly from the web, or can be downloaded to computer and
+work locally. See <a href="https://jquery.com/">jquery.com</a> and <a
+href="https://jqueryui.com/">jqueryui.com</a> . </p>
+    <p> In the setup provided here, we assume using content delivery networks.
+In this version, displaying html files compiled by VersoTeX requires a web access.
+Besides, the following files are required: <ul class="Itemize">
+<li class="Item "> <span class="emph" > vo.js </span>
+, a collection of javascript marcos; <li class="Item "> <span class="emph"
+> vo.css </span>
+, a Cascading Style Sheets for displaying html files produced by VersoTex; <li
+class="Item ">a directory <span class="emph" > icons </span>
+with a few icons. </ul>
+</p>
+    <p> They can be placed differently, but, in the configuration provided here,
+they are placed in the same directory as the html file and, if one wants to have
+them somewhere else, then a minor change of configuration would be needed.
+    <div onclick= "ReverseDisplay('bOdYSs1.5')"
+class="hline"></div> </span></div></section>
+ <div onclick= "ReverseDisplay('bOdYS1')"
+class="hline"></div></div> </div></section>
+    <section id="S2" class="Section"> <div id="s2"> <h2 class="Title
+TitleSection">
+<span id="heads2" onclick="ReverseDisplay('bOdYS2')"> <span class="Tag
+TagSection">2. </span> Instructions to a VersoTeX runner </span>
+<span onclick="Cp2Recto('s2')" class="rectolk"> <img
+src="icons/bubble.png" class="rectolk" height=13 width=12></span>
+</h2> <div id="bOdYS2"; class="bOdY "> This section is addressed
+to a person who wants to run VersoTeX. First, it was called <span
+class="emph" > Instructions to an author </span>
+. But besides authors, other people also can find it useful. If you have
+
+
+downloaded a paper from ArXiv with a serious intention to study it carefully,
+you may also want to improve its readability by VersoTeX.
+   <section id="Ss2.1" class="Subsection"> <div id="s2.1"> <h3
+class="Title TitleSubsection Runin">
+<span onclick="ReverseDisplay('bOdYSs2.1')">
+<span class="Tag TagSubsection">2.1. </span> Adjust the source
+file.</span> <span onclick="Cp2Recto('s2.1')" class="rectolk"><img
+src="icons/bubble.png" class="rectolk" height=13 width=12></span>
+</h3> <span id="bOdYSs2.1" class="bOdY ">
+&nbsp; For the best result, the document class of the paper should be article.
+So the source file should start with<br> <code>
+\documentclass{article}
+<br>
+
+\usepackage{verbatim,amssymb,amsmath,array}
+<br>
+\usepackage{vo}
+<br>
+
+\pagestyle{empty}
+</code> Right after that you may put <code>
+\begin{document}
+</code> </p>
+   <p> Then it's a good place to introduce your customer commands for
+mathematical formulas. Something like that:<br> <code>
+\hide{\$ \newcommand{\Q}{\mathbb Q}\$}
+
+<br>
+\hide{\$ \newcommand\p{\partial}\$}
+</code> </p>
+   <p> Contrary to the usual practice, these definitions must be surrounded
+with the dollar signs. The command <br> <code>
+\hide{}
+
+</code> <br> is not necessary, but recommended. If you do not put it, the
+definitions will be seen while the MathJax will be loading. </p>
+   <p> Then it's a right place to define your Theorem environments. The
+amsthm.sty is not yet supported. Instead, the original LaTeX commands can
+be used. Something like that:<br> <code>
+
+
+\spnewtheorem{Th}{Theorem}[section]{\bf}{\it}
+<br>
+\renewcommand{\theTh}{\thesection.\Alph{Th}}
+
+<br>
+\spnewtheorem{rem}[Th]{Remark}{\bf}{\rm}
+</code> </p>
+    <p> The environment proof is taken care of by VersoTeX, hence you do not
+need to define them here. </p>
+    <p> Abstract is a command rather than environment:<br> <code>
+\abstract{The text of the abstract.}
+
+</code> </p>
+    <p> The syntax for the commands <code>
+\title, \author, \date, \maketitle, \section, \subsection, \subsubsection,
+\label, \ref, \cite, \footnote
+</code> is usual. Inside math formulas everything is usual, or, to be more
+precise, as MathJax requires. </p>
+    <p> VersoTeX is good for handling files that are not too long. I plan to
+work out a book version of VersoTeX, in which this restriction will be lifted. If
+a paper version of the file is about 50 pages or longer, then it's better to split it
+prior to feeding to the present VersoTeX. This restriction comes from MathJax.
+For a long files it takes too long to load MathJax. </p>
+    <p> Answers to other TeX questions can be found in a few sample files of
+articles by the author which you can find in this directory. </p>
+    <p> Enjoy!
+    <div onclick= "ReverseDisplay('bOdYSs2.1')"
+class="hline"></div> </span></div></section>
+       <section id="Ss2.2" class="Subsection"> <div id="s2.2"> <h3
+class="Title TitleSubsection Runin">
+<span onclick="ReverseDisplay('bOdYSs2.2')">
+<span class="Tag TagSubsection">2.2. </span> The environment needed
+for running VersoTeX.</span> <span onclick="Cp2Recto('s2.2')"
+class="rectolk"><img src="icons/bubble.png" class="rectolk" height=13
+width=12></span> </h3> <span id="bOdYSs2.2" class="bOdY ">
+&nbsp; First of all, the TeX should be installed and working. Any major TeX
+distribution, like TeX Live, Mac TeX or MikTex, should work. </p>
+    <p> A TeX distribution usually contains a little program <span
+class="emph" > catdvi </span>
+. If this is not the case, install it separately: it is needed. </p>
+    <p> The process of compilation is organized by macros written in the Vim
+macro language. Let me remind that Vim is a programmer's text editor, a
+
+
+clone of Vi. Vim is freely available for any operating system, see <a
+href="http://www.vim.org">www.vim.org</a>. </p>
+    <p> Compiling a VersoTeX article requires an installed VIM editor and
+two files: <ul class="Itemize">
+<li class="Item "> <span class="emph" > vo.vim </span>
+, a collection of macros in the VIM macro language; <li class="Item ">
+<span class="emph" > vo.sty </span>
+, a LaTeX style file. </ul>
+    <div onclick= "ReverseDisplay('bOdYSs2.2')"
+class="hline"></div> </span></div></section>
+        <section id="Ss2.3" class="Subsection"> <div id="s2.3"> <h3
+class="Title TitleSubsection Runin">
+<span onclick="ReverseDisplay('bOdYSs2.3')">
+<span class="Tag TagSubsection">2.3. </span> Running
+VersoTeX.</span> <span onclick="Cp2Recto('s2.3')" class="rectolk"><img
+src="icons/bubble.png" class="rectolk" height=13 width=12></span>
+</h3> <span id="bOdYSs2.3" class="bOdY ">
+&nbsp; Compilation of a LaTeX source file is performed as follows. The source
+file, say article.tex, is open in Vim. Then, the macros from vo.vim are to be
+run in Vim. You just need to type in the command mode<br> :source
+vo.vim<br> Here we assume that vo.vim is located in the same directory as
+the source TeX file. Then vo.vim organizes the whole compilation. We
+consider the process of compilation in the next section. In a regular situation,
+the process of compilation does not require any user's action, except for
+pressing bar, when Vim says "more", and enter, when Vim requires. </p>
+    <p> Vim shows red complain lines, when it fails to find a regular expression,
+which had to be replaced. The user should not care about these warnings. At
+the end of the process, we find Vim open with the resulting file article.html
+open and this file saved in the directory, where article.tex was taken from.
+    <div onclick= "ReverseDisplay('bOdYSs2.3')"
+class="hline"></div> </span></div></section>
+ <div onclick= "ReverseDisplay('bOdYS2')"
+class="hline"></div></div> </div></section>
+    <section id="S3" class="Section"> <div id="s3"> <h2 class="Title
+TitleSection">
+<span id="heads3" onclick="ReverseDisplay('bOdYS3')"> <span
+class="Tag TagSection">3. </span> Under the hood </span>
+<span onclick="Cp2Recto('s3')" class="rectolk"> <img
+src="icons/bubble.png" class="rectolk" height=13 width=12></span>
+</h2> <div id="bOdYS3"; class="bOdY "> Technically, VersoTeX is a
+LaTeX style supplemented with a few macros in the Vim macro language.
+This choice of tools was determined by the experience and expertise of the
+author, who is not a programmer, but a mathematician. Perhaps, a
+programmer would use, instead of Vim, a more conventional engine, like
+PERL. As for the use of TeX engine, it has definite advantages. We will
+
+
+
+discuss them later. </p>
+    <p> As was mentioned above, a VersoTeX compilation of a TeX source
+file, say article.tex, starts with opening article.tex in Vim and typing<br>
+:source vo.vim. The macros collected in vo.vim then do the following: <ol
+class="Enumerate">
+<li class="Item ">Remove the files built by the preceding runs of vo.vim (if
+any). <li class="Item ">Remove or replace a few TeX commands. <li
+class="Item ">Localize mathematical formulas in article.tex, surround them
+with a special markers, numerate formulas and insert in the beginning of each
+of them a special code containing the number of the formula. <li class="Item
+">Save the result as two files, M1-article.tex and T-article.tex, identical to
+each other. <li class="Item ">Open file M1-article.tex and erase in it
+everything besides the formulas' codes and the formulas. <li class="Item
+">Each line in M1-article.tex is converted to a Vim macro which would
+replace the formula's code by the formula. After that the file consisting of
+these Vim macros is saved as M1-article.vim. <li class="Item ">In
+M1-article.tex, all lines, which contain no label, are erased, each line with a
+label turned into a Vim macro for placing two copies of the label around the
+formula code. The result is saved as M1-article.tex. <li class="Item ">In
+T-article.tex the mathematical formulas are erased. Only the formula's code is
+left in the place of each of the formulas. The codes of formulas that were
+labeled are equipped with the copies of labels (using the macros prepared in
+M1-article.tex), <li class="Item ">In T-article.tex, around each environment
+with a label, vo.vim creates a germ of div container whose id is the
+environment's label. <li class="Item ">In T-article.tex, the tabular
+environment is enhanced by inserting the commands which will force TeX to
+insert into each cell the information about its HTML class. <li class="Item
+">In T-article.tex the list of bibliography is duplicated and the TeX
+commands in one of the lists are modified. <li class="Item ">Some of the
+low level TeX commands are replaced. In particular, the font type commands
+(like
+\bf and \it
+
+) are replaced with commands, whose arguments are surrounded with braces
+(like
+ \textbf and \textit
+). <li class="Item ">Then vo.vim three times executes latex on
+T-article.tex. <li class="Item ">vo.vim executes the command catdvi on
+T-article.dvi and saves the result as article.html. <li class="Item ">In
+article.html, vo.vim makes the last cosmetic changes: unites the pages,
+removes unneeded brackets in references, insert the horizontal lines into tables.
+<li class="Item ">Finally, vo.vim inserts mathematical formulas into
+article.html by running M1-article.vim on it. </ol>
+</p>
+
+
+   <p> After this, the result is saved as article.html and stays open in Vim.
+A number auxiliary files are left: M1-article.tex, M1-article.vim, T-article.tex,
+T-article.toc, T-article.toc and T-article.log. They may be useful only for
+debugging. </p>
+   <p> Most of the job is done by TeX. The style file vo.sty redefines many
+usual LaTeX commands, so that they force TeX to draw, instead of usual
+typographical pages, an HTML file based on the same source file.
+   <div onclick= "ReverseDisplay('bOdYS3')"
+class="hline"></div></div> </div></section>
+   <section id="S4" class="Section"> <div id="s4"> <h2 class="Title
+TitleSection">
+<span id="heads4" onclick="ReverseDisplay('bOdYS4')"> <span class="Tag
+TagSection">4. </span> Speculations on problems and solutions </span>
+<span onclick="Cp2Recto('s4')" class="rectolk"> <img
+src="icons/bubble.png" class="rectolk" height=13 width=12></span>
+</h2> <div id="bOdYS4"; class="bOdY ">
+   <section id="Ss4.1" class="Subsection"> <div id="s4.1"> <h3
+class="Title TitleSubsection Runin">
+<span onclick="ReverseDisplay('bOdYSs4.1')">
+<span class="Tag TagSubsection">4.1. </span> Two problems to be
+addressed.</span> <span onclick="Cp2Recto('s4.1')" class="rectolk"><img
+src="icons/bubble.png" class="rectolk" height=13 width=12></span>
+</h3> <span id="bOdYSs4.1" class="bOdY ">
+&nbsp; TeX/LaTeX is a lingua franca of the scientific world. Most of
+mathematicians and physicists write their research papers and textbooks (and
+even private letters) in TeX/LaTeX. Most papers on ArXiv are prepared in
+TeX. (Lack of a TeX source for a paper in ArXiv is a strong indication that
+the author is not a professional.) </p>
+   <p> TeX and LaTeX are convenient for authors. Indeed, even if, when
+writing an email, we need to include a mathematical formula, we use TeX codes,
+although it is not assumed to be processed by TeX. </p>
+   <p> Now many documents are prepared for reading online from a computer
+screen. The screens become more readable. New generations of readers are used
+to read from screen. </p>
+   <p> Still, one can use typesetting by TeX/LaTeX, convert the output to
+pdf format and use Adobe Acrobat or other pdf-viewer. Although the picture
+that appears on a computer screen is almost identical to the picture printed on
+paper, in some ways it is more convenient. It allows hyper-references and fast
+search of words. </p>
+   <p> However the pdf format does not allow to use many other new
+opportunities of the new media. It lacks most interactive capabilities of a
+simple web browser. </p>
+   <p> The readers get used to appreciate advantages of interactive texts. It
+seems that inevitably mathematics will find a way to publishing online dynamic
+interactive texts. </p>
+   <p> There are two major problems to be solved for this: <ul
+
+
+class="Itemize">
+<li class="Item ">a convenient and useful design which would match the
+needs of a reader should be developed; <li class="Item ">writer-friendly
+tools for preparation dynamic online documents are to be developed. </ul>
+   <div onclick= "ReverseDisplay('bOdYSs4.1')"
+class="hline"></div> </span></div></section>
+       <section id="Ss4.2" class="Subsection"> <div id="s4.2"> <h3
+class="Title TitleSubsection Runin">
+<span onclick="ReverseDisplay('bOdYSs4.2')">
+<span class="Tag TagSubsection">4.2. </span> Design.</span> <span
+onclick="Cp2Recto('s4.2')" class="rectolk"><img src="icons/bubble.png"
+class="rectolk" height=13 width=12></span> </h3> <span
+id="bOdYSs4.2" class="bOdY ">
+&nbsp; Hundreds of years of publishing worked out standards of a design for
+scientific papers. Just to make clear what I mean, let me mention a few
+elements of the design. Normally a paper has to be sectioned, although the
+number of levels in the sectioning may vary. Sections are equipped with titles.
+The list of bibliography is placed at the end of a paper. The words defined in
+a definition is emphasized (e.g, by italic). Statements of theorems are also
+distinguished with a font, equipped with titles and numbered. And so on...
+</p>
+   <p> For online dynamic publishing of scientific texts, the design principles
+and specific tricks are still to be developed. Usually the traditions of paper
+publishing are respected and followed, but enhanced occasionally with new
+elements. For example, a table of contents is made easily available (either it is
+permanently shown, or there is a button for displaying it) and the items of the
+table work as hyper-references. </p>
+   <p> I am not going to present a survey of works in this direction, but
+restrict to a few references to those works which were the most inspiring for
+me. <ul class="Itemize">
+<li class="Item "> <a
+href="https://mathbook.pugetsound.edu/">MathBook</a> by Robert A.
+Beezer is a serious project in this direction. <li class="Item "> <a
+href="http://www.ams.org/publications/journals/journalsframework/AMSMathViewer">AMS
+MathViewer</a> <li class="Item "> <a
+href="http://dlmf.nist.gov/LaTeXML/">LaTeXML</a> by Bruce R.Miller
+and the primary instigator for this project, the Digital Library of
+Mathematical Functions http://dlmf.nist.gov/ </ul>
+</p>
+   <p> I use and agree with some design solutions coined in these projects,
+and disagree with others. Below I formulate a few of design principles which I
+came to in my own project, VersoTeX.
+   <p> <span class="FontBold" > Dynamic design. </span>
+The same mathematical text is read with different purposes (even by the same
+reader). For example, when you see a text for the first time, you do not want
+
+
+
+to see details of proofs, on the other hand, you want to have an easy access to
+definition, major statements and the list of literature. A design should provide
+an opportunity to remove elements of the text off your sight at your wish, and
+emphasize other elements. This opportunity should be self-evident. A reader
+should not be overloaded and confused by it.
+    <p> <span class="FontBold" > Folding. </span>
+There is an old simple way of dynamical hiding parts of texts. It is
+implemented long ago in some programmer's text editors as folding, see <a
+href="https://en.wikipedia.org/wiki/Code folding">Wikipedia, Code
+Folding</a> It allows to hide the body of an element (e.g., a section, a
+proof), which can be made visible by a click to its title. It makes sense to
+arrange the initial state of document such that only the title, authors, abstract
+and a list of section headings is seen.
+    <p> <span class="FontBold" > The line lengths: </span>
+<br> <span class="FontBold" > Keep lines sufficiently short </span>
+, so that it would not be difficult, after coming to the end of a line, to find the
+beginning of the next line. On the other hand,<br> <span class="FontBold"
+> keep lines sufficiently long </span>
+so that they accommodate mathematical formulas, which tend be long in some
+texts.
+    <p> <span class="FontBold" > Justify text fully. </span>
+The text should be aligned along both margins. This is a good option as long
+as lines are not too short.
+    <p> <span class="FontBold" > Inner references. </span>
+All references to other elements of the text (bibliographic references, references
+to formulas, footnotes, theorems, definitions, remarks, etc.) should be available
+without scrolling of the main text and realized by floating windows. These
+windows should be easy to open and close. They should not stay on your way.
+Ideally, if the total width of the browser allows, they should be placed in a
+separate area free of the main text.
+    <div onclick= "ReverseDisplay('bOdYSs4.2')"
+class="hline"></div> </span></div></section>
+       <section id="Ss4.3" class="Subsection"> <div id="s4.3"> <h3
+class="Title TitleSubsection Runin">
+<span onclick="ReverseDisplay('bOdYSs4.3')">
+<span class="Tag TagSubsection">4.3. </span> LaTeX for HTML.</span>
+<span onclick="Cp2Recto('s4.3')" class="rectolk"><img
+src="icons/bubble.png" class="rectolk" height=13 width=12></span>
+</h3> <span id="bOdYSs4.3" class="bOdY ">
+&nbsp; The tools for preparation of dynamic online documents are not
+writer-friendly. The very notion of a writer-friendly tool is to be specified.
+Here I mean a writer who knows LaTeX and has an experience in writing
+source LaTeX files. Journal publications require this anyway. </p>
+    <p> The best solution for such a writer would be to write a text file in
+an old good LaTeX, adding, when necessary, a few new commands for specific
+elements of the text. In other words, it is desirable to have a LaTeX style
+
+
+for preparing dynamic onscreen documents. The closer this style would be to
+other commonly used styles for paper publication, the easier would be to move
+between on-screen and on-paper publishing of the same document. </p>
+    <p> A LaTeX source code contains almost all the information necessary for
+creating dynamic HTML document fulfilling the design principles formulated
+above. It is divided into sections, subsections, etc.; statements of theorems,
+proofs, and definitions are distinguished; there is a built in system of internal
+and external references, etc. Besides, it is easy to add new functionality via
+adding new commands and environments. </p>
+    <p> The tools available now require either learning the XML language or
+use of converter programs like LaTeXML. </p>
+    <p> A number of converters from LaTeX to dynamic html have been
+written. The first of them, a PERL program LaTeX2HTML appeared in the
+middle of nineties. </p>
+    <p> Most of the existing LaTeX-HTML converters produce more or less
+literal HTML copies of the paper. They are configurable, but changes are not
+easy due to poor documentation. The most profound difficulty, which all
+converters faced, is a huge amount of style packages providing modifications
+and additions in TeX. </p>
+    <p> The most convenient converter that I could find so far is LaTeXML. I
+used it for making online version of the first two volumes of <a
+href="http://armj.math.stonybrook.edu/contents.html">Arnold
+Mathematical Journal.</a> The necessary adjustments were made by Vim
+macros applied first to the source TeX files and then to the resulting HTML
+files. Differences in the author styles forced to make individual changes to
+almost each article. </p>
+    <p> VersoTeX is positioned as a style for LaTeX rather than a TeX-to-
+HTML converter. It does not pursue the goal of automatic converting <span
+class="emph" > any </span>
+TeX file to a valid HTML file. As other TeX styles, it is not a priori compatible
+with all other styles. </p>
+    <p> Use the TeX itself as a parser and compiler is my original idea. It
+came from experience. Like most mathematicians, I wrote mathematics in
+TeX. I did this for about 30 years, and besides, in the beginning of this period,
+I happened to write style TeX files for publishing of Russian journal <a
+href="http://www.pdmi.ras.ru/AA/">Algebra and Analysis</a>, and later I
+wrote style files for a textbook <a
+href="http://bookstore.ams.org/mbk-54"> <span class="FontItalic" >
+Elementary Topology: Problem Textbook </span>
+</a> and its Russian version. This experience convinced me that TeX is an
+adequate tool for drawing an HTML file as a picture based on a TeX file.
+    <div onclick= "ReverseDisplay('bOdYSs4.3')"
+class="hline"></div> </span></div></section>
+<div onclick= "ReverseDisplay('bOdYS4')"
+class="hline"></div></div> </div></section>
+<div class="Acknowledgements">
+
+
+<h6 class="Title TitleAcknowledgements"> <span
+onclick="ReverseDisplay('bOdYackn')">Acknowledgements. </span></h6
+><span id="bOdYackn" class="bOdY ">I am grateful to many people
+who helped. My daughter Polina Viro wrote the first javascripts for VersoTeX
+and successfully hunted numerous javascript bugs through the whole period of
+work. Raluca Tanase implemented canvas with justification of text and helped
+to maintain the web page of Arnold Mathematical Journal. At the first stage,
+I used LaTeXML developed by Bruce R.Miller. In the HTML design I use
+many design solution from his work. I am grateful for very inspiring and
+fruitful conversations with Robert A. Beezer, David W.Farmer, Peter
+Krautzberger and Alexander Shumakovitch.
+   </div></div></div></div>
+<div id="menu">
+<span onclick="javascript:ReverseDisplay('Menu')">
+<img src="icons/menu.png"></span>
+<div id="Menu" class="hide" style="padding-top:20px">
+<table cellpadding=0> <tr><td align=center>
+<a href="./"> <img src="icons/goHome.png" height=25></a>
+</td></tr> <tr><td align=center>
+<a href="javascript:UnFoldAll()"> <img src="icons/goBottom.png"
+height=19> </a></td></tr><tr><td align=center>
+<a href="javascript:FoldAll()"> <img src="icons/goTop.png" height=19>
+</a></td></tr><tr><td align=center>
+<a href="javascript:CloseWindows()"> <img src="icons/crossedBubble.png"
+width=15 height=17> </a></td></tr><tr><td align=center>
+<a href="javascript:ToggleHighLight()"> <img src="icons/HL.png"
+height=19> </a></td></tr><tr><td align=center>
+<a href="javascript:rectoCopyAll()"> <img src="icons/textXGeneric.png"
+height=19 width=15><img src="icons/textXGeneric.png" height=19
+width=15> </span></td></tr><tr><td align=center>
+<span onclick="rectoBib()"> Bib </span></td></tr><tr><td
+align=center>
+<span onclick="rectoToc()"> ToC </span></td></tr></table>
+</div></div>
+<div id="recto"> </div> <div id="TOC" style="display:none">
+<h2>Contents</h2> <span onclick="ReverseDisplay('tOcS1')"><img
+src="icons/panStart.png" height=12></span>
+<span id="tocSection1"
+onclick="LinkTo('S1')">
+1. Instructions to a VersoTeX reader</span><br>
+<div id="tOcS1" class="hide tOcSs tOc">
+<span onclick="ReverseDisplay('tOcSs1.1')">
+<img src="icons/panStart.png" height=10></span>
+<span id="tocSubsection1.1"
+onclick="LinkTo('Ss1.1')">
+1.1. Three fields</span>&nbsp;&nbsp; <span onclick="Cp2Recto('s1.1')"
+
+
+class="rectolk"><img src="icons/bubble.png" class="rectolk" height=13
+width=12></span><br>
+<div id="tOcSs1.1" class="hide tOcSss tOc">
+</div>
+<span onclick="ReverseDisplay('tOcSs1.2')">
+<img src="icons/panStart.png" height=10></span>
+<span id="tocSubsection1.2"
+onclick="LinkTo('Ss1.2')">
+1.2. Verso</span>&nbsp;&nbsp; <span onclick="Cp2Recto('s1.2')"
+class="rectolk"><img src="icons/bubble.png" class="rectolk" height=13
+width=12></span><br>
+<div id="tOcSs1.2" class="hide tOcSss tOc">
+</div>
+<span onclick="ReverseDisplay('tOcSs1.3')">
+<img src="icons/panStart.png" height=10></span>
+<span id="tocSubsection1.3"
+onclick="LinkTo('Ss1.3')">
+1.3. Recto</span>&nbsp;&nbsp; <span onclick="Cp2Recto('s1.3')"
+class="rectolk"><img src="icons/bubble.png" class="rectolk" height=13
+width=12></span><br>
+<div id="tOcSs1.3" class="hide tOcSss tOc">
+<span onclick="ReverseDisplay('tOcSss1.3.1')">
+<img src="icons/panStart.png" height=10></span>
+<span id="tocSubsubsection1.3.1"
+onclick="LinkTo('Sss1.3.1')">
+1.3.1. Table of Contents</span>&nbsp;&nbsp; <span
+onclick="Cp2Recto('Sss1.3.1')" class="rectolk"><img
+src="icons/bubble.png" class="rectolk" height=13 width=12></span><br>
+<div id="tOcSss1.3.1" class="hide tOcSsss tOc">
+</div>
+<span onclick="ReverseDisplay('tOcSss1.3.2')">
+<img src="icons/panStart.png" height=10></span>
+<span id="tocSubsubsection1.3.2"
+onclick="LinkTo('Sss1.3.2')">
+1.3.2. From verso to recto</span>&nbsp;&nbsp; <span
+onclick="Cp2Recto('Sss1.3.2')" class="rectolk"><img
+src="icons/bubble.png" class="rectolk" height=13 width=12></span><br>
+<div id="tOcSss1.3.2" class="hide tOcSsss tOc">
+</div>
+</div>
+<span onclick="ReverseDisplay('tOcSs1.4')">
+<img src="icons/panStart.png" height=10></span>
+<span id="tocSubsection1.4"
+onclick="LinkTo('Ss1.4')">
+1.4. Menu</span>&nbsp;&nbsp; <span onclick="Cp2Recto('s1.4')"
+class="rectolk"><img src="icons/bubble.png" class="rectolk" height=13
+
+
+width=12></span><br>
+<div id="tOcSs1.4" class="hide tOcSss tOc">
+</div>
+<span onclick="ReverseDisplay('tOcSs1.5')">
+<img src="icons/panStart.png" height=10></span>
+<span id="tocSubsection1.5"
+onclick="LinkTo('Ss1.5')">
+1.5. The environment for reading VersoTeX html
+article</span>&nbsp;&nbsp; <span onclick="Cp2Recto('s1.5')"
+class="rectolk"><img src="icons/bubble.png" class="rectolk" height=13
+width=12></span><br>
+<div id="tOcSs1.5" class="hide tOcSss tOc">
+</div>
+</div>
+<span onclick="ReverseDisplay('tOcS2')"><img src="icons/panStart.png"
+height=12></span>
+<span id="tocSection2"
+onclick="LinkTo('S2')">
+2. Instructions to a VersoTeX runner</span><br>
+<div id="tOcS2" class="hide tOcSs tOc">
+<span onclick="ReverseDisplay('tOcSs2.1')">
+<img src="icons/panStart.png" height=10></span>
+<span id="tocSubsection2.1"
+onclick="LinkTo('Ss2.1')">
+2.1. Adjust the source file</span>&nbsp;&nbsp; <span
+onclick="Cp2Recto('s2.1')" class="rectolk"><img src="icons/bubble.png"
+class="rectolk" height=13 width=12></span><br>
+<div id="tOcSs2.1" class="hide tOcSss tOc">
+</div>
+<span onclick="ReverseDisplay('tOcSs2.2')">
+<img src="icons/panStart.png" height=10></span>
+<span id="tocSubsection2.2"
+onclick="LinkTo('Ss2.2')">
+2.2. The environment needed for running VersoTeX</span>&nbsp;&nbsp;
+<span onclick="Cp2Recto('s2.2')" class="rectolk"><img
+src="icons/bubble.png" class="rectolk" height=13 width=12></span><br>
+<div id="tOcSs2.2" class="hide tOcSss tOc">
+</div>
+<span onclick="ReverseDisplay('tOcSs2.3')">
+<img src="icons/panStart.png" height=10></span>
+<span id="tocSubsection2.3"
+onclick="LinkTo('Ss2.3')">
+2.3. Running VersoTeX</span>&nbsp;&nbsp; <span
+onclick="Cp2Recto('s2.3')" class="rectolk"><img src="icons/bubble.png"
+class="rectolk" height=13 width=12></span><br>
+<div id="tOcSs2.3" class="hide tOcSss tOc">
+
+
+</div>
+</div>
+<span onclick="ReverseDisplay('tOcS3')"><img src="icons/panStart.png"
+height=12></span>
+<span id="tocSection3"
+onclick="LinkTo('S3')">
+3. Under the hood</span><br>
+<div id="tOcS3" class="hide tOcSs tOc">
+</div>
+<span onclick="ReverseDisplay('tOcS4')"><img src="icons/panStart.png"
+height=12></span>
+<span id="tocSection4"
+onclick="LinkTo('S4')">
+4. Speculations on problems and solutions</span><br>
+<div id="tOcS4" class="hide tOcSs tOc">
+<span onclick="ReverseDisplay('tOcSs4.1')">
+<img src="icons/panStart.png" height=10></span>
+<span id="tocSubsection4.1"
+onclick="LinkTo('Ss4.1')">
+4.1. Two problems to be addressed</span>&nbsp;&nbsp; <span
+onclick="Cp2Recto('s4.1')" class="rectolk"><img src="icons/bubble.png"
+class="rectolk" height=13 width=12></span><br>
+<div id="tOcSs4.1" class="hide tOcSss tOc">
+</div>
+<span onclick="ReverseDisplay('tOcSs4.2')">
+<img src="icons/panStart.png" height=10></span>
+<span id="tocSubsection4.2"
+onclick="LinkTo('Ss4.2')">
+4.2. Design</span>&nbsp;&nbsp; <span onclick="Cp2Recto('s4.2')"
+class="rectolk"><img src="icons/bubble.png" class="rectolk" height=13
+width=12></span><br>
+<div id="tOcSs4.2" class="hide tOcSss tOc">
+</div>
+<span onclick="ReverseDisplay('tOcSs4.3')">
+<img src="icons/panStart.png" height=10></span>
+<span id="tocSubsection4.3"
+onclick="LinkTo('Ss4.3')">
+4.3. LaTeX for HTML</span>&nbsp;&nbsp; <span
+onclick="Cp2Recto('s4.3')" class="rectolk"><img src="icons/bubble.png"
+class="rectolk" height=13 width=12></span><br>
+<div id="tOcSs4.3" class="hide tOcSss tOc">
+</div>
+</div>
+</div> </body> </html>
+
+

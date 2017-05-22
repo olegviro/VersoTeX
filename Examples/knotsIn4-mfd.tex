@@ -1,0 +1,468 @@
+\documentclass{article}
+\usepackage{textcomp,verbatim,amssymb,amsmath,array}
+\def\<{\textless}
+\def\>{\textgreater}
+\usepackage{vo}
+\pagestyle{empty}
+\begin{document}
+
+
+$\newcommand\Fitt{\operatorname{Fitt}}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\p}{\partial}
+\newcommand{\inj}{\operatorname{in}}
+\newcommand{\codim}{\operatorname{codim}}
+\newcommand{\sminus}{\smallsetminus}$ 
+
+\spnewtheorem{Th}{Theorem}[section]{\bf}{\it}
+
+
+
+\title{Space of smooth 1-knots in a 4-manifold:\\ Is its algebraic topology
+sensitive to smooth structures?}
+\author{Oleg Viro}
+\date{}
+\maketitle
+
+\section{Introduction}\label{s1}
+\subsection*{ Diffeomorphic vs. homeomorphic in high dimensions}
+There are smooth manifolds, which are homeomorphic, but not diffeomorphic.
+It happens to manifolds of dimension greater than 3. 
+This phenomenon was discovered by Milnor \cite{Mi1} for the 7-dimensional
+sphere $S^7$ in the fifties. A technique for classification of 
+smooth 
+structures on a manifold of dimension greater than 4 was developed in the 
+sixties. 
+Homeomorphic, but not diffeomorphic manifolds were found in all 
+dimensions $>4$, see \cite{KM}, \cite{Ba}, \cite{S}. 
+A substantial part of the technique used in these works is not 
+applicable in dimension 4. \smallskip
+
+
+\subsection*{Closed simply connected 4-manifolds} 
+In the eighties Freedman \cite{F} gave a topological classification 
+of closed simply connected 4-manifolds and Donaldson \cite{D} proved that 
+some smooth closed simply connected 4-manifolds, which are homeomorphic 
+according to Freedman's results, are not diffeomorphic. 
+
+For smooth closed simply connected 4-manifolds, the only 
+homotopy invariant
+is the intersection form in the second homology with integer coefficients:
+two manifolds of this kind are homotopy equivalent iff their intersection
+forms are isomorphic (Whitehead \cite{Wh}, Pontryagin \cite{Po}). 
+
+As Freedman \cite{F} proved, for manifolds of this type homeomorphism 
+is equivalent to homotopy equivalence. Thus, two smooth closed simply connected 
+4-manifolds are homeomorphic iff their intersection forms are isomorphic. 
+
+In contrast, on many closed simply connected 4-manifolds there are 
+infinitely many smooth structures. Of course, the number of smooth structures 
+on a closed 4-manifold cannot be uncountable (on a non-compact 4-manifold it 
+can, as is the case for $\mathbb R^4$). There is no conjectural classification 
+scheme
+for smooth structures on any closed 4-manifold. Stern entitled his survey  
+paper \cite{Stern} by a question ``Will we ever classify simply-connected 
+smooth 4-manifolds?''. In the introduction to his paper he wrote: ``The 
+subject is rich in examples that demonstrate a wide variety of disparate 
+phenomena. Yet it is precisely this richness which, at the time of these 
+lectures, gives us little hope to even conjecture a classification scheme.'' 
+
+
+\subsection{Invariants distinguishing smooth structures}
+Proving that homeomorphic manifolds of dimension 4 are not diffeomorphic 
+required absolutely new tools. All the invariants, 
+that have been used so far for proving that some homeomorphic
+simply connected closed smooth 4-manifolds are not diffeomorphic, 
+are deeply rooted in analysis. They are based on counting solutions to some 
+nonlinear partial differential equations. 
+Most of the results on non-existence of 
+diffeomorphisms between homeomorphic simply connected 4-manifolds have been 
+obtained 
+using the Donaldson and Seiberg-Witten invariants.
+
+It is a long term challenge for topologists to find invariants which  
+would distinguish smooth structures on a 4-manifold, but would be independent
+on analytic tools. This is not just an aesthetic issue: the analytic 
+tools are not convenient in some situation. 
+
+For example, in dimension 4 smooth structures are closely related to 
+PL-structures (piecewise linear structures). In any dimension a
+smooth structure on a manifold determines on it a specific PL-structure 
+uniquely defined up to PL-homeomorphism.
+In dimensions $\le 6$ any PL-structure can be obtained in this way from a 
+smooth structure and the smooth structure is unique up to diffeomorphism,
+see \cite{S}. 
+Hence any invariant of a smooth structure on a 4-manifold 
+depends only on the PL-structure. However,  in order to prove that 
+two homeomorphic PL-manifolds of dimension 4 are
+not PL-homeomorphic, now one has to equip them with smooth 
+structures, and then calculate the invariants. 
+The techniques for calculation are not easy, especially if 
+the smooth structure is not defined naturally (say, as the underlying 
+structure on a complex surface), 
+but just obtained by smoothing of a PL-structure. 
+
+\subsection{Combinatorial invariants}
+It is worth mentioning a partial success of efforts towards eliminating 
+of analysis.
+An invariant of smooth 4-manifolds, the Ozsv\'ath-Szab\'o 
+mixed invariant \cite{OS}, conjecturally coinciding with the Seiberg-Witten 
+invariant, has been redefined \cite{MOT} in purely 
+combinatorial terms. However, on one hand, it is difficult to calculate even 
+for comparatively simple 4-manifolds, so it not an effective tool for 
+distinguishing smooth structures, on the other hand, its combinatorial 
+description has not 
+clarified its nature,  has not related it to the rest of topology.
+
+All the known invariants distinguishing smooth structures on closed simply 
+connected 4-manifold $X$ require non-trivial intersection form on $H_2(X)$. 
+In particular, for the 
+4-sphere these invariants give nothing, they cannot help in disproving of the 
+4-dimensional differential Poincar\'e conjecture, according to which any closed 
+4-dimensional manifold homeomorphic to $S^4$ is diffeomorphic to $S^4$. 
+
+Thus, a development of new approaches to building invariants of smooth 
+structures is desirable for several good reasons.
+
+\section{Seiberg-Witten versus Alexander}\label{s2}
+One of the most powerful invariants, which
+distinguish smooth structures on a 4-manifold, is the Seiberg-Witten
+invariant. It can be presented in several forms. In particular,
+the Seiberg-Witten invariant of a smooth closed 
+simply-connected 4-manifold $X$ can be identified with an element ${SW}_X$ 
+of $\Z[H_2(X)]$, the integer group algebra of the {\em second\/} 
+homology group $H_2(X)$.
+
+This identification makes the Seiberg-Witten invariant
+resembling the Alexander polynomial of a link. 
+For a classical link $L\subset S^3$, the Alexander polynomial 
+is an element of 
+$\Z[H_1(S^3\sminus L)]$, the integer group algebra of the {\em first\/} 
+homology group. 
+
+The Alexander polynomial can be defined in many ways. In particular, 
+it admits purely topological definitions.
+
+The similarity between Seiberg-Witten invariant and Alexander polynomial gives 
+a hope to find either a definition of Seiberg-Witten 
+invariant free of heavy analysis, or, at least, to invent 
+similar invariants that solve the same problems, but are defined and 
+calculated in ways more traditional for topology.
+This hope is supported by a relation between the Seiberg-Witten invariant and 
+the Alexander polynomial discovered 
+by Fintushel and Stern in 1996 \cite{FS}:
+
+\section{Fintushel-Stern knot surgery of a 4-manifold}\label{s3}
+Let $X$ be any simply connected closed smooth 4-manifold. 
+Suppose that $X$ contains a smoothly embedded torus $T$ with simply 
+connected complement $X\sminus T$ and with zero
+self-intersection number $T\circ T$.  Since $T\circ T=0$,
+the normal bundle of $T$ is trivial, and a tubular neighborhood of $T$
+can be identified with  $T\times D^2$. 
+
+A {\em knot surgery\/} on $T$ takes away from $X$ a tubular neighborhood 
+$T\times D^2$ of $T$  and attaches $S^1\times(S^3\sminus N_K)$ instead,  
+where $N_K$ is an open tubular neighborhood of a smooth knot $K\subset S^3$.
+Observe that the boundary of $S^3\sminus N_K$ is diffeomorphic to the 2-torus
+$S^1\times S^1$, and hence the boundary of the inserted
+ piece $S^1\times(S^3\sminus N_K)$ is diffeomorphic to
+the 3-torus $S^1\times S^1\times S^1$ as well as the boundary 
+$T\times\p D^2$ of the piece removed. The attaching is performed by a 
+diffeomorphism $S^1\times\p(S^3\sminus N_K)\to T\times\p D^2$ which maps 
+$\{pt\}\times l$, where $l$ is a longitude, 
+i.e., a circle bounding in $ S^3\sminus K$, to a fiber $\{pt\}\times\p D^2$. 
+This requirement on the attaching 
+map does not determine the map up to diffeotopy, and hence does not 
+necessarily determine
+$X_K$ up to diffeomorphism. However, by the following theorem, under 
+some assumptions, all the 
+manifolds obtained from the same $(X,T)$ and $K\subset S^3$ by knot 
+surgeries have the same Seiberg-Witten invariant.
+
+\begin{Th}[{\bf Fintushel-Stern \cite{FS}}]\label{ThFS} Let $X$ be a 
+simply connected closed smooth 4-manifold with $b_+(X)>1$, let $X$
+contain  a smoothly embedded torus $T$ with $T\circ T=0$ and simply
+connected complement $X\sminus T$. Let  $K$ be a knot in $S^3$. Then the
+result $X_K$ of a knot surgery is
+homeomorphic to $X$ and 
+$$
+{SW}_{X_K}={SW}_X\cdot \Delta_K(t^2),
+$$
+ where $t\in H_2(X)$ is the homology class realized by $T$ and
+$\Delta_K$ is the symmetrized Alexander polynomial of $K$.
+\end{Th}
+
+Present definitions of the Seiberg-Witten invariant are not applicable to 
+$(S^3\sminus K)\times S^1$ or $(S^3\sminus N_K)\times S^1$.
+So, one cannot speak about ${SW}_{(S^3\sminus K)\times S^1}$.
+However, if the ${SW}$ was extended to this setup and satisfied 
+a reasonable additivity property, Fintushel-Stern Theorem would  
+suggests that ${SW}_{(S^3\sminus K)\times S^1}$ should be $\Delta_K$.
+
+\section{Is ${SW}_X$ the Alexander polynomial of
+something?}\label{s4} The Alexander polynomial of a classical knot $K$ is
+the order of $\Z[H_1(S^3\sminus K)]$-module $H_1(\widetilde{S^3\sminus
+K})$, where $\widetilde{S^3\sminus K}\to S^3\sminus K$ is the infinite
+cyclic covering. The automorphism group of this covering is $H_1(S^3\sminus
+K)=\Z$, it acts
+in the homology group $H_1(\widetilde{S^3\sminus K})$, turning it into a
+$\Z[\Z]=\Z[t,t^{-1}]$-module. 
+
+This module is called the {\em Alexander module\/} of $K$. It is  
+finitely generated and admits a square matrix of relations.
+The determinant of this matrix is the Alexander polynomial. 
+It is defined up to multiplication by units 
+of $\Z[\Z]$ (that is by monomials $\pm t^k$).    
+
+According to this construction, the Alexander polynomial happens to belong to
+$\Z[H_1(S^3\sminus K)]$. The Seiberg-Witten invariant of $X$ belongs to 
+$\Z[H_2(X)]$. What could be a space $Y$ such that $H_1(Y)=H_2(X)$?
+
+\section{The loop space $\Omega X$?}\label{s5}
+There is an obvious candidate for such $Y$, the loop space $\Omega X$ of $X$.
+Indeed, $\pi_i(\Omega X)=\pi_{i+1}(X)$, and, in particular, 
+$\pi_1(\Omega X)=\pi_2(X)$; in the case of simply connected $X$, 
+ $\pi_2(X)$ is isomorphic to $H_2(X)$ by the Hurewicz theorem. 
+Thus $\pi_1(\Omega X)=H_2(X)$. Therefore $\pi_1(\Omega X)$ is commutative,
+and hence  $H_1(\Omega X)=\pi_1(\Omega X)=H_2(X)$.
+
+However, the loop space per se cannot do the job:\begin{itemize}
+\item
+First, the homotopy type of $\Omega X$ depends only on the homotopy type of
+$X$. Therefore homotopy invariants of $\Omega X$ cannot distinguish 
+smooth structures on $X$.
+\item
+Second, $\Omega X$ is an $H$-space. Therefore $\pi_1(\Omega X)$ acts on
+$H_*(\widetilde{\Omega X})$ trivially.
+\end{itemize}
+
+\section{ The knot space?}\label{s6}
+How to improve $\Omega X$? 
+
+First, let us make it closer to the smooth structure of $X$. The loop space 
+$\Omega X$ contains the space $\Omega_{Diff}X$ of differentiable loops 
+$S^1\to X$ that have at the base point fixed non-vanishing differential. 
+The replacement of $\Omega X$ by $\Omega_{Diff}X$ does not change the 
+homotopy type: well-known approximation theorems imply that 
+$\Omega_{Diff}X$ is a deformation retract of $\Omega X$. 
+
+Let $KX\subset \Omega_{Diff}X$ be the subspace which consists of loops that are 
+smooth embeddings. Denote $\Omega_{Diff}X\sminus KX$ by $DX$.
+Observe that $\codim_{\Omega_{Diff}X}DX=2$,  hence the 
+inclusion homomorphism
+$\pi_1(KX)\to\pi_1(\Omega_{Diff} X)=\pi_1(\Omega X)$ is onto. 
+
+Obvious suggestion: 
+consider the covering $\widetilde{KX}\to KX$ induced by the universal
+covering  $\widetilde{\Omega X}\to \Omega X$. The automorphism group 
+of the covering $\widetilde{\Omega X}\to \Omega X$ is $H_1(\Omega
+X)=H_2(X)$. Therefore $H_*(\widetilde{\Omega X})$ and 
+$H_*(\widetilde{KX})$ are modules over % the ring 
+$\Z[H_1(\Omega X)]=\Z[H_2(X)]$.
+
+The action of $H_1(\Omega X)$ in $H_*(\widetilde{\Omega X})$ is trivial,
+since $\Omega X$ is an $H$-space, while $KX$ is not an $H$-space and 
+$H_*(\widetilde{KX})$ may be an interesting $\Z[H_2(X)]$-module. 
+It has a broad range of invariants belonging to $\Z[H_2(X)]$
+similar to the Alexander polynomial. Indeed, if $X$ is simply connected,
+then $H_2(X)$ is a free abelian group of finite rank $r$, and $\Z[H_2(X)]$ is
+isomorphic to a ring $\Lambda_r=\Z[t_1,t_1^{-1},t_2,t_2^{-1},\dots 
+t_r,t_r^{-1}]$
+of Laurent polynomial in $r$ variables with integer
+coefficients, the same ring as in the situation of the Alexander module of a
+classical link. 
+
+
+A finitely generated module $M$ over $\Lambda_r$ gives rise to a
+filtration  of $\Z[H_2(X)]$
+$$\Fitt_0(M)\subset\Fitt_1(M)\subset\dots\subset\Z[H_2(X)]$$ 
+by {\em Fitting ideals\/}.  The $i$th Fitting ideal $\Fitt_i(M)$ is 
+generated by the minors (determinants of submatrices) of order $r-i$ 
+of the matrix of defining relations for $M$   
+In the topological literature Fitting ideals are called also {\em
+elementary ideals\/}. A generator of the minimal principal ideal 
+containing $\Fitt_i(M)$ is denoted by $\Delta_i(M)$. 
+
+In the context of link theory, when $\Lambda_r=H_1(S^3\sminus L)$, where 
+$L$ is an $r$-component link and $M=H_1(\widetilde{S^3\sminus L})$, the
+Laurent polynomial $\Delta_i(M)$ is called the $i$th Alexander polynomial
+of $L$. The $0$th Alexander polynomial is one of the oldest link
+invariants. It was introduced by Alexander \cite{Al}. 
+
+Similarly, for a smooth simply connected closed 4-manifold $X$, each
+$H_i(\widetilde{KX})$, as a module over $\Z[H_2(X)]$, gives rise to 
+a sequence of Laurent polynomials. They resemble the Seiberg-Witten 
+invariant. At least, they belong to the same $\Z[H_2(X)]$.
+The modules $H_i(\widetilde{KX})$ are also invariants of $X$.\medskip
+
+
+\<p\>
+{\bf The problem:} {\em Does there exist homeomorphic smooth simply 
+connected closed 4-manifolds $X_1$, $X_2$ such that  $H_*(\widetilde{KX_1})$
+and  $H_*(\widetilde{KX_2})$ are not isomorphic?\/}
+
+\section{Is this plausible?}\label{s7}
+The author discussed the problem with many leading specialists in the field 
+and asked them this question. The answers spread over a broad spectrum. Only 
+one expert expressed a definitely negative opinion. 
+On the other end, there were also very enthusiastic reactions. 
+
+The most convincing argument is that for different smooth structures on the
+same topological manifold $X$ a topologically observable difference between
+smooth structures was the minimal genus of a smoothly embedded surface 
+realizing  an element of $H_2(X)$. For any smooth structure each class can be 
+realized
+by an immersed sphere with transverse self-intersection (by the Hurewicz 
+theorem and transversality), but the minimal number of
+double point of such immersion depends on the structure. It is greater than 
+or equal to the minimal genus of a smoothly embedded surface realizing the
+class.  
+
+An immersion $f:S^2\to X$ can be used to produce a loop in the space of
+loops $\Omega_{Diff} X$. A loop in $\Omega_{Diff}S^2$ sweeping the whole $S^2$
+composed with $f$ gives a loop in $\Omega_{Diff} X$. Generically this gives a 
+loop
+in $KX$, because under a generic choice of loop in $\Omega_{Diff} S^2$, points 
+in 
+the preimage of a double point of $f$ are passed at different moments. 
+However, in families of loops realizing elements of high-dimensional 
+homology groups $H_k(\Omega_{Diff} S^2)=\Z$ these pairs of points appear on some
+of the loops. Such a family does not realize a homology class in $KX$ or
+$\widetilde{KX}$.    
+
+
+\section{Vassiliev invariants for 4-manifolds?}\label{s8}
+How to calculate $H_i(\widetilde{KX})$? One may apply Vassiliev's idea
+\cite{Va}, which 
+led to discovery of the Vassiliev knot invariants: start the calculation 
+with a study of the dual cohomology, the cohomology of the space of singular
+knots. The space of singular knots has a rich geometric structure. 
+
+
+The space $DX$ 
+consists of differentiable loops that are not embeddings. It fits to 
+the collection of discriminant hypersurfaces studied by Vassiliev \cite{Va}.
+The universal covering $\widetilde{\Omega X}\to \Omega X$ defines 
+a covering $\widetilde{DX}\to DX$.
+
+Resolve singularities of the discriminant $DX$, as Vassiliev
+did. This gives rise to a filtration in $H^*(\widetilde{DX})$.
+The first terms of these filtration are easier to calculate than the whole
+cohomology group.
+
+
+At first glance, the situation is much more complicated than 
+in the original setup in the theory of Vassiliev knot invariants. 
+Let us examine the extra difficulties.
+
+First, instead of the space of singular knots, we have to deal with its
+covering space. What does happen, when we pass from knots to
+points of a covering space? 
+
+In general, if $p:X\to B$ is a covering, $b_0\in B$, $x_0\in X$ are points 
+such that
+$p(x_0)=b_0$ and $X$ is path connected, then a point $x\in X$ is uniquely
+determined by its image $p(x)\in B$, a path $s:I\to B$ such that $s(0)=b_0$,
+and its covering path $\widetilde s:I\to X$ starts at $x_0$ and finishes
+at $x$. The path $s$ is defined up to path homotopy and multiplying by loops 
+covered by loops in $X$.
+
+In particular, a point of $\widetilde{\Omega X}$ (no matter if it belongs
+to $\widetilde{KX}$ or $\widetilde{DX}$) is defined by a loop
+$u:S^1\to X$ and a continuous map $f:D^2\to X$ with $f|_{S^1}=u$
+considered up to homotopy which is fixed on $S^1$. 
+The action of $H_2(X)$ in $\widetilde{\Omega X}$ is realized in this model
+as addition to the homotopy class of $f$ 
+homotopy classes of  maps $S^2\to X$ realizing elements of $H_2(X)$. 
+
+Second, the space of all loops in the Vassiliev setup is contractible.
+(Recall that loops there have the base point and the tangent vector at the
+base point fixed.) This allowed to apply the Alexander duality between the
+homology of the discriminant and cohomology of its complement, the space of
+knots. This was done in a finite dimensional (say, polynomial)
+approximation of the loop space.
+
+Here the loop space is not contractible. Therefore, the Alexander duality  
+is not applicable. However, it may be replaced by the Alexander-Poincar\'e
+duality between the homology of $\widetilde{KX}$ and a relative cohomology, 
+the cohomology of $(\widetilde{\Omega_{Diff} X},\widetilde{DX})$.
+
+\section{An alternative approach: string topology}\label{s9}
+
+The homology of loop space $\Omega_{Diff}X$ and its universal covering 
+accommodate a rich structure of the string topology operations \cite{CS}.
+Geometrically, one can expect that this structure incorporates the same 
+information as the 
+natural filtration of the discriminant and the Alexander-Poincar\'e duality.
+Apparently the connection have not been investigated. Nonetheless, it would
+be natural to expect that the string topology is as strong as the invariants
+discussed above. 
+
+\<p\> 
+{\bf Problem.\/} {\it Is the string topology sensitive to smooth structures
+on 4-manifolds?} 
+
+\<p\>It would be interesting also to find direct relations between the Vassiliev
+invariants theory and the string topology in the setup of classical knot 
+theory.  
+
+
+\begin{thebibliography}{99}
+
+\bibitem[{Alexander}{1928}]{Al}  J.W. Alexander, {\it Topological invariants of knots and
+links\/}, Trans. Amer. Math. Soc. 30 (2) (1928) 275-306.
+
+\bibitem[{Barden}{1987}]{Ba} D. Barden, {\it Simply connected five-manifolds,\/} 
+Ann. of Math. (2) 82 (1965), 365-385.
+
+\bibitem[{Donaldson}{1987}]{D}  S. Donaldson, {\it Irrationality and the h-cobordism 
+conjecture,\/} J. Differential Geom. 26 (1) (1987) 141-168.
+
+\bibitem[{Donaldson}{1983}]{D1} S. Donaldson, {\it An application of gauge theory to 
+4-dimensional topology,\/} J. Diff. Geom., 18 (1983), 279-315.
+
+\bibitem[{Chas and Sullivan}{1999}]{CS} Moira Chas and Dennis Sullivan. {\it String topology.\/} 
+Preprint arXiv:math/9911159.
+
+\bibitem[{Freedman}{1982}]{F}  Michael Hartley Freedman, {\it The topology of four-dimensional
+manifolds\/}, Journal of Differential Geometry 17 (3)  (1982), 357-453.
+
+\bibitem[{Fintushel and Stern}{1998}]{FS}  R. Fintushel and R.Stern, {\it Knots, links, and
+4-manifolds,\/} Invent. Math. {\bf 134}, no. 2 (1998), 363-400.
+
+\bibitem[{Milnor}{1956}]{Mi1} John W. Milnor, {\it On manifolds homeomorphic to the
+7-sphere,\/}
+Ann. of Math., 64 (1956), 399-405.
+
+\bibitem[{Manolescu, Ozsv\'{a}th and Thurston }{2009}]{MOT} Ciprian Manolescu, Peter s. Ozsv\'ath, and Dylan P. Thurston,
+{\it Grid diagrams and Heegaard Floer invariants\/}, arXiv:0910.0078 [math.GT].
+
+
+\bibitem[{Kervaire and Milnor}{1963}]{KM}  Michel Kervaire and John W. Milnor, {\it Groups of homotopy
+spheres,\/} Ann. of Math., 77 (1963), 504-537.
+
+\bibitem[{Ozsv\'{a}th and Z. Szab\'{o}}]{OS} P. S. Ozsv\'{a}th and Z.
+Szab\'{o},  {\it Holomorphic triangles and 
+invariants for smooth four-manifolds,\/}   Adv. Math., 202(2006), no. 2, 
+326-400.
+
+\bibitem[{Pontryagin}{1949}]{Po} L.S.Pontryagin, {\it On classification of four-dimensional
+manifolds,\/} Uspekhi Mat. Nauk, 4:4 (1949), 157-158 (Russian).
+
+\bibitem[{Siebenmann}{1970}]{S} L.C. Siebenmann, {\it Topological manifolds,\/} 
+Proceedings of the International Congress of Mathematicians
+Nice, September, 1970, Gauthier-Villars,
+1971, Vol. 2, 133-163.
+
+\bibitem[{Stern}{2006}]{Stern} Ronald J. Stern, {\it `Will we ever classify simply-connected 
+smooth 4-manifolds?\/}, Clay Mathematics Proceedings, Volume 5, 2006, 225-239.
+
+\bibitem[{Vassiliev}{1994}]{Va} V.A. Vassiliev, {\it Complements of Discriminants of Smooth
+Maps: Topology and Applications\/}  Translations of Mathematical Monographs 
+Series, 98,  American Mathematical Society, second edition, 1994. 
+
+\bibitem[{Whitehead}{1949}]{Wh} J.H.C. Whitehead, {\it On simply connected 4-dimensional
+polyhedra,\/} Comm. Math. Helv., 22 (1949), 48-92.
+
+\end{thebibliography}
+\end{document}

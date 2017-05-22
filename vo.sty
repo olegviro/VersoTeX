@@ -1,0 +1,1034 @@
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+\def\<{\textless}
+\def\>{\textgreater}
+
+
+\AtBeginDocument{
+\<!DOCTYPE html\>\<html\>
+\<head\> 
+\<title\>\</title\> \\ 
+\<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"\>\\
+\<link rel="stylesheet" href="vo.css" type="text/css"\>\\
+\<link rel="stylesheet"
+href= "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css"\>
+\<script type = "text/javascript" src = 
+"https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.js"\>
+\</script\>\\ 
+\<script type = "text/javascript" \\
+src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"\>
+\</script\> \\
+\<script type = "text/x-mathjax-config"\> \\ 
+MathJax.Hub.Config(\{  \\
+tex2jax: \{ \\
+inlineMath: [ ['\$','\$'] ],\\
+displayMath: [ ['\$\$','\$\$'] ], \\
+processEscapes: true \\
+\}\}); \\
+MathJax.Hub.Register.StartupHook("End", function() \{ \\
+var spinner = document.getElementById("spinner"); \\
+spinner.parentNode.removeChild(spinner);\\
+\}); \\ 
+\</script\>  \\
+\<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=  \\
+TeX-AMS-MML-HTMLorMML"\> \\
+\</script\>  \\
+\<script src = "vo.js"\>\</script\> \\ 
+\<script\>  \\
+\$( function() \{ \\
+ \$(".uidraggable").draggable(); \\
+ \$(".uiresizable").resizable(); \\
+\$(".hresizable").resizable(\{ handles:"e, w"\}); \\
+\});\\
+\</script\> \\ 
+\</head\> \\ 
+\<body\>  \\
+\<div id = "spinner" class = "loader"\>MathJax is loading, please wait\</div\>
+ \\ 
+\<div id = "versoCell" class = "uiresizable"\> \\
+\<div id = "verso"\>  \\
+}
+\AtEndDocument{
+\</div\>\</div\>\</div\>\</div\>\\
+\<div id="menu"\>\\ 
+\<span onclick="javascript:ReverseDisplay('Menu')"\> \\ 
+\<img src="icons/menu.png"\>\</span\>\\ 
+\<div id="Menu" class="hide" style="padding-top:20px"\> \\
+\<table cellpadding=0\>
+\<tr\>\<td align=center\>\break 
+\<a href="./"\> 
+\<img src="icons/goHome.png" height=25\>\</a\> 
+\</td\>\</tr\> 
+\<tr\>\<td align=center\>\\
+\<a href="javascript:UnFoldAll()"\> 
+\<img src="icons/goBottom.png" height=19\> 
+\</a\>\</td\>\</tr\>\<tr\>\<td align=center\>\\
+\<a href="javascript:FoldAll()"\>
+\<img src="icons/goTop.png" height=19\>
+\</a\>\</td\>\</tr\>\<tr\>\<td align=center\>\\
+\<a href="javascript:CloseWindows()"\> 
+\<img src="icons/crossedBubble.png" width=15 height=17\> 
+\</a\>\</td\>\</tr\>\<tr\>\<td align=center\> \\
+\<a href="javascript:ToggleHighLight()"\> 
+\<img src="icons/HL.png" height=19\> 
+\</a\>\</td\>\</tr\>\<tr\>\<td align=center\>\\
+\<a href="javascript:rectoCopyAll()"\>
+\<img src="icons/textXGeneric.png" height=19 width=15\>%
+\<img src="icons/textXGeneric.png" height=19 width=15\> 
+\</span\>\</td\>\</tr\>\<tr\>\<td align=center\> \\
+\<span onclick="rectoBib()"\>
+Bib
+\</span\>\</td\>\</tr\>\<tr\>\<td align=center\> \break
+\<span onclick="rectoToc()"\>
+ToC
+\</span\>\</td\>\</tr\>\</table\> \\
+\</div\>\</div\> \\
+\<div id="recto"\>
+\</div\>
+\<div id="TOC" style="display:none"\>
+\<h2\>Contents\</h2\>
+\@starttoc{toc}{}
+\</div\>
+\</body\> 
+\</html\> }
+
+\AtBeginDocument{%
+  \@for\@tempa:=-1,0,1,2,3\do{%
+    \@ifundefined{r@tocindent\@tempa}{%
+      \@xp\gdef\csname r@tocindent\@tempa\endcsname{0pt}}{}%
+  }%
+}
+\def\@writetocindents{%
+  \begingroup
+  \@for\@tempa:=-1,0,1,2,3\do{%
+    \immediate\write\@auxout{%
+      \string\newlabel{tocindent\@tempa}{%
+        \csname r@tocindent\@tempa\endcsname}}%
+  }%
+  \endgroup}
+\AtEndDocument{\@writetocindents}
+
+
+\def\hide#1{\<div class="hide"\>{#1}\</div\>\\}
+
+\makeatletter
+\def\papertype#1{\gdef\@papertype{#1}}
+\def\@papertype{\@latex@warning@no@line{No \noexpand\papertype given}}
+
+\def\Author#1{
+    \<span class="authors author"\>{#1}\</span\>}
+\def\authorInfo#1{
+    \<span class="authors authorInfo"\>\<span\>{#1}\</span\>\</span\>}
+
+
+\def\maketitle{\<p style="clear: both;"\>
+\<div class="TitleDocument" \> 
+\@title 
+\</div\>\newline 
+\<div class="authors"\> 
+\@author\</div\>\newline
+\<span\>
+\@date 
+\</span\>\newline
+}
+
+\def\ifEqStrings#1#2{\def\testa{#1}\def\testb{#2}%
+\ifx\testa\testb}
+
+\def\spnewtheorem{\@ifstar{\@sthm}{\@Sthm}}
+
+% definition of \spnewtheorem with number
+
+\def\@spnthm#1#2{%
+  \@ifnextchar[{\@spxnthm{#1}{#2}}{\@spynthm{#1}{#2}}}
+\def\@Sthm#1{\@ifnextchar[{\@spothm{#1}}{\@spnthm{#1}}}
+
+\def\@spxnthm#1#2[#3]#4#5{\expandafter\@ifdefinable\csname #1\endcsname
+   {\@definecounter{#1}\@addtoreset{#1}{#3}%
+   \expandafter\xdef\csname the#1\endcsname{\expandafter\noexpand
+     \csname the#3\endcsname \noexpand\@thmcountersep \@thmcounter{#1}}%
+   \expandafter\xdef\csname #1name\endcsname{#2}%
+   \global\@namedef{#1}{\@spthm{#1}{\csname #1name\endcsname}{#4}{#5}}%
+                              \global\@namedef{end#1}{\@endtheorem}}}
+
+\def\@spynthm#1#2#3#4{\expandafter\@ifdefinable\csname #1\endcsname
+   {\@definecounter{#1}%
+   \expandafter\xdef\csname the#1\endcsname{\@thmcounter{#1}}%
+   \expandafter\xdef\csname #1name\endcsname{#2}%
+   \global\@namedef{#1}{\@spthm{#1}{\csname #1name\endcsname}{#3}{#4}}%
+                               \global\@namedef{end#1}{\@endtheorem}}}
+
+\def\@spothm#1[#2]#3#4#5{%
+  \@ifundefined{c@#2}{\@latexerr{No theorem environment `#2' defined}\@eha}%
+  {\expandafter\@ifdefinable\csname #1\endcsname
+  {\global\@namedef{the#1}{\@nameuse{the#2}}%
+  \expandafter\xdef\csname #1name\endcsname{#3}%
+  \global\@namedef{#1}{\@spthm{#2}{\csname #1name\endcsname}{#4}{#5}}%
+  \global\@namedef{end#1}{\@endtheorem}}}}
+
+\def\@spthm#1#2#3#4{%
+\refstepcounter{#1}%
+\@ifnextchar[{\@spythm{#1}{#2}{#3}{#4}}{\@spxthm{#1}{#2}{#3}{#4}}}
+
+\def\@spxthm#1#2#3#4{\@spbegintheorem{#2}{\csname the#1\endcsname}{#3}{#4}%
+                    \ignorespaces}
+
+\def\@spythm#1#2#3#4[#5]{\@spopargbegintheorem{#2}{\csname
+       the#1\endcsname}{#5}{#3}{#4}\ignorespaces}
+
+\def\addTh#1#2{\<span class="tOcMisc"\>
+         \<span id="toc{#1}{#2}" onclick="LinkTo('#1#2')"\>
+         {#1} {#2}\</span\>\&nbsp;
+         \<span  onclick="Cp2Recto('{#1}{#2}')" class="rectolk"\>
+         \<img src="icons/bubble.png" class="rectolk" height=13
+         width=11\>\</span\>\&nbsp;\&nbsp;\</span\>}
+
+
+
+\def\normalthmheadings{\def\@spbegintheorem##1##2##3##4{%\trivlist\normalfont
+\<div id="##1##2" class="Theorem TheoremMain"\> 
+\<h6 class="Title Runin  TitleTheorem 
+\ifEqStrings{##3}{\bf} FontBold%
+\fi% 
+\ifEqStrings{##3}{\it} FontItalic%
+\fi%
+\ifEqStrings{##3}{\rm} FontUpright%
+\fi%
+"\>##1\ ##2.\</h6\>\\
+\<span class=
+\ifEqStrings{##4}{\bf} "FontBold"%
+\fi 
+\ifEqStrings{##4}{\it} "FontItalic"%
+\fi 
+\ifEqStrings{##4}{\rm} "FontUpright"%
+\fi
+\>
+\addtocontents{toc}{\addTh{##1}{##2}}
+}
+
+\def\@spopargbegintheorem##1##2##3##4##5{%\trivlist
+\<div id="##1##3" class="Theorem TheoremMain"\> \\
+\<h6 class="Title Runin FontBold TitleTheorem"\>##4##1 ##2 ##4(##3) ##5.\</h6\>\\}}
+\normalthmheadings
+
+\def\reversethmheadings{\def\@spbegintheorem##1##2##3##4{\trivlist\normalfont
+                 \item[\hskip\labelsep{##3##2\ ##1\@thmcounterend}]##4}
+\def\@spopargbegintheorem##1##2##3##4##5{\trivlist
+      \item[\hskip\labelsep{##4##2\ ##1}]{##4(##3)\@thmcounterend\ }##5}}
+
+\def\@endtheorem{\</span\>\</div\>}
+
+% definition of \spnewtheorem* without number
+
+\def\@sthm#1#2{\@Ynthm{#1}{#2}}
+
+\def\@Ynthm#1#2#3#4{\expandafter\@ifdefinable\csname #1\endcsname
+   {\global\@namedef{#1}{\@Thm{\csname #1name\endcsname}{#3}{#4}}%
+    \expandafter\xdef\csname #1name\endcsname{#2}%
+    \global\@namedef{end#1}{\@endtheorem}}}
+
+\def\@Thm#1#2#3{\topsep 7\p@ \@plus2\p@ \@minus4\p@
+\@ifnextchar[{\@Ythm{#1}{#2}{#3}}{\@Xthm{#1}{#2}{#3}}}
+
+\def\@Xthm#1#2#3{\@Begintheorem{#1}{#2}{#3}\ignorespaces}
+
+\def\@Ythm#1#2#3[#4]{\@Opargbegintheorem{#1}
+       {#4}{#2}{#3}\ignorespaces}
+
+\def\@Begintheorem#1#2#3{
+\<div id="#1" class="Theorem TheoremMain"\>\\
+\<h6 class="Title Runin  TitleTheorem 
+\ifEqStrings{#2}{\bf} FontBold%
+\fi% 
+\ifEqStrings{#2}{\it} FontItalic%
+\fi%
+\ifEqStrings{#2}{\rm} FontUpright%
+\fi%
+"\>\\
+#1.\</h6\>\\
+\<span class=
+\ifEqStrings{#3}{\bf} "FontBold"%
+\fi 
+\ifEqStrings{#3}{\it} "FontItalic"%
+\fi 
+\ifEqStrings{#3}{\rm} "FontUpright"%
+\fi
+\>\\
+}
+
+\def\@Opargbegintheorem#1#2#3#4{#4\trivlist
+      \item[\hskip\labelsep{#3#1}]{#3(#2)\@thmcounterend\ }}
+
+
+\newif \if@oitem \@oitemfalse
+
+
+\renewenvironment{itemize}%
+{\<ul class="Itemize"\>\\}
+{\if@oitem\</li\>\else\fi
+\@oitemfalse\</ul\>\\}
+
+
+
+\newcommand{\oitem}{\@ifnextchar[\@loitem\@oitem}
+\def\@loitem[#1]#2{
+\if@oitem\</li\>\\
+\else\fi
+\<li class="Item Tocentry"\>
+\<span class="Tag"\>#1\</span\>
+#2}
+\def\@oitem#1{
+\if@oitem\</li\>\\
+\else\fi
+\<li class="Item "\>#1}
+
+\renewenvironment{enumerate}
+{\<ol class="Enumerate"\>\\ }
+{\if@oitem\</li\>\else\fi
+\@oitemfalse\</ol\>\\}
+
+\renewenvironment{description}%
+{\<ul class="Description"\>\\}
+{\if@oitem\</li\>\else\fi
+\@oitemfalse\</ul\>\\}
+
+\newcommand{\dedication}[1]%
+{\<div class="Dedication"\>\<i\>#1\</i\>\</div\>\\}
+
+\newcounter{proof}
+\setcounter{proof}\z@
+
+\newenvironment{proof}[1][\proofname]{ 
+\refstepcounter{proof}
+\<br\>
+\<h6 class="Title TitleTheorem Runin"\>
+\<span
+onclick="ReverseDisplay('bOdYPf\arabic{proof}')"
+class="proofTitle"\>
+#1\</span\>.\</h6\>
+\<span id="bOdYPf\arabic{proof}" class="proof bOdY hide"\> \&nbsp;
+}
+{
+ \<span 
+onclick="ReverseDisplay('bOdYPf\arabic{proof}')"  
+class=" AlignFloatright qed"\>
+\&\#11036;
+\</span\>\</p\>\</span\>}
+
+\newcommand\qed{\<span class="AlignFloatright"\>
+\&\#11036;\</span\>}
+
+
+\providecommand{\proofname}{Proof}
+
+\newif \if@section \@sectionfalse
+\newif \if@sectionX \@sectionXfalse
+\newif \if@subsection \@subsectionfalse
+\newif \if@subsectionX \@subsectionXfalse
+\newif \if@subsubsection \@subsubsectionfalse
+\newif \if@subsubsectionX \@subsubsectionXfalse
+
+\setcounter{section}\z@
+
+\def\clsmk{\</div\>\\}
+
+\def\section{\@ifnextchar[{\cont@section}{\g@section}}
+
+\def\pre@section{
+\if@subsubsectionX 
+\<div onclick= "ReverseDisplay('bOdYSssx\thesubsubsectionX')"  
+class="hline"\>\</div\>
+\</span\>\</div\>\</section\>\\
+\addtocontents{toc}{\clsmk}
+\else\fi
+\@subsubsectionXfalse
+\if@subsubsection 
+\<div onclick= "ReverseDisplay('bOdYSss\thesubsubsection')"\\
+class="hline"\>\</div\>
+\</span\>\</div\>\</section\>\\
+\addtocontents{toc}{\clsmk}
+\else\fi
+\@subsubsectionfalse
+\if@subsectionX 
+\<div onclick= "ReverseDisplay('bOdYSsx\thesubsectionX')"  class="hline"\>\</div\>
+\</span\>\</div\>\</section\>\\
+\addtocontents{toc}{\clsmk}
+\else\fi
+\@subsectionXfalse
+\if@subsection 
+\<div onclick= "ReverseDisplay('bOdYSs\thesubsection')" \\
+class="hline"\>\</div\>
+\</span\>\</div\>\</section\>\\
+\addtocontents{toc}{\clsmk}
+\else\fi
+\@subsectionfalse
+\if@sectionX
+\<div onclick= "ReverseDisplay('bOdYSx\thesectionX')" \\
+class="hline"\>\</div\>
+\</div\>\</section\>\\
+\addtocontents{toc}{\clsmk}
+\else\fi
+\@sectionXfalse
+\if@section 
+\<div onclick= "ReverseDisplay('bOdYS\thesection')" \\
+class="hline"\>\</div\>\</div\>
+\</div\>\</section\>\\
+\addtocontents{toc}{\clsmk}
+\@sectionfalse
+\else\fi
+\setcounter{subsectionX}\z@
+\setcounter{subsection}\z@ 
+}
+
+\def\cont@section[#1]#2{
+\pre@section
+\refstepcounter{section}
+\@sectiontrue
+\setcounter{subsection}\z@ 
+\<section id="S\thesection" class="Section"\>
+\<div id="{#1}"\> 
+\<h2 class="Title TitleSection"\>\\ 
+\<span id="head{#1}" 
+onclick="ReverseDisplay('bOdYS\thesection')"\>
+\<span class="Tag TagSection"\>\thesection. \</span\> 
+#2 
+\</span\>\\
+\<span onclick="Cp2Recto('#1')" class="rectolk"\>
+\<img src="icons/bubble.png" class="rectolk" height=13 width=12\>\</span\>
+\</h2\>
+\addtocontents{toc}{\addSect\thesection{#2}}
+\<div id="bOdYS\thesection"; class="bOdY hide"\>
+}
+
+\def\addSect#1#2{
+\<span onclick="ReverseDisplay('tOcS{#1}')"\>
+\<img src="icons/panStart.png" height=12\>\</span\>\\
+\<span id="tocSection{#1}" \\
+onclick="LinkTo('S{#1}')"\>\\
+\thesection. {#2}\</span\>\<br\>\\
+\<div id="tOcS{#1}" class="hide tOcSs tOc"\>\\       
+}
+
+
+\def\g@section#1{
+\pre@section
+\refstepcounter{section}
+\@sectiontrue
+\setcounter{subsection}\z@ 
+\<section class="Section"\> 
+\<div  id="S\thesection"\>
+\<h2 class="Title TitleSection"\> \\ 
+\<span onclick="ReverseDisplay('bOdYS\thesection')"\>
+\<span class="Tag TagSection"\>\thesection. \</span\>
+ \\
+#1 
+\</span\>%
+\<span onclick="Cp2Recto('S\thesection')" class="rectolk"\>\<img
+src="icons/bubble.png" height=13 width=12\>\</span\>
+\</h2\>
+\addtocontents{toc}{\addSect\thesection{#1}}
+\<div id="bOdYS\thesection"; class="bOdY hide"\>
+}
+
+\newcounter{sectionX}
+\setcounter{sectionX}\z@
+
+\def\sectionX{\@ifnextchar[{\cont@sectionX}{\g@sectionX}}
+
+\def\cont@sectionX[#1]#2{
+\pre@section
+\refstepcounter{sectionX}
+\@sectionXtrue
+\setcounter{subsection}\z@ 
+\<section id="{#1}" class="SectionX"\> 
+\<h2 class="Title TitleSection"\>\\ 
+\<span id="head{#1}" 
+onclick="ReverseDisplay('bOdYSx\thesectionX')"\> 
+#2 
+\</span\>\\
+\<span onclick="Cp2Recto('#1')" class="rectolk"\>\<img
+src="icons/bubble.png" class="rectolk" height=13 width=12\>\</span\>
+\</h2\>
+\addtocontents{toc}{\addSectX\thesectionX{#2}}
+\<div id="bOdYSx\thesectionX"; class="bOdY hide"\>
+}
+
+
+\def\addSectX#1#2{
+\<span onclick="ReverseDisplay('tOcSx{#1}')"\>
+\<img src="icons/panStart.png" height=12\>\</span\>\\
+\<span id="tocSection{#1}" \\
+onclick="LinkTo('Sx{#1}')"\>\\
+\thesectionX. {#2}\</span\>\<br\>\\
+\<div id="tOcSx{#1}" class="hide tOcSs tOc"\>\\       
+}
+
+\def\g@sectionX#1{
+\pre@section
+\refstepcounter{sectionX}
+\@sectionXtrue
+\setcounter{subsection}\z@ 
+\<section  class="SectionX"\> 
+\<div id="Sx\thesectionX"\>
+\<h2 class="Title TitleSection"\> \\
+\<span onclick="ReverseDisplay('bOdYSx\thesectionX')"\> \\
+#1
+\</span\>%
+\<span onclick="Cp2Recto('secx\thesectionX')" class="rectolk"\>\<img
+src="icons/bubble.png" height=13 width=12\>\</span\>
+\</span\>\</h2\>
+\addtocontents{toc}{\addSectX\thesectionX{#1}}
+\<div id="bOdYSx\thesectionX"; class="bOdY hide"\>
+}
+
+\def\@addpunct#1{%
+  \relax\ifhmode
+    \ifnum\spacefactor>\@m \else#1\fi
+  \fi}
+
+\setcounter{subsection}\z@
+
+\renewcommand{\thesubsection}{%
+\if@section
+\arabic{section}.\arabic{subsection}%
+\else%
+\if@sectionX\arabic{sectionX}.\arabic{subsection}%
+\else%
+\arabic{subsection}%
+\fi\fi}
+
+
+
+\def\subsection{\@ifnextchar[{\cont@subsection}{\g@subsection}}
+
+\def\pre@subsection{
+\if@subsubsectionX 
+\<div onclick= "ReverseDisplay('bOdYSssx\thesubsubsectionX')"\\
+class="hline"\>\</div\>
+\</span\>\</div\>\</section\>\\
+\addtocontents{toc}{\clsmk}
+\else\fi
+\@subsubsectionXfalse
+\if@subsubsection 
+\<div onclick= "ReverseDisplay('bOdYSss\thesubsubsection')" \\
+class="hline"\>\</div\>
+\</span\>\</div\>\</section\>\\
+\addtocontents{toc}{\clsmk}
+\else\fi
+\@subsubsectionfalse
+\if@subsectionX 
+\<div onclick= "ReverseDisplay('bOdYSsx\thesubsectionX')" \\
+class="hline"\>\</div\>
+\</span\>\</div\>\</section\>\\
+\addtocontents{toc}{\clsmk}
+\@subsectionXfalse
+\else\fi
+\if@subsection
+\<div onclick= "ReverseDisplay('bOdYSs\thesubsection')" \\
+class="hline"\>\</div\>
+\</span\>\</div\>\</section\>\\
+\addtocontents{toc}{\clsmk}
+\@subsectionfalse
+\else\fi
+} 
+
+
+\def\cont@subsection[#1]#2{
+\pre@subsection
+\refstepcounter{subsection}
+\@subsectiontrue
+\addtocontents{toc}{
+\addSsect\thesubsection{#2}{#1}}
+\<section id="Ss\thesubsection" class="Subsection"\>
+\<div id="{#1}"\>
+\<h3  class="Title TitleSubsection Runin"\> \\
+\<span onclick="ReverseDisplay('bOdYSs\thesubsection')"\> \\ 
+\<span  class="Tag TagSubsection"\>\thesubsection. \</span\>
+#2\@addpunct.\</span\>
+\<span onclick="Cp2Recto('#1')" class="rectolk"\>\<img
+src="icons/bubble.png" class="rectolk" height=13 width=12\>\</span\>
+\</h3\>
+\<span id="bOdYSs\thesubsection" class="bOdY hide"\>\\ \&nbsp;
+}
+
+\def\addSsect#1#2#3{
+\<span onclick="ReverseDisplay('tOcSs{#1}')"\>\\
+\<img src="icons/panStart.png" height=10\>\</span\>\\
+\<span id="tocSubsection{#1}" \\
+onclick="LinkTo('Ss{#1}')"\>\\
+{#1}. {#2}\</span\>\&nbsp;\&nbsp;
+\<span onclick="Cp2Recto('#3')" class="rectolk"\>\<img
+src="icons/bubble.png" class="rectolk" height=13 width=12\>
+\</span\>\<br\>\\
+\<div id="tOcSs{#1}" class="hide tOcSss tOc"\>\\}
+
+
+\def\g@subsection#1{
+\pre@subsection
+\refstepcounter{subsection}
+\@subsectiontrue
+\addtocontents{toc}{
+\addSsect\thesubsection{#1}{Ss\thesubsection}}
+\<section class="Subsection"\>
+\<div  id="Ss\thesubsection"\>
+\<h3  class="Title TitleSubsection Runin"\> \\
+\<span onclick="ReverseDisplay('bOdYSs\thesubsection')"\>
+\<span class="Tag TagSubsection"\>\thesubsection. \</span\>
+#1\</span\>
+\<span onclick="Cp2Recto('Ss\thesubsection')" class="rectolk"\>\<img
+src="icons/bubble.png" class="rectolk" height=13 width=12\>\</span\>
+\</h3\>
+\<span id="bOdYSs\thesubsection"; class="bOdY hide"\>\\ \&nbsp;
+}
+
+\newcounter{subsectionX}
+\setcounter{subsectionX}\z@
+
+\renewcommand{\thesubsectionX}{%
+\if@section
+\arabic{section}.\arabic{subsectionX}%
+\else%
+\if@sectionX\arabic{sectionX}.\arabic{subsectionX}%
+\else%
+\arabic{subsectionX}%
+\fi\fi}
+
+\def\subsectionX{\@ifnextchar[{\cont@subsectionX}{\g@subsectionX}}
+
+\def\cont@subsectionX[#1]#2{
+\pre@subsection
+\refstepcounter{subsectionX}
+\@subsectionXtrue
+\addtocontents{toc}{
+\addSsect\thesubsectionX{#2}}
+\<section id="SsX\thesubsectionX" class="SubsectionX"\>
+\<div id="{#1}"\>
+\<h3  class="Title TitleSubsection Runin"\> \\
+\<span onclick="ReverseDisplay('bOdYSsX\thesubsectionX')"\> \\ 
+\<span  class="Tag TagSubsectionX"\>\thesubsectionX. \</span\>
+#2\@addpunct.\</span\>
+\<span onclick="Cp2Recto('#1')" class="rectolk"\>\<img 
+src="icons/bubble.png" class="rectolk" height=13 width=12\>\</span\>
+\</h3\>
+\<span id="bOdYSsx\thesubsectionX"; class="bOdY hide"\>\\ \&nbsp;
+}
+
+\newcommand{\g@subsectionX}[1]{
+\pre@subsection
+\refstepcounter{subsectionX}
+\@subsectionXtrue
+\<section class="SubsectionX"\> 
+\<div  id="Ssx\thesubsectionX"\>
+\<h3  class="Title TitleSubsection Runin"\> \\
+\<span
+onclick="ReverseDisplay('bOdYSsx\protect\thesubsectionX')"\> 
+#1\@addpunct.\</span\>\<span
+onclick="Cp2Recto('Ssx\thesubsectionX')"  style="color:blue" \>%
+\<img
+src="icons/bubble.png" class="rectolk" height=13 width=12\>
+\</span\>\</h3\>
+\addtocontents{toc}{
+\addSsectX\thesubsectionX{#1}}
+\<div id="bOdYSsx\protect\thesubsectionX"; class="bOdY hide"\>\\ \&nbsp;
+}
+
+\def\addSsectX#1#2{
+\<span onclick="ReverseDisplay('tOcSsx{#1}')"\>\\
+\<img src="icons/panStart.png" height=10\>\</span\>\\
+\<span id="tocSubsectionX{#1}" \\
+onclick="LinkTo('Ssx{#1}')"\>\\
+{#2}\</span\>\&nbsp;\&nbsp;
+\<span onclick="Cp2Recto('Ssx#1')" class="rectolk"\>\<img
+src="icons/bubble.png" class="rectolk" height=13 width=12\>
+\</span\>\<br\>\\
+\<div id="tOcSsx{#1}" class="hide tOcSss tOc"\>\\}
+
+
+\setcounter{subsubsection}\z@
+\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+
+\def\subsubsection{\@ifnextchar[{\cont@subsubsection}{\g@subsubsection}}
+
+\def\pre@subsubsection{
+\if@subsubsectionX 
+\<div onclick=
+"ReverseDisplay('bOdYSssx\thesubsubsectionX')" \\
+class="hline"\>\</div\>
+\</span\>\</div\>\</section\>\\
+\addtocontents{toc}{\clsmk}
+\@subsubsectionXfalse
+\else\fi
+\if@subsubsection
+\<div onclick= "ReverseDisplay('bOdYSss\thesubsubsection')"\\
+class="hline"\>\</div\>
+\</span\>\</div\>\</section\>\\
+\addtocontents{toc}{\clsmk}
+\@subsubsectionfalse
+\else\fi
+} 
+
+\def\addSssect#1#2{
+\<span onclick="ReverseDisplay('tOcSss{#1}')"\>\\
+\<img src="icons/panStart.png" height=10\>\</span\>\\
+\<span id="tocSubsubsection{#1}" \\
+onclick="LinkTo('Sss{#1}')"\>\\
+{#1}. {#2}\</span\>\&nbsp;\&nbsp;
+\<span onclick="Cp2Recto('Sss#1')" class="rectolk"\>\<img
+src="icons/bubble.png" class="rectolk" height=13 width=12\>
+\</span\>\<br\>\\
+\<div id="tOcSss{#1}" class="hide tOcSsss tOc"\>\\}
+
+
+\def\cont@subsubsection[#1]#2{
+\pre@subsubsection
+\refstepcounter{subsubsection}
+\@subsubsectiontrue
+\addtocontents{toc}{
+\addSssect\thesubsubsection{#2}}
+\<section id="Sss\thesubsubsection" class="Subsubsection"\>
+\<div id="{#1}"\>
+\<h4  class="Title TitleSubsubsection Runin"\> \\
+\<span onclick="ReverseDisplay('bOdYSss\thesubsubsection')"\> \\ 
+\<span  class="Tag TagSubsubsection"\>\thesubsubsection. \</span\>
+#2\@addpunct.\</span\>
+\<span onclick="Cp2Recto('#1')" class="rectolk"\>\<img 
+src="icons/bubble.png" class="rectolk" height=13 width=12\>\</span\>
+\</h4\>
+\<span id="bOdYSss\thesubsubsection"; class="bOdY hide"\>\\ \&nbsp;
+}
+
+
+\def\g@subsubsection#1{
+\pre@subsubsection
+\refstepcounter{subsubsection}
+\@subsubsectiontrue
+\addtocontents{toc}{
+\addSssect\thesubsubsection{#1}}
+\<section class="Subsubsection"\>
+\<div  id="Sss\thesubsubsection"\>
+\<h4  class="Title TitleSubsubsection"\> \\
+\<span onclick="ReverseDisplay('bOdYSss\thesubsubsection')"\>
+\<span class="Tag TagSubsubsection"\>\thesubsubsection. \</span\>
+#1\</span\>
+\<span onclick="Cp2Recto('Sss\thesubsubsection')" class="rectolk"\>\<img
+src="icons/bubble.png" class="rectolk" height=13 width=12\>\</span\>
+\</h4\>
+\<span id="bOdYSss\thesubsubsection"; class="bOdY hide"\>\\ \&nbsp;
+}
+
+\renewenvironment{thebibliography}[1]{%
+\pre@section
+\<section class="Bibliography"\>
+\<h2 class="Title TitleBibliography"\ \>\\
+\<span 
+id="oPeNBib"  
+onclick="ReverseDisplay('bOdYBib')" \>\\
+References\</span\>\</h2\>
+\<div
+ id="bOdYBib" 
+class="bOdY hide" \>
+  \normalfont\labelsep .5em\relax
+  \renewcommand\theenumiv{\arabic{enumiv}}\let\p@enumiv\@empty
+  \list{\@biblabel{\theenumiv}}{\settowidth\labelwidth{\@biblabel{#1}}%
+    \leftmargin\labelwidth \advance\leftmargin\labelsep
+    \usecounter{enumiv}}%
+  \sloppy \clubpenalty\@M \widowpenalty\clubpenalty
+  \sfcode`\.=\@m
+}{%
+  \def\@noitemerr{\@latex@warning{Empty `thebibliography' environment}}%
+  \endlist
+\</div\>\</section\>
+}
+
+\newenvironment{shadebibliography}{
+\</div\>\</section\>
+\<section id="shadebib"\  class="ShadeBib"\ style="display:none"\ \>
+\<ul class="Biblist" \>
+}
+{\</span\>\</li\>
+\</ul\>\</section\>
+}
+
+\newcounter{shadebibblock}
+\setcounter{shadebibblock}\z@
+\renewcommand{\theshadebibblock}{\arabic{shadebibblock}}
+
+
+\def\shadebibblock{\@ifnextchar[\@lshadeblock\@shadeblock}
+\def\@lshadeblock[#1]#2{
+\ifnum\c@shadebibblock=\z@
+\else\</span\>\</li\>\fi
+\refstepcounter{shadebibblock} 
+\<li class="Bibitem"\ \> \\
+\<span id="shadebib.#1"\ class="Bibblock"\ \>
+\<a onclick="closeCite(this)"
+class="rightbottom BoldLarge"\>\&nbsp;\&nbsp;\&times;\</a\>
+}
+\def\@shadeblock{
+\ifnum\c@shadebibblock=\z@
+\else\</span\>\</li\>\fi
+\refstepcounter{shadebibblock} 
+\<li class="Bibitem"\ \> \\
+\<span id="shadebib.\theshadebibblock"\ class="Bibblock"\ \>
+\<a onclick="closeCite(this)"
+class="rightbottom BoldLarge"\>\&nbsp;\&nbsp;\&times;\</a\>
+}
+
+
+
+
+
+
+
+
+%\renewenvironment{abstract}{
+%\</p\> \\
+%\<div class="oAbstract" \> \\
+%\<h6 class="Title TitleAbstract" \> \\
+%\<a href="javascript:ReverseDisplay('bOdYAbst')" \>
+%Abstract\</a\>\</h6\>\\
+%\<div id="bOdYAbst" class="bOdY" \>\\
+%}
+%{\</div\>\</div\>
+%}
+
+\renewcommand{\abstract}[1]{
+\<div class="Abstract" \> \\
+\<h6 class="Title TitleAbstract"\\
+onclick="ReverseDisplay('bOdYAbst')" \>\\
+Abstract\</h6\>\\
+\<div id="bOdYAbst" class="bOdY" \>\\
+{#1}
+\</div\>\</div\>}
+
+\newcommand{\subclass}[1]{
+\<div class="Subclass" \> \\
+\<h6 class="Title TitleSubclass" \> \\
+\<span onclick="ReverseDisplay('bOdYSubclass')" \> \\
+Mathematics Subject Classification\</span\>\</h6\> \\
+\<span id="bOdYSubclass" class="bOdY hide" \> \\
+\&nbsp;#1 \</span\>\</div\>}
+
+\newcommand{\keywords}[1]{\<div class="Keywords" \> \\
+\<h6 class="Title TitleKeywords" \> \\
+\<span onclick="ReverseDisplay('bOdYKeywords')\ "\>
+Keywords\</span\>\</h6\> \\
+\<span id="bOdYKeywords" class="bOdY hide" \>
+\&nbsp; #1\</span\>\</div\>}
+
+\newenvironment{acknowledgements}{
+\pre@section
+\<div class="Acknowledgements"\>\\
+\<h6 class="Title TitleAcknowledgements"\>
+\<span onclick="ReverseDisplay('bOdYackn')"\>Acknowledgements. \</span\>\</h6
+\>\<span id="bOdYackn" class="bOdY hide"\>}
+{\</span\>\</div\>}
+
+\renewcommand{\textit}[1]{
+ \<span class="FontItalic"\ \>  
+#1 
+\</span\>\\ }
+
+
+\renewcommand{\emph}[1]{
+ \<span class="emph" \ \>  
+#1 
+\</span\>\\ }
+
+\renewcommand{\textbf}[1]{
+ \<span class="FontBold"\ \>  
+#1 
+\</span\>\\ }
+
+\def\ref#1{\<span
+onclick="Cp2Recto('{#1}')" class="cp2recto"\>%
+\expandafter\@setref\csname r@#1\endcsname\@firstoftwo{#1}\</span\>}
+
+
+%\def\ref#1{
+%\<a href="javascript:linkTo('{#1}')"\>\expandafter\@setref\csname
+%r@#1\endcsname\@firstoftwo{#1}\</a\>}
+
+
+\newcounter{eref}
+\setcounter{eref}\z@
+
+\def\eqref#1{%
+\\
+\<span class="cp2recto"\\
+onclick="CpMath2Recto('{#1}')" \>\\
+(\expandafter\@setref\csname r@#1\endcsname\@firstoftwo{#1})\\
+ \</span\> \\}
+
+
+\def\Label#1#2{%	
+    \<div id="#1" class="container"\>{#2}\</div\>}
+
+\def\NuM#1{
+\refstepcounter{equation}\\
+\<table id="eq\theequation" class="equation"\>\\
+\<tr class="eqnBaseline"\>\\
+\<td class="eqnPadLeft"\>\\
+\<td class="AlignCenter"\>{#1}\</td\>\\
+\<td class="eqnPadRight"\>\</td\>\\
+\<td rowspan="1" class="eqnEqno AlignMiddle AlignRight"\>\\
+\<span class="Tag TagEquation"\>(\theequation)\</span\>\\
+\</td\>\</tr\>\</table\>\\
+}
+
+
+
+
+\def\tablename{Table}
+\setcounter{table}\z@
+\def\thetable{\arabic{table}} 
+
+\renewenvironment{table}
+         {\refstepcounter{table}%
+          \def\captiontag{\tablename\&nbsp;\thetable}% 
+         \<div id="table\thetable" class="table"\>\addtocontents{toc}{\<span class="tOcMisc"\>
+         \<span id="tocTable\thetable" onclick="LinkTo('table\thetable')"\>
+         Table \thetable\</span\>\&nbsp;
+         \<span  onclick="Cp2Recto('table\thetable')" class="rectolk"\>
+         \<img src="icons/bubble.png" class="rectolk" height=13
+         width=11\>\</span\>\&nbsp;\&nbsp;\</span\>}}
+         {\</div\>}
+
+\def\figurename{Figure}
+\setcounter{figure}0
+\def\thefigure{\arabic{figure}} 
+
+\renewenvironment{figure}
+         {\refstepcounter{figure}%
+          \def\captiontag{\figurename\&nbsp;\thefigure}% 
+         \<div id="fig\thefigure" class="figure"\>
+\addtocontents{toc}{\<span class="tOcMisc"\>
+         \<span id="tocFig\thefigure" onclick="LinkTo('fig\thefigure')"\>
+         Figure \thefigure\</span\>\&nbsp;
+         \<span  onclick="Cp2Recto('fig\thefigure')" class="rectolk"\>
+         \<img src="icons/bubble.png" class="rectolk" height=13
+         width=11\>\</span\>\&nbsp;\&nbsp;\</span\>}           }
+         {\</div\>}
+
+
+\renewcommand{\caption}[1]{
+\<div class="caption"\>
+\<span class="TagCaption"\>\captiontag\</span\> #1.\</div\>}
+
+\def\lpict#1{\<div class="lpict"\>{#1}\</div\>}
+\def\rpict#1{\<div class="rpict"\>{#1}\</div\>}
+
+
+\setcounter{footnote}\z@
+\renewcommand{\thefootnote}{\<sup\>\arabic{footnote}\</sup\>}%
+
+%\renewcommand{\footnote}[1]{
+%\refstepcounter{footnote}
+%\<span id="footnote\arabic{footnote}" 
+%class="citeUp uidraggable" style="display:none" \>#1 \<span
+%onclick="hideSideNote('footnote\arabic{footnote}')"
+%class="rightbottom BoldLarge"\>\&nbsp;\&nbsp;\&times;\</span\>\</span\>\<span
+%onclick="sideNote('footnote\arabic{footnote}')" style="cursor:pointer;"\>\thefootnote\</span\>}
+
+\renewcommand{\footnote}[1]{
+\refstepcounter{footnote}
+\<span id="footnote\arabic{footnote}" 
+class="citeUp uidraggable" style="display:none" \>#1 \<span
+onclick="closeCite(this)"
+class="rightbottom BoldLarge"\>\&nbsp;\&nbsp;\&times;\</span\>\</span\>
+\<span id="foot\arabic{footnote}" 
+class="citeUp hide uidraggable" \>\</span\>
+\<span
+onclick="citeUp('footnote\arabic{footnote}','foot\arabic{footnote}')"
+class="versolk"\>\thefootnote\</span\>}
+
+
+\newcounter{cref}
+\setcounter{cref}\z@
+
+\newcommand{\ocite}[1]{\refstepcounter{cref}%
+\<span id="cItE\thecref\cite{#1}" 
+class="citeUp hide uidraggable" \>\</span\>\<span 
+onclick="citeUp('shadebib.\cite{#1}','cItE\thecref\cite{#1}')"
+class="versolk"\>\cite{#1}\</span\>}
+
+
+\newcommand\solution[1]{\<span class="fbContext"\\
+data-fb-context="source:\#sol.\ref{#1}"\\ 
+style="color:Navy"\ \>\&nbsp;
+Solution.\</span\>}
+
+\newenvironment{solut}[1]{
+\<div id="sol.\ref{#1}" style="display:none"\>}
+{\</div\>}
+
+\def\abz{\</p\>\<p\>}
+
+
+
+\newenvironment{yem}
+{\<div class="yem"\>}
+{\</div\>}
+
+\newenvironment{syem}
+{\<span class="syem"\>\&nbsp;
+}
+{\</span\>}
+
+\newcounter{petit}
+\setcounter{petit}\z@
+\def\petitname{Exercises}
+\newenvironment{petit}[1]
+{\refstepcounter{petit}
+\<div id="hEaDPtit\arabic{petit}" class="petit head"\>\\
+\<a href="javascript:ToggleDivs('hEaDPtit\arabic{petit}','bOdYPtit\arabic{petit}')"\>{#1}\</a\>\</div\> \\ 
+\<div id="bOdYPtit\arabic{petit}" class="petit bOdY hide"\>
+\<a href="javascript:ToggleDivs('hEaDPtit\arabic{petit}','bOdYPtit\arabic{petit}')" \>{#1}\</a\>
+}
+{\<div class="endPtit"\>\<a href="javascript:ToggleDivs('hEaDPtit\arabic{petit}','bOdYPtit\arabic{petit}')" \\ 
+class=" AlignLeft" \>
+\&\#9722;
+\</a\>\</div\>\</p\>\</div\>}
+
+\newenvironment{otstup}
+{\<div class="otstup"\>}
+{\</div\>}
+
+\renewcommand{\rightline}[1]{
+\<span class="AlignFloatright"\>{#1}\</span\>}
+
+\renewcommand{\centerline}[1]{
+\<center\>{#1}\</center\>}
+
+
+
+\newcommand{\hyperimage}[2]{
+\<a href="{#1}"\>{#2}\</a\>}
+
+
+\def\includegraphics{\@ifnextchar[{\op@includegraphics}{\noop@includegraphics}}
+\def\noop@includegraphics#1{
+\<img src="#1"\>}
+\def\op@includegraphics[#1=#2]#3{
+\<img src="#3" style="#1:#2"\>}
+
+\def\icon{\@ifnextchar[{\op@icon}{\noop@icon}}
+\def\noop@icon#1{
+\<img src="#1" class="icon"\>}
+\def\op@icon[#1=#2]#3{
+\<img src="#3" style="#1:#2" class="icon"\>}
+
+
+\newcommand{\url}[2]{
+\<a href="{#1}"\>{#2}\</a\>}
+
+\newenvironment{container}[1]{
+\<div id="{#1}" class="container"\>}
+{\</div\>}
+
+
+
+

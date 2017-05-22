@@ -1,0 +1,1114 @@
+\documentclass{article}
+\usepackage{verbatim,amssymb,amsmath,array}
+\usepackage{vo}
+\pagestyle{empty}
+
+\begin{document}
+\title{
+Stiefel orientations\\
+on a real algebraic variety}
+\author{A. I. Degtyarev}
+\maketitle
+\abstract{
+Some natural Stiefel orientations on the normal bundle of the fixed point
+set of an involution on a smooth manifold are constructed. This result
+is applied to non-singular real algebraic varieties in order to generalize
+Rokhlin's construction of complex orientations on a separating real
+algebraic curve}
+
+\keywords{
+Stiefel orientation, involution, fixed point set, real algebraic variety}
+
+\hide{$\def\le{\leqslant}
+\def\ge{\geqslant}
+\def\longto{\longrightarrow}
+\def\into{\hookrightarrow}
+\def\first{\roster\runinitem}
+\def\o{\otimes}
+\def\s{\#}
+\def\tm{\times}
+\def\pt{\text{\mathrm{pt}}}
+\def\i{\operatorname{in}}
+\def\pr{\operatorname{pr}}
+\def\const{\operatorname{const}}
+\def\id{\operatorname{id}}
+\def\inc{\operatorname{inclusion}}
+\def\conj{\operatorname{conj}}
+\def\tconj{\widetilde{\conj}}
+\def\rel{\operatorname{rel}}
+\def\Ann{\operatorname{Ann}}
+\def\Im{\operatorname{Im}}
+\def\Fl{\operatorname{Flag}}
+\def\St{\operatorname{St}}
+\def\Hom{\operatorname{Hom}}
+\def\Ker{\operatorname{Ker}}
+\def\Fix{\operatorname{Fix}}
+\def\F{\mathcal F}
+\def\CS{\mathcal S}
+\def\SF{\CS\F}
+\def\SH{SH}
+\def\Sm{Sm}
+\def\sm{\operatorname{sm}}
+\def\Pin{\mathrm{Pin}}
+\def\Spin{\mathrm{Spin}}
+\def\Z{\mathbb Z_2}
+\def\R{\mathbb R}
+\def\C{\mathbb C}
+\def\Rp{\R p}
+\def\Cp{\C p}
+\def\RA{\R A}
+\def\CA{\C A}
+\def\Rh{\R h}
+\def\Ch{\C h}
+\def\tR{\widetilde{\RA}}
+\def\tC{\widetilde{\CA}}
+\def\pR{\pr_\R}
+\def\pC{\pr_\C}
+\def\d{\partial}
+\def\cd{\delta}
+\def\k{\varkappa}
+\def\t{\theta}
+\def\f{\varphi}
+\def\sg{\sigma}
+\def\Sg{\Sigma}
+\def\L{\Lambda}
+\def\be{{\pmb e}}
+\def\E#1/#2/#3/{{}^{#1}\!E^{#2}_{#3}}$}
+%
+\spnewtheorem{proclaim}{}[subsection]{\bf}{\it}
+\renewcommand{\theproclaim}{\arabic{section}.\arabic{subsection}.\arabic{proclaim}}
+\spnewtheorem{remark}{Remark}[proclaim]{\bf}{\rm}
+\spnewtheorem{definition}{Definition}[proclaim]{\bf}{\rm}
+%
+\setcounter{section}{-1}
+\section{ Introduction }
+\subsection*{ 0.1 }
+The main purpose of this paper is to generalize Rokhlin's construction
+of complex orientations on a separating real algebraic curve.
+The original construction is the following (Rokhlin \cite{6}): 
+Denote, respectively, by $\CA$ and $\RA$ the sets of real and complex
+points of curve $A$. Since $\RA$ separates $\CA$, the complement
+$\CA\setminus\RA$ consists of two components $\CA_{\pm}$. The complex
+orientation of complex manifolds $\CA_{\pm}$ defines a pair of
+opposite orientations of their common boundary $\RA$.
+
+A direct generalization of this construction is obvious: Let $F$ be
+an $m$-dimensional smooth submanifold of a smooth $n$-dimensional
+manifold $X$. Suppose that the fundamental class $[F]$ of $F$ vanishes
+in $H_m(X)$. Then the linking coefficient map
+$\operatorname{lk}:H_{n-m-1}(X\setminus F)\longto\Z$ restricted to the
+boundary of a tubular neighborhood of $F$ in $X$ is an
+$(n-m-1)$-dimensional Stiefel orientation on the normal bundle
+$\nu_F$ of $F$ in $X$. (The notion of Stiefel orientation is a
+generalization of the ordinary orientation and $\Spin$-structure on
+a vector bundle; see Definition 1.4.1 for details.) This orientation
+is well defined over the subgroup 
+$\Ker[\inc_*:H_{n-m-1}(F)\to H_{n-m-1}(X)]$. O.Viro \cite{8} proposed
+a further generalization of this construction (see 4.2) for the case
+when pair  $(X,F)$  is  supplied  with  the  following  additional 
+structure:
+$X$ is a manifold with an involution $c:X\to X$, and $F=\Fix c$ is
+the fixed point set of $c$. In this paper we give another approach
+to Viro's construction which shows that the arising Stiefel orientations
+are, in fact, also the linking coefficient functionals on homology
+groups of some appropriate spaces $\CS^{k-1}X\setminus \CS^{k-1}F$
+associated with pair $(X,c)$. These orientations exist if for some
+$k\ge1$ class $[F]$ vanishes under some ``higher'' inclusion maps
+$e_{m+k-1}^k:H_*(F)\dashrightarrow H_{m+k-1}(X)$, and it is defined over
+the subgroup $\Ker e_{n-m-1}^k$ (see Theorem 4.1.1 for details).
+\begin{remark}{{Remark} The advantage of the approach of this paper is
+that the construction is connected with the general theory of
+$\Z$-spaces (i.e. spaces with involution). In particular, if $F$
+is an $M$-space (i.e. $\dim H_*(F)=\dim H_*(X)$), this theory enables
+to express the condition necessary for existence of the orientations
+in terms of characteristic classes of $X$ (Degtyarev \cite{3}).
+}\end{remark}
+\subsection*{ 0.2 }
+Applying Theorem 4.1.1 to an $n$-dimensional real algebraic manifold $A$
+yields a series of partial $i$-dimensional Stiefel orientations on the
+tangent bundle of $\RA$, \ $n-k\le i\le n-1$, provided that
+$e_{n+k-1}^k[\RA]=0$. However, this condition seems to be rather 
+difficult to be verified. If $A$ is a projective complete intersection,
+it can be substantially simplified and reduced to the usual requirement
+that $[\RA]$ should be either equal to zero or dual to the plane section
+class in $H_n(\CA)$. In this case some modified construction provides a
+series of Stiefel orientations of all dimensions on the tangent bundle
+of the double cover $\tR$ of $\RA$ corresponding to the real hyperplane
+section class $\Rh\in H^1(\RA)$. These orientations are well defined
+over the whole group $\widetilde H_*(\RA)$ (Theorem 4.4.4).
+\begin{remark}{{Remark} If $[\RA]$ is equal to the plane section class, manifold
+$\RA$ may not possess any Stiefel orientation, but the modified
+construction is still applicable to $\tR$. If $A$ is a surface, there
+is another approach, also due to Viro. It provides a $\Pin^-$-structure
+on $\RA$ which lifts to the 1-dimensional Stiefel orientation on $\tR$
+arising due to Theorem 4.4.4. It would be interesting to find a
+higher-dimensional generalization of this approach.
+}\end{remark}
+\begin{remark}{{Remark} The main difficulty in generalizing Viro's approach
+(see the previous remark) seems to consist in the following:
+
+In a way, $\Pin^-$-structure is the structure corresponding to 
+characteristic class $w_2+w_1^2$. More precisely, let $f:X\to BO_n$
+be a characteristic map of bundle $\xi$, and $P(\omega)\to BO_n$ be
+a fixed fibration killing some characteristic class $\omega\in H^k(BO_n)$.
+Then an $\omega$-structure on $\xi$ can be defined as a class
+$\k\in H^{k-1}(f^*P(\omega))$ which does not vanish when restricted
+to any fibre. (For example, Stiefel orientations are defined via
+the Stiefel bundles $V_{n,k}(\eta_n)\to BO_n$, killing $w_{n-k+1}$; \
+$\Pin^-$-structure is defined via the bundle $B\Pin^-\to BO_n$,
+which kills $w_2+w_1^2$.) The problem is that there is no 
+universal way to choose the killing fibration $P(\omega)$, so in fact
+structures of this kind are functorially defined only modulo all
+$(k-1)$-dimensional characteristic classes. This reduction being
+accepted, both Viro's \ $\Pin^-$-structure and Nezvetaev's form (Viro \cite{8};
+in fact, this form is a $w_1^2$-structure) can easily be generalized
+(Degtyarev \cite{2}). But in order to define the absolute (i.e. not
+reduced modulo characteristic classes) structures some appropriate
+killing spaces over $BO_n$ and $BU_n$ are necessary which would be
+functorial under some standard homomorphisms of groups $O_n$ and $U_n$.
+}\end{remark}
+\subsection*{ 0.3 }
+Among the other results of the paper is a new approach to defining
+Stiefel orientations. Instead of the associated Stiefel bundles
+$V_{n,k}(\xi)$ it involves some other spaces which can be constructed
+using only the total space of the associated sphere bundle $S^{n-1}(\xi)$
+and the standard antipodal involution on it (Definition 3.3.1). It is this 
+approach that, being applied to a tubular neighborhood of $F$ in $X$,
+makes the construction of Theorem 4.1.1 possible.
+\subsection*{ 0.4 }
+The paper is organized as follows:
+
+In section 1 we remind some known basic facts and introduce some notations,
+which are not generally accepted.
+
+Section 2 is devoted to $\Z$-spaces. Most of the notions and results of
+this section seem to be familiar to those who deal with involutions,
+though I could not find any systematic account of them. In 2.1 we discuss
+singular Smith homology groups, which are more suitable for this paper.
+In 2.2 the spectral sequence of space $S^\infty\tm_{\Z} X$ (cf., for example,
+Hsiang \cite{4}) and of some natural finite dimensional approximations of
+this space are introduced. In 2.3 we define the stabilized spectral 
+sequence of an involution. This sequence, first introduced by
+Kalinin \cite{5}, is, in fact, just a compact way to express the
+stabilization theorem (Hsiang \cite{4}). Kalinin also conjectured
+the description of the differentials of of these spectral sequences
+given in 2.4. In 2.5 we define higher inclusion homomorphisms
+$e_*^r:\SH_*(X)\dashrightarrow H_*(X)$ and study their properties.
+
+In section 3 the new approach to constructing Stiefel orientations
+is introduced and its relation to the ordinary orientations is studied.
+
+Section 4 is devoted to the main construction and its applications to
+real algebraic varieties.
+\subsection*{Acknowledgements }
+I take this opportunity to express my deep gratitude to O.Ya.Viro
+for his help and interest to this work.
+
+\section{Preliminaries }
+\subsection{Complexes and homology groups }
+For a topological space $X$ we denote by $S_*(X)$ and $S^*(X)$
+its singular chain and cochain complexes with {\it coefficients
+$\Z$}. All homology and cohomology groups also have 
+coefficients $\Z$. When it cannot confuse, we use the same letters
+to denote cycles and their homology classes.
+\subsection{$G$-bundles }
+Let $G$ be a Lie group. The term ``$G$-bundle'' (over space $X$)
+means a principal $G$-bundle $\xi:G(\xi)\to X$, i.e. a free
+right $G$-space $G(\xi)$ such that $G(\xi)/G=X$.
+
+For a $G$-bundle $\xi$ and left $G$-space $F$ we denote by
+$F(\xi)$ the {\it associated $F$-bundle\/} $G(\xi)\tm_GF\longto X$,
+where the twisted product $G(\xi)\tm_GF$ is the quotient space
+$$
+G(\xi)\tm F\big/\left\{(x,f)=(xg^{-1},gf)\text{ for any }g\in G \right\}.
+$$
+\subsection{Some standard spaces }
+We use the following standard notations:
+
+$\R^n$ is the coordinate Euclidean space with the
+standard basis $(\be_1,\dots,\be_n)$. For $k\le n$ we identify
+$\R^k$ with the subspace of $\R^n$ generated by $(\be_1,\dots,\be_k)$;
+
+$S^n$ and $D_{\pm}^n$ are the standard sphere and semispheres
+\begin{align}
+S^n&=\left\{\sum t^i\be_i\in\R^{n+1}\mid|\sum(t^i)^2=1\right\}\\
+D_+^n&=\left\{\sum t^i\be_i\in\R^{n+1}\mid|\sum(t^i)^2=1,\;t^1\ge0\right\}\\
+D_-^n&=\left\{\sum t^i\be_i\in\R^{n+1}\mid|\sum(t^i)^2=1,\;t^1\le0\right\};
+\end{align}
+
+
+$\Delta^n$ is the standard simplex
+$\bigl\{\sum t^i\be_i\in\R^{n+1}\bigm|\sum t^i=1,\;t^i\ge0\bigr\}$;
+
+$O_n$ is the group of orthogonal transformations of $\R^n$;
+
+$V_{n,k}$ is the {\it Stiefel manifold,\/} which can be defined
+as either the quotient space $O_n/O_{n-k}$, or the space of all
+orthogonal $k$-frames in $\R^n$; it is well known that
+$\widetilde H^i(V_{n,k})=0$ for $i<n-k$,
+and $\widetilde H^{n-k}(V_{n,k})=\Z$
+(see Steenrod, Epstein \cite{7});
+
+for an $O_n$-bundle $\xi$ we denote by $S(\xi)$ the associated
+$S^{n-1}$-bundle; $S(\xi)$ is called the {\it sphere bundle\/} of $\xi$.
+Note that $S(\xi)=V_{n,1}(\xi)$.
+
+Let $R=({\pmb x}_1,\dots,{\pmb x}_{k+1})$ be an orthonormal
+$(k+1)$-frame in $\R^{n+1}$. Denote by $\Delta^k(R)$ the singular
+simplex $\Delta^k\to S^n$, \
+$\sum t^i{\pmb x}_i\longmapsto\sum t^i{\pmb x}_i\big/\sum(t^i)^2$.
+We will use the following singular chains in $S^n$:
+\begin{align}
+\Sg_+^k&=\Delta^n(+\be_1,\dots,\be_{k+1})+
+\sum_{i=2}^{k+1}\Delta^n(+\be_1,\dots,-\be_i,\dots,\be_{k+1}),\\
+\Sg_-^k&=\Delta^n(-\be_1,\dots,\be_{k+1})+
+\sum_{i=2}^{k+1}\Delta^n(-\be_1,\dots,-\be_i,\dots,\be_{k+1}),\\
+\Sg^k&=\Sg_+^k+\Sg_-^k.
+\end{align}
+$\Sg_{\pm}^k$ will also be considered as singular chains in $D_{\pm}^k$.
+If $c$ is the antipodal involution on $S^n$, then obviously
+$c_\s\Sg_+^k=\Sg_-^k$, and $\d\Sg_{\pm}^k=\Sg_+^{k-1}+\Sg_-^{k-1}$.
+\subsection{Stiefel orientations }
+\begin{subsubsection}{ Definition} A ({\rm reduced\/}) $k$-{\rm dimensional
+Stiefel orientation\/} on an $O_n$-bundle $\xi$ is a class
+$\k_k\in H^k(V_{n,n-k}(\xi)$)
+(resp., $\tilde\k_k\in\widetilde H^k(V_{n,n-k}(\xi))$),
+such that for any fibre $V_{n,n-k}$ of fibration $V_{n,n-k}(\xi)\to X$
+the restriction of $\k_k$ (resp., $\tilde\k_k$) to $\widetilde H^k(V_{n,n-k})$
+is non-zero. The set of all (reduced) Stiefel orientations on $\xi$
+is denoted by $\St_k(\xi)$ (resp., $\widetilde\St_k(\xi)$).
+
+{\it Remark} A 0-dimensional Stiefel orientation is an ordinary
+orientation of vector bundle $\xi$. A 1-dimensional orientation is
+a $\Pin^+$-structure on $\xi$. A pair consisting of a 0- and
+1-dimensional orientation is a $\Spin$-structure.
+
+{\it Remark} If $k>0$, obviously $\widetilde\St_k(\xi)=\St_k(\xi)$.
+If $k=0$, a reduced orientation is a pair of opposite ordinary
+orientations on $\xi$. (So this notion is not trivial only if
+the underlying space $X$ is not connected.)
+}\end{remark}
+\subsubsection{Theorem \textrm{(well known)}} {\it Let $\xi$ be an
+$O_n$-bundle over $X$. Then $\St_k(\xi)$ and $\widetilde\St_k(\xi)$
+are not empty if and only if $w_{k+1}(\xi)=0$. In this case
+$\St_k(\xi)$ (resp., $\widetilde\St_k(\xi)$) is an affine space
+over $H^k(X)$ (resp., $\widetilde H^k(X)$). The reduction map
+$\St_k(\xi)\to\widetilde\St_k(\xi)$ is affine.
+}
+%
+%     The end of file 1.
+%     To be followed by file 2.
+%     File 2 of
+% ``Stiefel orientations on a real algebraic variety''
+%    by A.I.Degtyarev
+%
+\section{ $\Z$-spaces }
+\subsection{Singular Smith homology }
+Throughout this section $X$ is a fixed {\it $\Z$-space,} i.e.
+a topological space supplied with an involution $c:X\to X$.
+We denote by $\Fix c$ the fixed point set of $c$, and by $X/c$
+the quotient space. For simplicity we assume that pair $(X,\Fix c)$
+allows a $c$-invariant cell partition. (Note, though, that most
+results can easily be extended to general $\Z$-spaces using an
+equivariant cell approximation of $(X,c)$.)
+\subsubsection{Notation} Denote $\L=\Z[c]/(c^2=1)$.
+Since $\Z$ acts on $S_*(X)$ via the induced involution $c_\s$,
+this complex can be considered as a complex of $\L$-modules.
+
+We will also consider the $\Z$-algebra $H^*(\Rp^k)=\Z[h]/(h^{k+1}=0)$
+and the $H^*(\Rp^k)$-module $H_*(\Rp^k)$. The generator of
+$H_i(\Rp^k)=\Z$ is denoted by $h_i$; both $h_i$ and $h^i$ are
+assumed to be zero if either $i<0$ or $i>k$.
+
+\subsubsection{Definition} The {\it Smith homology groups\/}
+$\SH_*(X)$ are the homology groups of the {\it Smith complex\/}
+$\Sm_*(X)=\Ker[(1+c_\s):S_*(X)\to S_*(X)]$. The inclusion
+homomorphism $\SH_*(X)\to H_*(X)$ is denoted by $\sm_X$.
+
+\subsubsection{Proposition} {\it (1) Let $C_*(X)$ be the cell complex
+corresponding to some $c$-invariant cell partition of pair $(X,\Fix c)$.
+Then $\SH_*(X)=H_*(\Ker[(1+c_\s):C_*(X)\to C_*(X)])$;
+
+(2) denote by $p:X\to X/c$ the projection. Then the map
+$x\mapsto \rel p_\s x$ induces isomorphism
+$H_*(S_*(X)/\Sm_*(X))\cong H_*(X/c,\Fix c)$;
+
+(3) $\Sm_*(X)$ naturally splits into
+$S_*(\Fix c)\oplus S_*(X)/\Sm_*(X)$, due to (2) this induces an
+isomorphism $\SH_*(X)\cong H_*(\Fix c)\oplus H_*(X/c,\Fix c)$.
+}
+
+\begin{proof}{ The last two statements are well known for cell
+Smith homology groups (cf. Bredon \cite{1}), so they follow
+from the first one. Proof of the first statement is absolutely
+analogous to the standard proof of similar statement about
+ordinary homology groups $H_*(X)$. We omit the details since
+they would require developing from the very beginning the theory
+of functor $\SH_*$, which is absolutely analogous to the standard
+singular homology theory. 
+}\end{proof}
+\subsubsection{Corollary} {\it Let $(X,\Fix c)$ is an $n$-dimensional
+cell pair. Then $\SH_i(X)=0$ for $i>n$, and
+$\SH_n(X)=\Ker[(1+c_*):H_n(X)\to H_n(X)]$.
+}
+
+\subsubsection{Corollary} {\it Let $X$ be an $n$-dimensional smooth
+manifold, and $c$ be a smooth involution. Then there exists one
+and only one class $[X]_S\in\SH_n(X)$ such that
+$\sm_X[X]_S=[X]$. We call this class the {\rm Smith fundamental class}
+of $X$.)
+}
+
+For $(\sm_X)_n:\SH_n(X)\to H_n(X)$ is a monomorphism, and
+$[X]$ is a $c_*$-invariant class. 
+\subsection{ Spectral sequence of an involution }
+\begin{definition}{{2.1.1. Definition} Denote by $\CS^kX$, \ $0\le k\le\infty$,
+the twisted product $S^k\tm_{\Z}X$ supplied with the induced involution
+and filtration by subspaces
+$\emptyset\subset \CS^0X\subset \CS^1X\subset\dots\subset \CS^kX$.
+(Here inclusions are induced by the standard inclusions
+$\emptyset\subset S^0\subset S^1\subset\dots\subset S^k$.)
+The homology and cohomology spectral sequences of filtered
+space $\CS^kX$ are denoted by $\E k/r/pq/(X)$ and $\E k/pq/r/(X)$
+respectively and called the {\it spectral sequences\/} of
+involution $c$. (Here and in other similar notations space
+$X$ will often be omitted.)
+}\end{definition}
+Note that if $X$ is a trivial $\Z$-space, i.e. $c=\id_X$,
+then $\CS^kX=\Rp^k\tm X$, and
+$H_*(\CS^kX)=H_*(\Rp^k)\o H_*(X)$. In particular,
+both the spectral sequences degenerate in term $E^1$.
+\begin{proclaim}{{2.2.2. Proposition}
+
+(1) $\E k/1/**/=H_*(\Rp^k)\o H_*(X)$, and
+$\E k/**/1/=H^*(\Rp^k)\o H^*(X)$;
+
+(2) $d^1(h_p\o x)=h_{p-1}\o(1+c_*)x$, and $d_1(h^p\o x)=h^{p+1}\o(1+c^*)x$;
+
+(3) if $r\ge 2$, both the sequences coincide with the Serre
+spectral sequences of fibration $\CS^kX\to \Rp^k=\CS^k\pt$;
+
+(4) $\E k/**/r/$ is a bigraded $H^*(\Rp^k)$-algebra,
+and $\E k/r/**/$ is a bigraded $\E k/**/r/$-module;
+if $r\ge2$, differentials $d^r$ and $d_r$ are derivatives;
+
+(5) $\E k/r/pq/$ and $\E k/pq/r/$ converge to 
+$H_{p+q}(\CS^kX)$ and $H^{p+q}(\CS^kX)$ respectively;
+the convergence observes both the multiplicative structures;
+
+(6) if $l\le k$, the inclusion homomorphism
+$\E l/r/pq/\to \E k/r/pq/$ (resp., $\E k/pq/r/\to \E l/pq/r/$)
+is surjective (resp., injective) for $p\le l$ and
+one-to-one for $p\le l+1-r$.
+}\end{proclaim}
+\begin{proof}{ By definition,
+\begin{align}
+\E k/1/pq/&=H_{p+q}(\CS^pX,\CS^{p-1}X)\\
+&=H_{p+q}(S^p\tm X,D_-^p\tm X)\\
+&=H_{p+q}(D_+^p\tm X,S^{p-1}\tm X)\\
+&=H_q(X).
+\end{align}
+This proves (1). Statement (2) follows from 2.4.4(1) below.
+(3) is just a rewording of the construction of the Serre spectral sequence
+using the skeleton filtration of the base of the fibration.
+(4) and (5) are well known properties of the Serre spectral
+sequence. (6) follows from the fact that $\E l/1/**/$
+(resp., $\E l/**/1/$) is a truncation of $\E k/1/**/$
+(resp., $\E k/**/1/$). 
+}\end{proof}
+\subsection{Stabilized spectral sequence }
+Denote by $\f_p^r:\E\infty/r/p+1,*/\to\E\infty/r/p,*/$ and
+$\f_r^p:\E\infty/p,*/r/\to\E\infty/p+1,*/r/$ the maps
+$x\mapsto h\cap x$ and $x\mapsto h\cup x$ respectively.
+\begin{definition}{{2.3.1. Definition \rm(Kalinin \cite{5})}
+Spectral sequences
+$$\E/r/q/(X)=\varprojlim(\E\infty/r/pq/,\f_p^r)\quad
+\text{and}\quad\E/q/r/(X)=\varinjlim(\E\infty/pq/r/,\f_r^p)
+$$
+are called the {\it stabilized spectral sequences\/} of involution $c$.
+}\end{definition}
+
+Natural maps $\E/r/q/\to\E\infty/r/pq/$ and $\E\infty/pq/r/\to\E/q/r/$
+will be denoted by $\psi_q^r$ and $\psi_r^q$ respectively.
+\begin{proclaim}{{2.3.2. Theorem \rm (Kalinin \cite{5})}
+
+(1) $E_q^1=H_q(X)$, and $E_1^q=H^q(X)$;
+
+(2) $d^1=1+c_*$, and $d_1=1+c^*$;
+
+(3) $E_r^*$ is a graded $\Z$-algebra, and $E_*^r$ is a graded
+$E_r^*$-module; $d_r$ and $d^r$ are derivatives if $r\ge2$;
+
+(4) provided that $X$ is a finite $CW$-complex,
+$E_*^r$ and $E_r^*$ converge to $H_*(\Fix c)$ and $H^*(\Fix c)$
+respectively; the convergence observes the multiplicative structures,
+but it does not observe the grading of $H_*(\Fix c)$ and $H^*(\Fix c)$;
+
+(5) homology maps $\psi_p^r$ are injective;
+cohomology maps $\psi_r^p$ are surjective.
+}\end{proclaim}
+\begin{definition}{{2.3.3. Notation} The filtration on $H_*(\Fix c)$ which
+arises due to convergence $E_*^r\Rightarrow H_*(\Fix c)$ is denoted by
+$\F_*(X)$. The composed maps
+$\F_q\longto\F_q/\F_{q+1}@>\cong>> E_q^\infty$ are denoted by $e_q$.
+
+Note that filtration $\F_q$ can as well be defined if $E_*^r$ does
+not converge to $H_*(\Fix c)$ (Kalinin \cite{5}). By definition,
+the class of cycle $x=\sum x_i$, \ $x_i\in S_i(\Fix c)$, belongs to
+$\F_q$ if for some $p$ the image of
+$\sum h_{p+q-i}\o x_i\in H_{p+q}(\CS^\infty\Fix c)$  in
+$H_{p+q}(\CS^\infty X)$ comes from $H_{p+q}(\CS^pX)$.
+}\end{definition}
+\subsection{Geometric description }
+Let $C_*$ (resp., $C^*$) be a chain (cochain) complex of
+$\L$-modules. Define filtered complexes $\CS^kC_*$ and $\CS^kC^*$
+as follows:
+
+as a graduated group $\CS^kC_*=H_*(\Rp^k)\o C_*$
+(resp., $\CS^kC^*=H^*(\Rp^k)\o C^*$);
+
+the boundary (coboundary) operator is the map
+$h_i\o x\mapsto h_i\o\d x+h_{i-1}\o(1+c)x$
+(resp.,\linebreak $h^i\o x\mapsto h^i\o\cd x+h^{i+1}\o(1+c)x$);
+
+the filtration is, respectively,
+$F_p=\Im[\inc_*\o\id:\CS^pC_*\to \CS^kC_*]$, and
+$F^p=\Ker[\inc^*\o\id:\CS^kC^*\to \CS^pC^*]$.
+
+The spectral sequences of filtered complexes $\CS^kC_*$ and $\CS^kC^*$ 
+are denoted by $\E k/r/pq/(C_*)$ and $\E k/pq/r/(C^*)$ respectively.
+\begin{proclaim}{{2.4.1. Theorem} There exists a natural chain map
+$\t:\CS^kS_*(X)\to S_*(\CS^kX)$ which induces isomorphisms of
+\begin{itemize}
+\item spectral sequences $\E k/r/**/(S_*(X))\cong \E k/r/**/(X)$
+and $\E k/**/r/(S^*(X))\cong \E k/**/r/(X)$;
+\item homology groups $H_*(\CS^kS_*(X))\cong H_*(\CS^kX)$ and
+$H^*(\CS^kS^*(X))\cong H^*(\CS^kX)$;
+\item Smith homology groups $H_*(\Rp^k)\o\SH_*(X)\cong\SH_*(\CS^kX)$.
+\end{itemize}
+}\end{proclaim}
+\begin{proof}{ Let $p$ be the projection $S^k\tm X\to \CS^kX$, and
+$\tilde c$ be the diagonal involution on $S^k\tm X$. Fix some natural
+chain homotopy equivalence $\mu:S_*(X)\o S_*(Y)\longto S_*(X\tm Y)$
+and define $\t$ as the map $h_i\o x\mapsto p_\s\mu(\Sg_+^i\o x)$.
+Since $p_\s\tilde c_\s=p_\s$, and $\mu$ is natural,
+\begin{align}
+&\t\d(h_i\o x)-\d\t(h_i\o x)=\\
+&\qquad=p_\s\mu(\Sg_+^{i-1}\o c_\s x+\Sg_+^i\o\d x)-
+  p_\s\mu(\Sg_+^{i-1}\o x+\Sg_-^{i-1}\o x+\Sg_+^i\o\d x)=\\
+&\qquad=p_\s\mu(\Sg_+^{i-1}\o c_\s x-\Sg_-^{i-1}\o x)=
+p_\s(1-\tilde c_\s)\mu(\Sg_+^{i-1}\o c_\s x)=0.
+\end{align}
+This proves that $\t$ is a chain map. The subquotient map
+$$
+\t_p:\CS^pS_*(X)/\CS^{p-1}S_*(X)=h_p\o S_*(X)\longto S_*(\CS^pX,\CS^{p-1}X)
+$$
+can be decomposed through the map
+$$
+\tilde\t_p:h_p\o S_*(X)\longto S_*(D_+^p\tm X,S^{p-1}\tm X),\\
+h_p\o x\mapsto\mu(\Sg_+^i\o x),
+$$
+which induces an isomorphism of terms $E^1$ of the corresponding spectral
+sequences. Hence $\t$ induces isomorphisms of the spectral sequences
+and homology groups.
+
+To prove the last statement, we need the following lemma:
+\begin{proclaim}{{2.4.2. Lemma} Let $f:C_*\to D_*$ be a chain map
+which induces isomorphism $f_*:H_*(C_*)\to H_*(D_*)$. Then
+$(\id\o f)_*:H_*(\CS^kC_*)\to H_*(\CS^kD_*)$ is also an
+isomorphism for any $k$.
+}\end{proclaim}
+\begin{proof} $\id\o f$ induces an isomorphism of terms $E^1$
+of spectral sequences $\E k/r/**/(C_*)$ and $\E k/r/**/(D_*)$. 
+\end{proof}
+Lemma 2.4.2 and Proposition 2.1.3(2) imply that $\t$ induces
+isomorphism
+$$
+H_*(\CS^k(S_*(X)/\Sm_*(X)))\cong H_*(S_*(\CS^kX)/\Sm_*(\CS^kX)),
+$$
+and, due to Five Lemma, isomorphism
+$$
+H_*(\CS^k\Sm_*(X))\cong\SH_*(\CS^kX).
+$$
+Since $c_\s$ acts trivially on $\Sm_*(X)$, the first group is equal to
+$H_*(\Rp^k)\o\SH_*(X)$. \qed
+\begin{proclaim}{{2.4.3. Corollary \rm (of 2.4.1 and 2.4.2)} Theorem 2.4.1
+remains valid if $S_*(X)$ is replaced with the cell complex
+corresponding to some $c$-invariant cell partition of pair
+$(X,\Fix c)$. (Note that for (1) and (2) it even is not necessary
+that $\Fix c$ be a cell subcomplex of $X$.)
+}\end{proclaim}
+The remaining statements provide a clear geometric description of
+spectral sequences $\E k/r/**/$ and $E_*^r$. (The dual description
+of cohomology spectral sequences is also valid.) The term ``chain''
+(``cycle'') means either singular or cell chain (resp., cycle).
+\begin{proclaim}{{2.4.4. Corollary} Let $x$ be a $q$-dimensional cycle in $X$. Then
+
+(1) $d^1(h_p\o x)=h_{p-1}\o(1+c_\s)x$;
+
+(2) let $r\le p$. Then $d^r(h_p\o x)$ vanishes in $\E k/r/p-r,q+r-1/(X)$
+if and only if there exist some $i$-dimensional chains $y_i$ in $X$, \
+$q+1\le i\le q+r$, such that $(1+c_\s)x=\d y_{q+1}$,
+and $(1+c_\s)y_i=\d y_{i+1}$ for $i\le q+r-1$. In this case
+$d^{r+1}(h_p\o x)=h_{p-r-1}\o(1+c_\s)y_{q+r}$.
+}\end{proclaim}
+\begin{proclaim}{{2.4.5. Corollary} Let $x$ be a $q$-dimensional cycle in $X$. Then
+
+(1) $d^1x=(1+c_\s)x$;
+
+(2) $d^rx$ vanishes in $\E/r/q+r-1/(X)$ if and only if there exist some
+$i$-dimensional chains $y_i$ in $X$, \ $q+1\le i\le q+r$, such that
+$(1+c_\s)x=\d y_{q+1}$, and $(1+c_\s)y_i=\d y_{i+1}$ for $i\le q+r-1$.
+In this case $d^{r+1}x=(1+c_\s)y_{q+r}$.
+}\end{proclaim}
+\begin{proof}{ 2.4.4 is, in fact, the definition of the spectral
+sequence of complex $\CS^kS_*(X)$. 2.4.5 is obtained
+by stabilizing differentials of $\E\infty/r/**/$. 
+}\end{proof}
+\begin{proclaim}{{2.4.6. Proposition} Let $\i:\Fix c\into X$ be the inclusion.
+Consider some $i$-dimensional cycles $x_i$  in $\Fix c$, and denote
+$x=\sum x_i$. Then $x\in\F_q(X)$ if and only if there exist some
+$i$-dimensional chains $y_i$ in $X$, \ $i\le q$, such that
+$\i_\s x_i=\d y_{i+1}+(1+c_\s)y_i$ for $i\le q+1$. In this case
+$e_qx=\i_\s x_q+(1+c_\s)y_q$.
+}\end{proclaim}
+\begin{proof}{ Replace $S_*(\CS^kX)$ with $\CS^kS_*(X)$. By definition
+(cf. 2.3.3) $x\in\F_q$ if and only if 
+$\i_\s(\sum h_{p+q-i}\o x_i)=\bar x+\d y$ for some $p\ge0$, \
+$\bar x\in \CS^pS_{p+q}(X)$, and $y\in \CS^\infty S_{p+q+1}(X)$.
+In this case $\psi_pe_qx$ is the class of $\bar x$ in $\E\infty/\infty/pq/$. 
+Expanding $y$ in the sum $\sum h_{p+q+1-i}\o y_i$ we obtain that
+$\i_\s x_i=\d y_{i+1}+(1+c_\s)y_i$ for $i\le q+1$, and
+\begin{align}
+\bar x&=h_p\o(\i_\s x_q+(1+c_\s))y_q\\
+      &+\d(\sum_{i\ge q+1}h_{p+q+1-i}\o y_i)
+&\qquad\text{(belongs to }\d \CS^pS_*(X))\\
+      &+\sum_{i\ge q+1}h_{p+q-i}\o\i_\s x_i
+&\qquad\text{(belongs to }\CS^{p-1}S_*(X)).
+\end{align}
+
+Hence $\psi_pe_qx=h_p\o(\i_\s x+(1+c_\s)y_q)$. 
+}\end{proof}
+\subsection{Higher inclusion maps }
+Define filtration $\SF_q^r(X)$ on $\SH_*(X)$ and homomorphisms 
+$e_q^r:\SF_q^r(X)\to E_q^r(X)$ as follows:
+
+The class of a cycle $x=\sum\limits_{i\ge q-r+1}x_i$, \ $x_i\in\Sm_i(X)$,
+belongs to $\SF_q^r$ if and only if there exist some chains $y_i\in S_i(X)$, \
+$q-r+2\le i\le q$, such that $x_{q-r+1}=\d y_{q-r+2}$, and
+$x_i=\d y_{i+1}+(1+c_\s)y_i$ for $q-r+1\le i\le q-1$. In this case $e_q^rx$
+is the class of $x_q+(1+c_\s)y_q$ in $E_q^r(X)$.
+
+Denote by $\F_q^r(X)$ the filtration $\SF_q^r\cap H_*(\Fix c)$
+on $H_*(\Fix c)$ (cf. 2.1.3(3)). Restriction
+$e_q^r\left|{\vphantom{(_(}}\right._{\F_q^r}$ will also be denoted by $e_q^r$.
+\begin{definition}{{2.5.1. Definition} Homomorphisms $e_q^r$ are called
+the {\it higher inclusion homomorphisms.}
+}\end{definition}
+\begin{remark}{{Remark} In this definition singular chains can as well be replaced
+with cell chains corresponding to some $c$-invariant cell partition of
+pair $(X,\Fix c)$.
+}\end{remark}
+\begin{proclaim}{{2.5.3. Proposition} Homomorphisms $e_q^r$ are well defined.
+}\end{proclaim}
+\begin{proof}{ We have to prove the following three statements:
+(1) $x_q+(1+c_\s)y_q$ is a cycle; (2) $d^s(x_q+(1+c_\s)y_q)=0$ for $s\le r$,
+so this cycle projects into $E_q^r$; (3) the class of $x_q+(1+c_\s)y_q$
+in $E_q^r$ does not depend on the choice of $y_i$'s.
+\begin{enumerate}\item{(3)}
+\item"(1)" $\d(x_q+(1+c_\s)y_q)=
+(1+c_\s)x_{q-1}+(1+c_\s)^2y_{q-1}=0$
+since $x_{q-1}$ is $c_\s$-invariant, and $(1+c_\s)^2=0$;
+\item"(2)" $d^s(x_q+(1+c_\s)y_q)=0$ for any $s$ due to the fact that
+this cycle is $c_\s$-invariant (see Corollary 2.4.5);
+\item"(3)" let $y_i'=y_i+z_i$ be some other chains. Then $\d z_{q-r+2}=0$,
+and $(1+c_\s)z_i=\d z_{i+1}$ for $q-r+2\le i\le q-1$. Hence
+$(1+c_\s)y_i'=(1+c_\s)y_i+d^{r-1}z_{q-r+2}$ (Corollary 2.4.5), and
+the image of $x_q+(1+c_\s)y_i'$ in $E_q^r$ coincides with that of
+$x_q+(1+c_\s)y_i$. 
+\end{enumerate}
+}\end{proof}
+\begin{proclaim}{{2.5.4. Theorem}
+\begin{itemize}
+\item $\SF_q^1=\bigoplus\limits_{i\ge q}\SH_i(X)$, and
+$\SF_q^r=\Ker e_{q-1}^{r-1}$;
+\item $\SF_q^r\supset\bigoplus\limits_{i\ge q}\SH_i(X)$;
+restriction of $e_q^r$ to $\SH_i(X)$ is trivial for
+$i>q$ and coincides (in the obvious sense) with $\sm_X$ for $i=q$;
+\item $\SF_q^r\subset\SF_q^{r+1}$; restriction of $e_q^{r+1}$ to
+$\SF_q^r$ coincides with $e_q^r$;
+\item statements (1)--(3) remain valid if $\SF_q^r$ are
+replaced with $\F_q^r$;
+\item $\F_q^r=\F_q$ and $e_q^r=e_q$ for any $r\ge q+2$
+(note that in this case $E_q^r=E_q^\infty$.
+\end{itemize}
+}\end{proclaim}
+\begin{proof}{ If $x\in\SF_q^r$, then obviously $x\in\SF_{q-1}^{r-1}$,
+and $e_{q-1}^{r-1}x=x_{q-1}+(1+c_\s)y_{q-1}=\d y_q$ vanishes in
+$E_{q-1}^{r-1}$. Hence $\SF_q^r\subset\Ker e_{q-1}^{r-1}$.
+
+Let $x\in\Ker e_{q-1}^{r-1}$. This means that 
+$x_{q-1}+(1+c_\s)y_{q-1}=d^{r-2}z_{q-r+2}+\d y_q'$ for some cycle
+$z_{q-r+2}\in S_{q-r+2}(X)$ and chain $y_q'\in S_q(X)$. Due to Corollary 2.4.5
+this is equivalent to existence of some chains $z_i$, \ $q-r+3\le i\le q-1$,
+such that $\d z_i=(1+c_\s)z_{i-1}$, and
+$x_{q-1}+(1+c_\s)y_{q-1}=(1+c_\s)z_{q-1}+\d y_q'$.
+Denoting $y_i'=y_i+z_i$ for $q-r+2\le i\le q-1$,
+we see that $x\in\SF_q^r$. This completes proof of (1).
+
+Statements (2)--(4) immediately follow from the definitions,
+and (5) follows from comparing the definition of
+$\SF_q^r$ and Proposition 2.4.6. 
+}\end{proof}
+\begin{definition}{{2.5.5. Definition} Define map
+$\bar e_q^r:\SF_q^r\to H_q(\CS^{r-1}X)$ as the product
+$$\begin{CD}
+\SF_q^r@>e_q^r>>E_q^r@>\psi_0^r>>\E\infty/r/0,q/
+@<\cong<<\E r-1/r/0,q/@>>>H_q(\CS^{r-1}X)\end{CD}
+$$
+(here the third map is invertible due to 2.2.2(6); the last map is the edge
+homomorphism of spectral sequence $\E r-1/r/pq/$).
+}\end{definition}
+\begin{proclaim}{{2.5.6. Proposition} Let $x=\sum\limits_{i\ge q}x_i$, \
+$x_i\in\SH_i(X)$, and $r\ge0$. Then
+$\sm_{\CS^rX}(\sum h_{q+r-i}\o x_i)=0$ in $H_{q+r}(\CS^rX)$
+if and only if $x\in\SF_{q+r+1}^{r+2}$. In this case
+$\sm_{\CS^{r+1}X}(\sum h_{q+r+1-i}\o x_i)=\bar e_{q+r+1}^{r+2}(x)$.
+}\end{proclaim}
+\begin{proof}{ According to the definition the condition
+$x\in\SF_{q+r+1}^{r+2}$ is equivalent to the equality
+$\sum h_{q+r-i}\o x_i=\d(\sum h_{q+r+1-i}\o y_i)$ for some
+$y_i\in S_i(X)$ (cf. Corollary 2.4.4). In this case
+$\sum h_{q+r+1-i}\o x_i=\d(\sum h_{q+r+2-i}\o y_i)+
+h_0\o(x_{q+r+1}+(1+c_\s)y_{q+r+1})$; hence this element
+projects to $\bar e_{q+r+1}^{r+2}x\in H_{q+r+1}(\CS^{r+1}X)$. 
+}\end{proof}
+\begin{remark}{{Remark} Since $\psi_0^r$ and the edge homomorphisms
+$\E r-1/r/pq/\to H_q(\CS^{r-1}X)$ are injective, Proposition 2.5.6 can
+as well be taken for definition of $\SF_q^r$ and $e_q^r$.
+}\end{remark}
+%
+%   The end of file 2.
+%   To be followed by file 3.
+
+%   File 3 of
+% ``Stiefel orientations on a real algebraic variety''
+%    by A.I.Degtyarev
+%
+\section{The basic construction }
+\subsection{Groups $H^{n-1}(\CS^kS(\xi))$}
+Throughout this section $\xi$ denotes some fixed
+$O_n$-bundle over space $X$.
+\begin{definition}{{3.1.1 Definition} Denote by $\eta_k$ the tautological linear
+bundle over $\Rp^{k}$, and by $\eta_k\o\xi$ the exterior tensor
+product, which is a bundle over $\Rp^{k}\tm X$.
+}\end{definition}
+\begin{proclaim}{{3.1.2. Proposition} (1) There exists a natural fibrewise
+homeomorphism $S(\eta_k\o\xi)=\CS^kS(\xi)$, \ $S(\xi)$ being considered as
+a $\Z$-space via the standard antipodal involution;
+
+(2) if space $X$ is connected and $k\le n-1$,
+there exists a natural exact sequence
+$$
+0\to\sum\limits_{i=n-k-1}^{n-1}H^i(X)\to H^{n-1}(\CS^kS(\xi))
+\overset{i^*}\to{\longto}H^{n-1}(S^{n-1}),
+$$
+where $i^{*}$ is induced by the inclusion of a fibre $S^{n-1}$ of
+fibration $S(\eta_k\o\xi)\to\Rp^{k}\tm X$;
+
+(3) homomorphism $i^{*}$ is non-zero if and only if
+$w_n(\xi)=\dots=w_{n-k}(\xi)=0$;
+
+(4) if $l\le k$, the following diagram commutes
+$$\require{AMScd}
+\begin{CD}
+0@>>>\bigoplus\limits_{i=n-k-1}^{n-1}H^i(X)@>>>H^{n-1}(\CS^kS(\xi))@>i^*>>
+   H^{n-1}(S^{n-1})\\
+@.@VV\text{projection}V@VV\text{restriction}V@VV\text{identity}V\\
+0@>>>\bigoplus\limits_{i=n-l-1}^{n-1}H^i(X)@>>>H^{n-1}(\CS^lS(\xi))@>i^*>>
+   H^{n-1}(S^{n-1}),
+\end{CD}
+$$
+}\end{proclaim}
+\begin{proof}{
+Statement (1) immediately follows from definitions. To prove (2) and
+(3) consider the Gisin exact sequence of the sphere bundle
+$S(\eta_k\o\xi)\to\Rp^{k}\tm X$:
+$$\require{AMScd}
+\minCDarrowwidth{1.5em}
+\begin{CD}
+H^{n-1}(\Rp^k\tm X)&\hookrightarrow&H^{n-1}(S(\eta_k\o\xi))
+   @>>>H^0(\Rp^k\tm X)@>e\cup>>H^n(\Rp^k\tm X)\\
+@|&\searrow^{i^*}&@VV\cong V\\
+\bigoplus\limits_{i=n-k-1}^{n-1}H^i(X)@.@.H^{n-1}(S^{n-1})
+\end{CD}
+$$
+where $e=\sum h^{n-i}\o w_i(\xi)$ is the characteristic class of the bundle.
+It yields that $\Im i^{*}\ne 0$ if and only if $e=0$.
+Statement (4) follows from the naturallity of the Gisin sequence. 
+}\end{proof}
+\subsection{Maps $\chi^{k}:H^{n-1}(\CS^{k-1}S(\xi))\longto
+\bigoplus\limits_{i=1}^k H^{n-i}(V_{n,i}(\xi))$ }
+\begin{definition}{{3.2.1. Definition} Let $f:Y\to V_{n,k}(\xi)$ be some map,
+$y\mapsto(x(y),\be_1(y),\dots,\be_k(y))$, where $x(y)\in X$ and
+$(\be_1(y),\dots,\be_k(y))$ is a $k$-frame in the fibre at $x(y)$ of the
+associated vector bundle $\R^{n}(\xi)$. Define the {\it coordinatewise lift\/}
+of $f$ as the map $\tilde f:Y\tm S^{k-1}\to S(\xi)$, \
+$y\tm\sum t^{i}\be_i\longmapsto(x(y),\sum t^{i}\be_i(y))$.
+(Here $S^{k-1}$ and $S(\xi)$ are considered as subspaces of
+$\R^{k}$ and $\R^{n}(\xi)$ respectively.)
+}\end{definition}
+\begin{definition}{{3.2.2. Definition}
+Fix some natural chain homotopy equivalence
+$$\mu: S_*(X)\o S_*(Y)\longto S_*(X\tm Y)$$
+and define the following maps:
+
+(1) $\t_{ij}:S_i(V_{n,k}(\xi))\longto S_{i+j}(S(\xi))$, \ $j\le k-1$.
+Let $x=\sum\sg_{\alpha}$ be a singular chain, i.e. a sum of singular simplexes
+$\sg_{\alpha}:\Delta^{i}\to V_{n,k}(\xi)$. Then $\t_{ij}(x)=0$ for $j<0$, and
+$\t_{ij}(x)=\sum(\tilde\sg_{\alpha})_{\s}\mu(\id_{\Delta^{i}}\o\Sg_{+}^{j})$
+otherwise;
+
+(2) $\bar\f_{k,i}:S_i(V_{n,k}(\xi))\longto \CS^{k-1}S_{i+k-1}(S(\xi))$.
+By definition, $\bar\f_{k,i}(x)=\sum h_{k-j-1}\o\t_{ij}(x)$.
+}\end{definition}
+\begin{proclaim}{ {3.2.3. Proposition} (1) $\bar\f_{k,i}$ is a chain map, so it
+induces homomorphisms
+$$
+\f_k=(\bar\f_{k,n-k})_*:H_{n-k}(V_{n,k}(\xi)))\longto
+   H_{n-1}(\CS^{k-1}S(\xi)),\qquad\text{and}\\
+\f^{k}:H^{n-1}(\CS^{k-1}S(\xi))\longto H^{n-k}(V_{n,k}(\xi));
+$$
+
+(2) if $X=\pt$, homomorphism $\f^{k}:H^{n-1}(\CS^{k-1}S^{n-1})\longto
+H^{n-k}(V_{n,k})$ is one-to-one;
+
+(3) the following diagram commutes (cf. 3.1.2(2))
+$$\begin{CD}
+H^{n-k}(X)@>>>H^{n-1}(\CS^{k-1}S(\xi))\\
+&\searrow&@VV\f^kV\\
+@.H^{n-k}(V_{n,k}(\xi)).
+\end{CD}
+$$
+}\end{proclaim}
+\begin{proof}{
+We prove the dual statements about homology maps
+$\f_k$. Denote by $c$ the antipodal involution on $S(\xi)$.
+
+Let $f:Y\to V_{n,k}(\xi)$ be some map, and $x\in S_i(Y)$ be a singular chain
+in $Y$. Then obviously $\t_{ij}(f_\s x)=\tilde f_\s\mu(x\o\Sg_+^{j})$.
+In particular, for a singular simplex $\sg:\Delta^{i}\to V_{n,k}(\xi)$
+this implies that $\d\t_{ij}(\sg)=\tilde\sg_\s\mu(\d\id_{\Delta^{i}}
+\o\Sg_+^{j}+\id_{\Delta^{i}}\o(\Sg_+^{j-1}+\Sg_-^{j-1}))=
+\t_{i-1,j}(\d\sg)+(1+c_\s)\t_{ij}(\sg)$,
+and $\d\bar\f_{k,i}(\sg)=\bar\f_{k,i}(\d\sg)$.
+This proves statement (1).
+
+To prove (2), consider the inclusion $\iota:S^{n-k}\to V_{n,k}$:
+$$
+\sum t^{i}\be_i\longmapsto(\be_1,\dots,\be_{k-1},\sum t^{i}\be_{i+k-1}),
+$$
+which induces isomorphism $\iota_*:H_{n-k}(S^{n-k})\to H_{n-k}(V_{n,k})$
+(cf. Steenrod, Epstein \cite{7}); we suppose that $k<n$). It is easy to see
+that the coordinatewise lift $\tilde\iota:S^{n-k}\tm S^{k-1}\to S^{n-1}$
+is a degree 1 map, whose restriction to $S^{n-k}\tm S^{k-2}$ coincides with the
+product $\const\tm\inc:S^{n-k}\tm S^{k-2}\longto\pt\tm S^{n-1}$.
+Hence $\t_{n-k,j}(\Sg^{n-k})=\mu(\const_\s\Sg^{n-k}\o
+\inc_\s\Sg_+^{j})=0$ for $j\le k-2$, and $\t_{n-k,k-1}(\Sg^{n-k})$
+is a fundamental cycle of $S^{n-1}$, which generates $H_{n-1}(S^{n-1})$
+(cf.3.1.2). If $k=n$, the same construction applied separately
+to each cycle $\Sg_{\pm}^{0}$ in $S^{0}$ gives both the generators of
+$H_{n-1}(\CS^{n-1}S^{n-1})=\Z\oplus\Z$.
+
+Prove statement (3). Let $\sg:\Delta^{i}\to V_{n,k}(\xi)$ be a singular
+simplex. Denote by $p$ the projection $V_{n,k}(\xi)\to X$ and by $\sg_X$
+the simplex $p\circ\sg:\Delta^{i}\to X$, and consider the following
+commutative diagram
+$$\begin{CD}
+\Delta^i\tm S^{n-1}@>{\tilde\sg}>>S(\xi)\\
+@V\id\tm\const VV@VVp_S V\\
+\Delta^i\tm\pt@>\sg_X\tm\id>>X\tm\pt
+\end{CD}
+$$
+Since $\mu$ is natural, $(p_S)_\s\t_{ij}(\sg)=\mu(\sg_X\o\const_\s\Sg_+^j)$.
+If $j>0$, \ $\const_\s\Sg_+^j=0$. Hence $\bar\f_{k,n-k}$ projects to the map
+$\sg\mapsto h_{k-1}\o\mu(p_\s\sg\o\id_{\pt})$, which induces isomorphism
+$H_{n-k}(X)\longto h_{k-1}\o H_{n-k}(X)$.
+\begin{definition}{{3.2.4. Definition} Define $\chi_k:H^{n-1}(\CS^{k-1}S(\xi))
+\longto\bigoplus\limits_{i=1}^k H^{n-i}(V_{n,i}(\xi))$
+as the direct sum of composed maps
+$$\begin{CD}
+H^{n-1}(\CS^{k-1}S(\xi))@>\text{restriction}>>
+  H^{n-1}(\CS^{i-1}S(\xi))@>\f^i>>H^{n-i}(V_{n,i}(\xi)).
+\end{CD}
+$$
+}\end{definition}
+\begin{proclaim}{{3.2.5. Proposition} For any $l\le k\le n$
+the following diagram commutes
+$$\begin{CD}
+\bigoplus\limits_{i=1}^kH^{n-1}(X)@>>>H^{n-1}(\CS^{k-1}S(\xi))
+   @>\inc^*>>H^{n-1}(\CS^{l-1}S(\xi))\\
+&\searrow&@VV{\chi^k}V@VV{\chi^l}V\\
+@.\bigoplus\limits_{i=1}^kH^{n-i}(V_{n,i}(\xi))
+   @>\text{projection}>>\bigoplus\limits_{i=1}^lH^{n-i}(V_{n,i}(\xi))
+\end{CD}
+$$
+}\end{proclaim}
+\begin{proof} Immediately follows from 3.2.3(3). 
+\end{proof}
+\subsection{Flag structures }
+\begin{definition}{{3.3.1. Definition} A $k$-{\it flag structure\/} on bundle $\xi$
+is a class $\k\in H^{n-1}(\CS^{k-1}S(\xi))$ whose restriction to every fibre
+$S^{n-1}$ is non-zero. The set of all $k$-flag structures on $\xi$ is denoted
+by $\Fl^k(\xi)$.
+}\end{definition}
+\begin{proclaim}{{3.3.2. Theorem} (1) $\Fl^k(\xi)$ is not empty
+if and only if $w_n(\xi)=\dots=w_{n-k+1}(\xi)=0$. In this case
+$\Fl^k(\xi)$ is an affine space over $\bigoplus\limits_{i=1}^k H^{n-i}(X)$;
+
+(2) if $l<k$, the inclusion homomorphism 
+$H^{n-1}(\CS^{k-1}S(\xi))\longto H^{n-1}(\CS^{l-1}S(\xi))$
+restricts to an affine map $\Fl^k(\xi)\longto\Fl^l(\xi)$;
+
+(3) if $\Fl^k(\xi)$ is not empty, $\chi^k$ restricts to
+an affine isomorphism $\Fl^k(\xi)\longto\prod\limits_{i=1}^k\St_{n-i}(\xi)$.
+The following diagram commutes: ($l\le k$)
+$$\begin{CD}
+\Fl^k(\xi)@>\text{restriction}>>\Fl^l(\xi)\\
+@VV\chi^k V@VV\chi^l V\\
+\prod_{i=1}^k\St_{n-i}(\xi)
+@>{\text{projection}}>>
+\prod_{i=1}^l\St_{n-i}(\xi)
+\end{CD}
+$$
+}\end{proclaim}
+\begin{proof}{ Statements (1) and (2) follow from 3.1.2;
+statement (3) follows from 3.2.5. 
+}\end{proof}
+\begin{definition}{{3.3.3. Definition} Denote by $p$ the projection
+$\CS^{k-1}S(\xi)\longto\Rp^{k-1}\tm X$ and fix a subgroup (not necessary
+graded) $G\subset\bigoplus\limits_{i=1}^k H_{n-i}(X)=H_{n-1}(\Rp^{k-1}\tm X)$.
+A {\it partial $k$-flag structure\/} (defined over $G$) is a class
+$\k\in H^{n-1}(\CS^{k-1}S(\xi))/\Ann(p_*^{-1}G)$ 
+whose restriction to every fibre $S^{n-1}$ is non-zero.
+The set of all partial $k$-flag structures
+on $\xi$ is denoted by $\Fl^k(\xi,G)$.
+(Remark: a $k$-flag structure can be thought of as a functional
+$H_{n-1}(\CS^{k-1}S(\xi))\longto\Z$. A partial structure is a partial
+functional defined on $p_*^{-1}G$. This explains the term.)
+}\end{definition}
+In the case of partial structures Theorem 3.3.2 should be
+reworded as follows:
+\begin{proclaim}{{3.3.4. Theorem} (1) $\Fl^k(\xi,G)$ is not empty
+if and only if $w_i(\xi)=0$ for $i\ge n-k+1$. (Note that
+this condition does not depend on $G$.) This set is an affine
+space over $\Bigl[\bigoplus\limits_{i=1}^k H^{n-i}(X)\Bigr]\Big/\Ann G$;
+
+(2) if $l\le k$, the inclusion homomorphism induces an affine map
+$\Fl^k(\xi,G)\longto
+\Fl^l\Bigl(\xi,G\cap\bigoplus\limits_{i=1}^l H^{n-i}(X)\Bigr)$.
+}\end{proclaim}
+%
+%     The end of file 3.
+%     File 4 of
+% ``Stiefel orientations on a real algebraic variety''
+%    by A.I.Degtyarev
+%
+\section{Flag structures on the fixed point set\\of an involution }
+\subsection{Construction }
+Let $X$ be an $(n+m)$-dimensional closed smooth manifold and $c$ be a smooth
+involution on $X$. Fix some $c$-invariant $m$-dimensional closed smooth
+submanifold $V\in X$ and denote by $F_V$ the intersection $V\cap \Fix c$,
+by $i:F_V\into\Fix c$, \ $j:F_V\into V$ and $i_V:V\into X$ the inclusions,
+and by $\nu_V$ the normal bundle of $V$ in $X$.
+\begin{proclaim}{{4.1.1.Theorem} Let for some $k\ge 1$ class $(i_V)_*[V]$ belongs to
+$\SF_{m+k}^{k+1}(X)$, or, equivalently, $e_m^1[V]=\dots=e_{m+k-1}^k[V]=0$.
+Then there exists a natural $k$-flag structure $\k_k$ on $j^*\nu_V$ defined
+over $i_*^{-1}\F_n^{k+1}(X)$. In particular, $w_p(j^*\nu_V)=0$ for $p>n-k$.
+}\end{proclaim}
+\begin{proof}{
+Consider an equivariant tubular neighborhood $T_{k-1}$ of $\CS^{k-1}V$ in
+$\CS^{k-1}X$ and denote by $\d T_{k-1}$ its boundary,
+by $\pr:\d T_{k-1}\to \CS^{k-1}V$ the projection, and by
+$\i:T_{k-1}\into \CS^{k-1}X$ the inclusion. The restriction
+$\pr\left\vert\vphantom{(_(}\right.{}_{\pr^{-1}F_V}$ obviously coincides with
+the sphere bundle associated with $\eta^{k-1}\o j^*\nu_V$, so the orientation
+$\k_k$ that is to be constructed is a partial functional
+$H_{n-1}(\d T_{k-1})\dashrightarrow\Z$, which is non-trivial on the fundamental
+class of every fibre $S^{n-1}$ of $\pr$. We let $\k_k$ be the linking
+coefficient map. More precisely, consider the following commutative diagram
+with exact rows: ($D^{-1}$ denotes the Poincaris duality isomorphism)
+$$\begin{CD}
+@.\bar\k_k&\longmapsto&[\CS^{k-1}V]\\
+&&\cap&&\cap\\
+H_{m+k}(\CS^{k-1}X)@>\rel>>H_{m+k}(\CS^{k-1}X,T_{k-1})@>\d>>
+   H_{m+k-1}(T_{k-1})@>\i^*>>\\
+@VV D^{-1} V@VV D^{-1} V@VV D^{-1} V\\
+H^{n-1}(\CS^{k-1}X)@>>>H^{n-1}(\CS^{k-1}X\setminus T_{k-1})@>\cd>>
+   H^n(T_{k-1},\d T_{k-1})@>>>
+\end{CD}
+$$
+Due to 2.5.5 the hypothesis of the theorem implies that $\i_*[\CS^{k-1}V]=0$.
+Hence there exists an element $\bar\k_k\in H_{m+k}(\CS^{k-1}X, T_{k-1})$
+such that $\d\bar\k_k=[\CS^{k-1}V]$; this element is unique up to $\Im\rel$.
+Consider $D^{-1}\bar\k_k$ as an element of
+$\Hom(H_{n-1}(\CS^{k-1}X\setminus T_{k-1}),\Z)$ and define $\k_k$ as the
+composed homomorphism
+$$\begin{CD}
+H_{n-1}(\pr^{-1}F_V)@>\inc>>H_{n-1}(\CS^{k-1}X\setminus T_{k-1})
+@>D^{-1}\bar\k_k>>\Z\end{CD}
+$$
+restricted to
+$$
+\Ker[\inc_*:H_{n-1}(\pr^{-1}F_V)\to H_{n-1}(\CS^{k-1}X)].
+$$
+
+Since $\cd D^{-1}\bar\k_k=D^{-1}[\CS^{k-1}V]$ is the Thom class of $\pr$,
+the restriction of $\k_k$ to every fibre is non-zero, and $\k_k$ is a
+$k$-flag structure. The domain of $\k_k$ is the pull back of
+$\Ker[\i_*:H_{n-1}(\CS^{k-1}F_V)\to H_{n-1}(\CS^{k-1}X)]$;
+due to 2.5.5 the latter group coincided with $\F_n^{k+1}$. 
+}\end{proof}
+4.1.3. Let $(i_V)_*[V]\in\SF_{m+k}^{k+1}$. Then due to 2.5.3 \
+$(i_V)_*[V]\in\SF_{m+l}^{l+1}$ for any $l\le k$. This gives rise to series of
+natural partial $l$-flag structures $\k_l$ on $j^*\nu_V$, \ $1\le l\le k$,
+defined over $\F_n^{l+1}$. On the other hand, due to 2.3.4 $\k_k$ can be
+restricted to an $l$-flag structure $\k_l^\prime$ defined
+over subgroup $\F_n^{k+1}\cap\bigoplus\limits_{i=1}^l H_{n-1}(X)$,
+which contains $\F_n^{l+1}$ (see 2.5.3).
+\begin{proclaim}{ {4.1.4. Proposition} The restriction of
+$\k_k$ to $\F_n^{l+1}$ coincides with $\k_l$.
+}\end{proclaim}
+\begin{proof}
+Denote by $\i:(\CS^{l-1}X, T_{l-1})\into(\CS^{k-1}X,T_{k-1})$ the inclusion
+and consider the following diagram
+$$\begin{CD}
+H_{m+k}(\CS^{k-1}X,T_{k-1})@>\d>>H_{m+k-1}(T_{k-1})\\
+@VV\i^!V@VV\i^!V\\
+H_{m+l}(\CS^{l-1}X,T_{l-1})@>\d>>H_{m+l-1}(T_{l-1})
+\end{CD}
+$$
+Since $\i^![\CS^{k-1}V]=[\CS^{l-1}V]$, we can choose $\bar\k_l=\i^!\bar\k_k$.
+Then $D^{-1}\bar\k_l=in^*D^{-1}\bar\k_k$, that shows that $\k_l$ coincides with
+the restriction of $\k_k$. 
+\end{proof}
+\subsection{Geometric description }
+
+4.2.1. The definition of map $\chi^k$ (3.2.4), filtration $\F_q^r$ and
+homomorphisms $e_q^r$, and the geometric construction of the linking
+coefficient map yield the following clear geometric description of flag
+structures $\k_k$: (For simplicity we replace $\F_n^{k+1}$ with its maximal
+graded subgroup. This allows to consider orientations of different dimensions
+separately.)
+
+Suppose that the total space of the sphere bundle $S(\nu_V)$ is embedded as
+the boundary of an equivariant tubular neighborhood of $V$ in $X$.
+Let $\sg:P\to V_{n,k}(j^*\nu_V)$ be an $(n-k)$- dimensional cycle (i.e. a
+singular polyhedron, a singular manifold, a cell cycle, etc.) Consider the
+composed map 
+$$\begin{CD}\tilde\sg_i:P\tm D_+^i\into P\tm S^{k-1}@>\tilde\sg>>
+S(j^*\nu_V)\into X\end{CD} $$ 
+as a chain in $X$ (of the same nature as $\sg$), and
+suppose that there exist some $j$-dimensional chains $y_j$ in$X$, \
+$n-k+1\le j\le n$, such that $\d y_{n-k+1}=\tilde\sg_0$, and
+$\d y_j=(1+c_\s)y_{j-1}+\tilde\sg_{j+k-n-1}$ for $j>n-k+1$. Suppose that
+$y_n$ is transversal to $V$. Then $\k_k(\sg)=\#(y_n\cap F)\mod2$.
+\begin{remark}{{Remark} It is this construction that
+was originally proposed by O.Viro \cite{8}.
+}\end{remark}
+\subsection{Projective complete intersections
+}
+
+4.4.1. Let $A$ be an $n$-dimensional non-singular real algebraic variety.
+Denote by $\CA$ the set of complex points of $A$, by $\RA$ the real part of
+$A$, and by $\conj$ the involution of complex conjugation on $\CA$.
+Multiplication by $\sqrt{-1}$ induces an isomorphism between the tangent
+bundle $\tau_{\RA}$ of $\RA$ and its normal bundle $\nu_{\RA}$ in $\CA$.
+Since $\RA=\Fix\conj$, Theorem 4.1.1 yields:
+\begin{proclaim}{{4.4.2. Theorem} If $[\RA]\in\F_{n+k}^{k+1}(\CA)$, there exists a
+natural partial $k$-flag structure on $\tau_{\RA}$ defined over
+$\F_n^{k+1}(\CA)$. In particular, $w_p(\RA)=0$ for $p>n-k$.
+}\end{proclaim}
+
+4.4.3. Let $A$ be a projective complete intersection. Denote by $\Ch$ (resp,
+$\Rh$) the complex (resp,real) hyperplane section class in $H^2(\CA,\mathbb Z)$
+(resp, $H^1(\RA,\Z)$), and by $\tR$ the double cover of $\RA$ corresponding
+to $\Rh$.
+\begin{proclaim}{ {4.4.4. Theorem} Let $[\RA]$ is either equal to zero or dual to
+$\Ch^{n/2}\mod2$ in $H_n(\CA)$. Then for every $k$, \ $0\le k\le n-1$, \ $\tR$
+is naturally supplied with a reduced $k$-dimensional Stiefel orientation.
+}\end{proclaim}
+\begin{remark}{ {Remark} In particular, 4.4.4 implies that $w_1(\tR)=\dots=w_n(\tR)=0$.
+Note, however, that this holds for every projective complete intersection,
+no matter whether $[\RA]$ vanishes or not, since $\tR$ is a complete
+intersection in sphere $S^N=\widetilde{\Rp^N}$.
+}\end{remark}
+\begin{proof}{ Consider the following diagram
+$$\require{AMScd}\begin{CD}
+\tR@>\i>>\pC^{-1}\RA@>\text{inclusion}>>\tC\\
+&{}_{\pR}\searrow&@VVV@VV\pC V\\
+@.\RA@>\text{inclusion}>>\CA
+\end{CD}
+$$
+where $\pC:\tC\to\CA$ is the $S^1$-bundle corresponding to $\Ch$. \ $\tC$ can
+be constructed as the pull back of $\CA$ under the standard projection
+$S^{2N+1}\to\Cp^N\supset\CA$. The complex conjugation on
+$S^{2N+1}\subset\C^{N+1}$ restricts to involution $\tconj$ on $\CA$ such that
+$\tconj$ covers $\conj$, \ $\pC^{-1}\RA$ is $\tconj$-invariant,
+and $\RA=\Fix\tconj$.
+
+Class $[\pC^{-1}\RA]=\pC^![\RA]$ vanishes in $H_{n+1}(\CA)$. Since $H^*(\CA)$
+is generated by powers of $\Ch$ up to dimension $n-1$, \
+$H_i(\tC)=H^{2n+1-i}(\tC)=0$ for $n+2\le i\le 2n$, and all maps $e_q^r$ are
+trivial for $n+2\le q\le 2n$. Hence $[\pC^{-1}\RA]\in\SF_{2n+1}^{n+1}(\tC)$,
+and Theorem 4.1.1 applied to $V=\pC^{-1}\RA$ yields a partial $k$-flag
+structure $\k_n$ on the bundle 
+$\i^*\nu_V=\pR^*\nu_{\RA}\cong\pR^*\tau_{\RA}=\tau_{\tR}$. This structure is
+defined over subgroup $\F_{n+1}^{n+1}$, which coincides with
+$\widetilde H_*(\tR)$ since $\widetilde H_i(\tC)=0$ for $i\le n$.
+Due to Theorem 3.3.2 \ $\chi^n\k_n$ is a collection of reduced $k$-dimensional
+Stiefel orientations, $0\le k\le n-1$. 
+}\end{proof}
+%
+\begin{thebibliography}{2}
+
+\bibitem[1]{1}
+ G. E. Bredon, {\it Introduction to compact transformation groups,}
+ Academic Press,  New York, London
+ 1972
+
+\bibitem[2]{2}
+ A. Degtyarev,
+{\it Cohomology approach to structures on $G$-bundles}
+to appear
+\bibitem[3]{3}A.Degtyarev,
+{\it Screwed Steenrod squares and some applications}
+to appear
+\bibitem[4]{4}
+ W. I. Hsiang,
+{\it Cohomology theory of topological transformation groups,}
+ Springer-Verlag,  Berlin, Heidelberg, New York
+1975
+\bibitem[5]{5}
+I. Kalinin
+{\it Cohomology characteristics of real algebraic hypersurfaces,} 
+Algebra i Analis
+{\bf3} (1991) Russian
+\bibitem[6]{6}
+V. A. Rokhlin,
+{\it Complex orientations of real algebraic curves,}
+ Funkz. Analis 
+( Russian)
+{\bf 8}  (1974)  71--75
+\bibitem[7]{7}
+ N. E. Steenrod, D. B. A. Epstein
+{\it Cohomology operations,}
+Princeton University Press, Princeton (1962)
+\bibitem[8]{8}
+ O. Ya. Viro,
+{\it Progress in the topology of real algebraic varieties
+over the last six years,}
+ Russian Math. Surveys
+{\bf41}  (1986) 55--82
+\end{thebibliography}
+\end{document}
