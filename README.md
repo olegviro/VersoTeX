@@ -200,8 +200,8 @@ with justification of text and helped to maintain the web page of
 Arnold Mathematical Journal. At the first stage, I used LaTeXML 
 developed by Bruce R. Miller. In the HTML design I use many design solution 
 from his work. I am grateful for very inspiring and fruitful conversations 
-with Robert A. Beezer, David W. Farmer, Peter Krautzberger and Alexander 
-Shumakovitch.
+with Robert A. Beezer, David W. Farmer, Peter Krautzberger, Alexander 
+Shumakovitch and Al Viro.
 
 
 ### 2. Instructions to a VersoTeX reader ###
