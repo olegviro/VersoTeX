@@ -1,0 +1,805 @@
+ 
+/*@import url("lwarp.css")*/
+
+/* start css.sty */
+
+body { 
+  margin:0px;
+  padding:0px;
+  text-align: justify;
+  font-family: sans-serif, Open, Liberation, Helvetica;
+  font-size:15px;
+  font-style:normal;
+  background-color:#eeeeee;
+  overflow:hidden;
+  line-height:1.9; 
+}
+
+/*from lwarp:*/
+
+p {margin: 1.5ex 0em 1.5ex 0em ;}
+table p {margin: .5ex 0em .5ex 0em ;}
+
+
+span.strong, span.textbf, div.strong, div.textbf, table td.tdbfseries {
+ font-weight: bold; }
+
+span.textit, div.textit, table td.tditshape { font-style: italic; }
+
+span.textnormal, div.textnormal {
+    font-weight: 500;
+    font-style: normal;
+    font-variant: normal;
+    font-variant-numeric: normal ;
+    font-family: sans-serif, Open, Liberation, Helvetica;
+    line-height: 1.9;
+}
+
+span.textmd, div.textmd { font-weight: normal; }
+
+span.textup, div.textup {
+    font-style: oblique;
+    font-variant: normal;
+    font-variant-numeric: normal ;
+}
+
+span.textsc, div.textsc {
+    font-variant: small-caps;
+    font-variant-numeric: oldstyle-nums ;
+}
+
+span.textulc, div.textulc {
+    font-variant: normal ;
+    font-variant-numeric: normal ;
+}
+
+span.textsl, div.textsl { font-style: oblique; }
+
+span.textrm, div.textrm {
+    font-family:  sans-serif, Open, Liberation, Helvetica;}
+
+span.textsf, div.textsf {
+     font-family: "DejaVu Sans", "Bitstream Vera Sans",
+        Geneva, Verdana, sans-serif ;
+}
+
+div.book, h1, h2, h3, h4, h5, h6, span.paragraph, span.subparagraph
+{
+    font-family: sans-serif, Liberation, Open, Helvetica;
+   /* background: #FAF7F4 ;*/
+    color: black ;
+    margin:0em ;
+    padding:0em ;
+    line-height: 1.4;
+}
+table p {margin: .5ex 0em .5ex 0em ;}
+
+div.hidden, span.hidden { display: none ; }
+
+span.strong, span.textbf, div.strong, div.textbf, table td.tdbfseries {
+    font-weight: bold; 
+    font-style: normal ;
+    text-align: left ;
+}
+
+#HeadLine{
+      display:grid;
+      grid-template-areas: 
+      "amr JournalTitle ims";
+      grid-template-columns: 145px 1fr 95px;
+      grid-gap: 10px;}
+
+#HeadLine > div {
+      padding:10px;
+      text-align:center;
+}
+
+#JournalTitle {
+      font-family: serif, Open, Liberation, Helvetica;
+      text-align:center;
+      font-weight:500;
+      padding:.5ex 0em .5ex 0em;}
+
+.TitleDocument {font-size:170%;
+      font-family:sans-serif, Open, Liberation, Helvetica;
+      color: black ;
+      text-align:center; 
+      font-weight:500;
+      margin:0.5em 0 0.5em 0;
+     line-height: 1.9;}
+.Author {text-align:center; 
+       font-family:sans-serif, Open, Liberation, Helvetica;
+       margin:0.5em 0 0.5em 0;
+       font-size: 120%;
+       font-weight:500; }
+
+
+h1 {    /* title of the entire website, used on each page */
+    font-size: 150% ;
+    padding: 0ex 0em 0ex 0em ;
+    color: black ;
+    line-height: 1.4;
+    font-weight:500;
+}
+
+div.book {
+    text-align: center ;
+    font-size: 2.325em ;
+    padding: .4ex 0em 0ex 0em ;
+}
+
+h2 { font-size: 140%;
+     font-family:sans-serif, Open, Liberation, Helvetica;
+     color: black;
+     margin: 1ex 0em 1ex 0em ;
+     line-height: 1.7;
+     font-weight:500; }
+h3 { color: black;
+     font-family:sans-serif, Open, Liberation, Helvetica;
+     font-size:120%;
+     margin: 3ex 0em 1ex 0em ;
+     line-height: 1.7;
+     font-weight:500;
+     display:inline;}
+h4 { color: black;
+      font-family:sans-serif, Liberation, Helvetica;
+      font-size:110%;
+      margin: 3ex 0em 1ex 0em ;
+      line-height: 1.7;
+      font-weight:500;
+      display:inline; }
+h5 { color: black;
+      font-family:sans-serif, Liberation, Helvetica;
+      font-size:110%;
+      font-weight:500;
+      margin: 3ex 0em 1ex 0em ;
+      line-height: 1.7;
+      display:inline;}
+h6 { color:black;
+      font-family:sans-serif, Liberation, Helvetica;
+      font-size:110%;
+      margin: 3ex 0em 1ex 0em ;
+      line-height: 1.7;
+      font-weight:500;
+      display:inline;}
+span.paragraph {font-size: 1em ; font-variant: normal ;
+    margin-right: 1em ; }
+span.subparagraph {font-size: 1em ; font-variant: normal ;
+    margin-right: 1em ;  }
+
+div.minisec {
+    font-family: "DejaVu Sans", "Bitstream Vera Sans",
+        Geneva, Verdana, sans-serif ;
+    font-style: normal ;
+    font-weight: bold ;
+    text-align: left ;
+}
+
+/*h1 {
+  margin: 0ex 0em 0ex 0em ;
+  line-height: 1.9;
+  text-align: center ;
+}*/
+
+  
+
+
+
+
+
+.Runin { display:inline; }
+.Runin:after { content:" "; }
+
+
+
+div.titlepage {
+  text-align: center ;
+}
+
+.authors{
+  text-align: center ;
+  font-size: 120%;
+}
+
+.footnote {
+    text-align: left ;
+    font-size: .85em ;
+    margin: 3ex 2em 0ex 2em ;
+    border-top: 1px solid silver ;
+}
+
+.marginpar, .marginparblock {
+    max-width: 50%;
+    float: right ;
+    clear: both ;
+    text-align: left ;
+    margin: 1ex 0.5em 1ex 1em ;
+    padding: 1ex 0.5em 1ex 0.5em ;
+    font-size: 85% ;
+    border-top: 1px solid silver ;
+    border-bottom: 1px solid silver ;
+    overflow-x: auto ;
+}
+
+.marginpar br { margin-bottom: 2ex ; }
+
+div.marginblock, div.marginparblock {
+    max-width:50%;
+    min-width: 10em; /* room for caption */
+    float:right;
+    text-align:left;
+    margin: 1ex 0.5em 1ex 1em ;
+    padding: 1ex 0.5em 1ex 0.5em ;
+    overflow-x: auto;
+}
+
+div.marginblock div.minipage,
+div.marginparblock div.minipage {
+    display: inline-block ;
+    margin: 0pt auto 0pt auto ;
+}
+
+div.marginblock div.minipage p ,
+div.marginparblock div.minipage p
+    { font-size: 85%}
+
+div.marginblock br ,
+div.marginparblock br
+    { margin-bottom: 2ex ; }
+
+main.bodycontainer {
+    float: left ;
+    width: 80% ;
+}
+/*---------*/
+ul, ol {
+  margin: 1ex 1em 1ex 0em;
+  line-height: 1.4;
+}
+
+li { margin: 0ex 0em 1ex 0em; }
+
+
+div.displaymath {
+    text-align: center ;
+}
+
+div.displaymathnumbered {
+    text-align: right ;
+    margin-left: 5% ;
+    margin-right: 5% ;
+    min-width: 2.5in ;
+}
+table {
+    margin: 1ex auto 1ex auto ;
+    border-collapse: separate ;
+    border-spacing: 0px ;
+    line-height: 1.3 ;
+    }
+
+table > tbody > tr.hline > td {border-top: 2px solid #808080 ; margin-top: 0ex ;
+    margin-bottom: 0ex ; } /* for \hline */
+
+tr.tbrule td {border-top: 1px solid black ; margin-top: 0ex ;
+    margin-bottom: 0ex ; } /* for \toprule, \bottomrule */
+
+td {padding: .5ex .5em .5ex .5em ;}
+
+table td.tdl { text-align: left ; vertical-align: middle ; }
+table td.tdc { text-align: center ; vertical-align: middle ; }
+table td.tdat { text-align: center ; vertical-align: middle ; padding: 0px ; margin: 0px ; }
+table td.tdbang { text-align: center ; vertical-align: middle ; }
+table td.tdr { text-align: right ; vertical-align: middle ; }
+table td.tdp { text-align: left ; vertical-align: bottom ; }
+table td.tdm { text-align: left ; vertical-align: middle ; }
+table td.tdb { text-align: left ; vertical-align: top ; }
+
+table td.tvertbarl { border-left: 1px solid black }
+table td.tvertbarldouble { border-left: 4px double black }
+table td.tvertbarr { border-right: 1px solid black }
+table td.tvertbarrdouble { border-right: 4px double black }
+
+table td.tvertbarldash { border-left: 1px dashed black }
+table td.tvertbarldoubledash { border-left: 2px dashed black }
+table td.tvertbarrdash { border-right: 1px dashed black }
+table td.tvertbarrdoubledash { border-right: 2px dashed black }
+
+table td.tdcenter { text-align: center}
+table td.tdleft { text-align: left}
+table td.tdright { text-align: right}
+
+/* for cmidrules: */
+table td.tdrule {
+    border-top: 1px solid #A0A0A0 ;
+}
+
+table td.tdrulel {
+    border-top-left-radius:.5em ;
+    border-top: 1px solid #A0A0A0 ;
+}
+
+table td.tdruler {
+    border-top-right-radius:.5em ;
+    border-top: 1px solid #A0A0A0 ;
+}
+
+table td.tdrulelr {
+    border-top-left-radius:.5em ;
+    border-top-right-radius:.5em ;
+    border-top: 1px solid #A0A0A0 ;
+}
+
+/* Margins of paragraphs inside table cells: */
+td.tdp p , td.tdprule p , td.tdP p , td.tdPrule p { padding-top: 1ex ;
+    padding-bottom: 1ex ; margin: 0ex ; }
+td.tdm p , td.tmbrule p , td.tdM p , td.tdMrule p { padding-top: 1ex ;
+    padding-bottom: 1ex ; margin: 0ex ; }
+td.tdb p , td.tdbrule p , td.tdB p , td.tdBrule p { padding-top: 1ex ;
+    padding-bottom: 1ex ; margin: 0ex ; }
+
+td.tdp , td.tdprule , td.tdP , td.tdPrule
+    { padding: 0ex .5em 0ex .5em ; }
+td.tdm , td.tdmrule , td.tdM , td.tdMrule
+    { padding: 0ex .5em 0ex .5em ; }
+td.tdb , td.tdbrule , td.tdB , td.tdBrule
+    { padding: 0ex .5em 0ex .5em ; }
+
+/* table notes: */
+.tnotes {
+    margin: 0ex 5% 1ex 5% ;
+    padding: 0.5ex 1em 0.5ex 1em;
+    font-size:.80em;
+    text-align: left ;
+}
+
+.minipage .tnotes {
+    margin: 0pt ;
+    padding: 0pt ;
+}
+
+.tnotes dl dt p {margin-bottom:0px;}
+
+.tnoteitemheader {margin-right: 1em;}
+
+/* for colortbl and cell color */
+div.cellcolor {
+    width: 100% ;
+    padding: .5ex .5em .5ex .5em ;
+    margin: -.5ex -.5em -.5ex -.5em ;
+}
+
+
+
+
+/*@media screen and (max-width:600px){*/
+#versoCell { 
+  position:fixed;
+  max-height: 97%;
+  right: 40%;
+  height:auto;
+  top:20px;
+  left:16px;
+  overflow-y:auto;
+  overflow-x:visible;
+}/*}*/
+@media screen and (min-width:600px){
+
+#versoCell { 
+  position:fixed;
+  max-height: 97%;
+  right: 40%;
+  height:auto;
+  left:85px;
+  top:20px;
+  overflow-y:auto;
+  overflow-x:visible;
+}
+  
+#verso {
+  position:relative;
+  display:block;
+  background-color:#ffffff;
+  border:1px solid #b4b4b4;
+  padding-left:25px;
+  padding-right:20px;
+  padding-top:20px;
+  padding-bottom:20px;
+  line-height:1.5;
+  font-family: sans-serif, Open, Liberation, Helvetica;
+  text-align:justify;
+}
+
+
+#recto {
+  position:fixed;
+  background-color:#eeeeee;
+  top:0px;
+  right:100%;
+  left: 0px;
+  bottom:0px;
+  pointer-events: none;
+  overflow-y:auto;
+  z-index:5;
+  line-height:1.5;
+  font-family: sans-serif, Open, Liberation, Helvetica;
+  text-align: justify;
+}
+
+#subrecto {
+  position:relative;
+}
+
+#canvasRecto { 
+  position: fixed;
+  text-align:justify;
+  border:1px solid #b4b4b4;
+  max-width:740px;
+  max-height: 97%;
+  height:auto;
+  right:2px;
+  top:20px;
+  overflow-y:auto;
+  overflow-x:visible;
+}
+
+
+
+
+#bibRecto{
+  display:block;
+  position:absolute;
+  padding:20px;
+    pointer-events: all;
+    z-index:5; 
+  background-color:#ffffff;
+  border:1px solid #b4b4b4;
+  max-height:97%;
+  overflow-y:auto;
+}
+
+#menu {
+        position:fixed;
+        top:20px;
+        left:0px;
+        z-index:30;
+        text-align:center;
+}
+
+#TOC{
+  display:block;
+  position:absolute;
+  padding-left:20px;
+  padding-right:20px;
+  padding-top:20px;
+  padding-bottom:20px;
+  margin-right:10px;
+    pointer-events: all;
+    z-index:10; 
+  background-color:#ffffff;
+  border:1px solid #b4b4b4;
+     }
+
+.toc {position: fixed; 
+    display:block; 
+    z-index:10; 
+    text-align:left;
+    padding-left:10px;
+    padding-right:10px;
+    border:3px outset gray;
+    top:20px;
+    right:10px;
+    max-width: 400px;
+    min-width: 300px;
+    min-height: 60px;
+    background:white;
+    cursor:move;
+    -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+    font-size:100%;
+    font-weight:400;
+    pointer-events: all;
+    overflow-y:auto;
+    max-height:97%;}
+
+
+nav { display: none; }
+
+/* Colors */
+
+.hide{
+     position: absolute;
+     visibility:hidden;
+}
+
+.rectolk{color:blue;}
+.rectolk:hover {color:steelblue;}
+
+.versolk{color:steelblue;  
+font-size:75%;}
+
+.versolk:hover {color:slateblue;  
+font-size:90%;}
+
+
+.cp2recto {
+   color: blue;
+   font-weight: bold;}
+.cp2recto:hover {
+   color: steelblue;
+   font-size:110%;
+   font-weight:bold;}
+
+span.emph{  
+   font-size:110%; 
+   font-style:oblique; 
+   font-family:sans-serif;
+}
+span.highlight{background-color:#ffff00;}
+
+.fa-caret-down {color:steelblue;}
+
+.fa-caret-right {color:steelblue;}
+
+.subjclass {color:black;}
+
+.keywords {color:black;}
+
+.sectionend { 
+      width:100%; 
+      height:20px;
+    background-color:white;  
+    border-top: 1px solid white;
+    border-bottom: 0px solid mediumblue;}
+.hline:hover {
+      height:20px; 
+  background-color:white; 
+    border-top: 1px solid cornflowerblue;
+    border-bottom: 0px solid cornflowerblue;}
+
+
+
+.noteUp {position: fixed; 
+    display:block; 
+    z-index:10; 
+    text-align:justify;
+    padding-left:10px;
+    padding-right:10px;
+    top:20px;
+    right:10px;
+    max-width: 650px;
+    min-width: 550px;
+    min-height: 60px;
+    border:3px outset gray;
+    background:mintcream;
+    cursor:move;
+    -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+    font-size:100%;
+    font-weight:400;
+    pointer-events: all;
+    overflow-x: scroll;
+    max-height:97%;
+    overflow-y:auto;
+}
+
+.citeUp {       
+    position: absolute; 
+    display:block;
+    padding-left:20px;
+    padding-right:30px;
+    padding-top: 20px; 
+    padding-bottom: 40px; 
+    margin-top: -140px;
+    max-width: 80%;
+    min-height: 36px;
+    z-index:10; 
+    border-radius: 6px;
+    text-align:left;
+    padding:8px;
+    border:3px inset DimGray;
+    background:linen;
+    cursor:move;
+    -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
+
+.rightUp {       
+    position: fixed; 
+    display:block;
+    text-align:justify;
+    padding-left:10px;
+    padding-right:10px;
+    top:20px;
+    right:10px;
+    max-width: 650px;
+    min-width: 500px;
+    min-height: 60px;
+    border:3px outset gray;
+    background:white;
+    cursor:move;
+    -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+    font-size:100%;
+    font-weight:400;
+    pointer-events: all;
+
+    overflow-x: scroll;
+    max-height:97%;
+    overflow-y:auto;
+}
+
+.aInfo {
+    display:block; 
+    position:absolute; 
+    left: 80px;
+    top: 300px;
+    margin-top: 50px;
+    margin-right: 20px;
+    z-index:20; 
+    border-radius: 6px;
+    font-size:100%; 
+    text-align:left;
+    padding-left:20px;
+    padding-right:30px;
+    padding-top: 20px; 
+    padding-bottom: 20px; 
+    border:3px outset black;
+    background:mintcream;
+    cursor:move;
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+    pointer-events: all;
+}
+
+.rotated {
+    transform: rotate(90deg);
+}
+
+.elevated {
+    transform: rotate(-25deg) translate(0,-2px);
+}
+
+.torecto {
+    transform: rotate(45deg);
+}
+
+.mathUp {
+    display:block; 
+    position:absolute; 
+    max-width:30%;
+    left: 100px;
+    z-index:20; 
+    border-radius: 6px;
+    font-size:100%; 
+    text-align:left;
+    padding-left:20px;
+    padding-right:30px;
+    padding-top: 20px; 
+    padding-bottom: 20px; 
+    border:3px outset black;
+    background:#e6ffe6;
+    cursor:move;
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+    pointer-events: all;
+}
+
+.figure{
+    text-align: center;
+}
+
+.theorembodyproof {
+    font-style: normal ;
+    margin-top: 1ex ; margin-bottom: 1ex ;
+}
+
+.theoremhearderproof  {
+	font-style: normal ; 
+	font-weight: bold ; 
+	margin-right: 2em ;
+}
+
+
+.lefttop {
+    position:absolute;
+    top:0px;
+    left:10px}
+
+.righttop {
+    position:absolute;
+    top:0px;
+    right:10px}
+
+.rightmidtop {
+	position:absolute;
+	top:3px;
+	right:60px}
+
+.rightbottom {
+    position:absolute;
+    bottom:0px;
+    right:10px}
+
+.rightsqueezed {
+    margin-right:25px;
+   }
+
+
+div.TheoremMain{
+   margin: 5px 0px 5px 0px; 
+   padding-left: 9px; 
+   border-left:2px solid steelblue; 
+}
+.toCS {	display:block;}
+.tOCSs {
+    display:block;
+    margin-left:40px;}
+
+.tOCSss {
+    display:block;
+    margin-left:50px;}
+
+.tOCSsss {
+    display:block;
+    margin-left:60px;}
+
+.tOCMisc {
+	display:block;
+	padding-left:10px;}
+
+.Itemize,
+.Enumerate,
+.Description
+   { display:block; }
+.Itemize .Item,
+.Enumerate .Item
+   { display: list-item; }
+.Tocentry  { list-style-type:none; }
+
+.bODy
+ {
+  text-align: justify;
+  font-family: sans-serif, Open, Liberation, Helvetica;
+  font-size:15px;
+  background-color:#ffffff;
+  overflow:hidden;
+  line-height:1.5; 
+}
+
+.bodywithoutsidetoc{
+ background-color:#eeeeee;
+}
+.textbody{
+ background-color:#eeeeee;
+}
+
+.bodycontainer {
+  background-color:#eeeeee;
+}
+
+div.lpict{
+   float:left;
+   margin: 2px 25px 2px 0px;
+}
+div.rpict{
+   float:right;
+   margin: 2px 0px 2px 25px;
+}
+
+.hint {display:inline-block;}  
+.hint:before {content:"*"; color:blue;}
+.hint span { display:none; }
+.hint:hover span {display:block;  position:relative; z-index:50;
+       background:#e6ffe6; border:3px outset darkblue;
+       text-align:left; 
+       cursor:move;
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+    pointer-events: all;
+    uidraggable: true;}
+
+.heading {font-weight: 500;}
+
+
+
+/* end css.sty */

@@ -1,0 +1,1411 @@
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+\AfterEndPreamble{
+\warpHTMLonly{
+</head>
+<body>
+<div id="icons" style="display:none">
+<svg xmlns="http://www.w3.org/2000/svg" 
+xmlns:xlink="http://www.w3.org/1999/xlink"
+ style="display: none;">
+<symbol id="caret-right"> 
+<path stroke="none" d="M0 0h24v24H0z" fill="none"/><path fill="\#0000ff" d="M9 6c0 -.852
+.986 -1.297 1.623 -.783l.084 .076l6 6a1 1 0 0 1 .083 1.32l-.083 .094l-6
+6l-.094 .083l-.077 .054l-.096 .054l-.036 .017l-.067 .027l-.108 .032l-.053
+.01l-.06 .01l-.057 .004l-.059 .002l-.059 -.002l-.058 -.005l-.06 -.009l-.052
+-.01l-.108 -.032l-.067 -.027l-.132 -.07l-.09 -.065l-.081 -.073l-.083
+-.094l-.054 -.077l-.054 -.096l-.017 -.036l-.027 -.067l-.032 -.108l-.01
+-.053l-.01 -.06l-.004 -.057l-.002 -12.059z" />
+</symbol>
+<symbol id="caret-right-16"  viewBox="0 0 16 16" fill="\#0000ff"  height="16" width="16"><path d="M6 4c0 -0.568 0.6573333333333333 -0.8646666666666666 1.0819999999999999 -0.522l0.056 0.050666666666666665 4 4a0.6666666666666666 0.6666666666666666 0 0 1 0.05533333333333333 0.88l-0.05533333333333333 0.06266666666666666 -4 4 -0.06266666666666666 0.05533333333333333 -0.05133333333333333 0.036 -0.064 0.036 -0.023999999999999997 0.011333333333333334 -0.04466666666666667 0.018 -0.072 0.021333333333333333 -0.03533333333333333 0.006666666666666666 -0.039999999999999994 0.006666666666666666 -0.038 0.0026666666666666666L6.666666666666666 12.666666666666666l-0.03933333333333333 -0.0013333333333333333 -0.03866666666666667 -0.003333333333333333 -0.039999999999999994 -0.005999999999999999 -0.034666666666666665 -0.006666666666666666 -0.072 -0.021333333333333333 -0.04466666666666667 -0.018 -0.088 -0.04666666666666667 -0.06 -0.043333333333333335 -0.054 -0.048666666666666664 -0.05533333333333333 -0.06266666666666666 -0.036 -0.05133333333333333 -0.036 -0.064 -0.011333333333333334 -0.023999999999999997 -0.018 -0.04466666666666667 -0.021333333333333333 -0.072 -0.006666666666666666 -0.03533333333333333 -0.006666666666666666 -0.039999999999999994 -0.0026666666666666666 -0.038L6 4z" stroke-width="0.6667"></path>
+</symbol>
+<symbol id="rectoSm" width="16" height="16" viewBox="0 0 24 24" 
+fill="\#0000ff" stroke="\#0000ff" stroke-width="2.5"
+stroke-linecap="round" stroke-linejoin="round">
+<polygon points="3 11 22 2 13 21 11 13 3 11"/>
+</symbol>
+</svg>
+</div>  
+
+<div id="menu" style="width:80px"> 
+<a href="javascript:ReverseDisplay('wordMenu')" style="padding-left:20px" > 
+<img src="icons/menu.png"></a>
+<div id="wordMenu" class="" 
+style="padding-top:0px; margin-left:10px; width:75px; 
+font-size:13px; line-height:1.5"> 
+<table padding="5px" style="height:20px"> 
+<tbody>
+<tr style="height:30px"><td align=center> 
+<a href="javascript:goHome(); closeAllIcons();">
+<img src="icons/goHome.png" height=25></a> 
+</td>
+</tr>
+
+<tr style="height:30px">
+<td align=center> 
+ <a href="javascript:UnFoldAll(); openAllIcons()">
+ open all
+</a> 
+</td></tr>
+
+<tr style="height:30px">
+<td align=center> 
+ <a href="javascript:FoldAll(); closeAllIcons()">
+ fold all
+</td></tr>
+
+<tr style=height:10px></tr>
+
+<tr style="height:10px"><td align=center style="padding-right:0.1px;
+padding-left:0.1em"> 
+line height:
+</td></tr>
+<tr style="height:15px">
+<td align=center> 
+<a href="javascript:lineHeightVerso(true)"><svg
+xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24
+24" fill="none" stroke="\#0000ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/>
+</svg></a><a href="javascript:defaultHeightVerso()"><svg
+   width="20"
+   height="20"
+   viewBox="0 0 24 24"
+   fill="none"
+   stroke="\#0000ff"
+   stroke-width="2"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   class="lucide lucide-recycle-icon lucide-recycle"
+   version="1.1"
+   id="recycle"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <path
+     d="m 16.999577,19 h 2.185 a 1.83,1.83 0 0 0 1.57,-0.881 1.785,1.785 0 0 0 0.004,-1.784 l -3.955,-6.835"
+     id="path1" />
+  <path
+     d="M 12.999577,19 H 4.7965772 a 1.83,1.83 0 0 1 -1.556,-0.89 1.784,1.784 0 0 1 0,-1.775 l 1.226,-2.12"
+     id="path2" />
+  <path
+     d="m 9.9995772,16 2.9999998,3 -2.9999998,3"
+     id="path3" />
+  <path
+     d="m 15.706577,13.596 1.097,-4.096 4.096,1.098"
+     id="path4" />
+  <path
+     d="m 14.655577,5.811 -1.093,-1.892 a 1.83,1.83 0 0 0 -1.548,-0.919 1.784,1.784 0 0 0 -1.546,0.888 l -3.9429998,6.843"
+     id="path5" />
+  <path
+     d="m 10.621577,9.633 -4.0959998,1.098 -1.097,-4.096"
+     id="path6" />
+</svg></a><a href="javascript:lineHeightVerso(false)"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="\#0000ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-minus-icon lucide-minus"><path d="M5 12h14"/></svg>
+</a>
+<tr style=height:10px></tr>
+</td></tr>
+<tr style="height:15px">
+<td align=center style="padding-right:0.3em; padding-left:0.1em">
+font size:
+</td></tr>
+
+<tr style="height:15px"><td align=center style="padding-right:0.3em;
+padding-left:0.1em">
+<a href="javascript:adjustFontSize(true)"><svg
+xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24
+24" fill="none" stroke="\#0000ff" stroke-width="2" stroke-linecap="round"
+stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus"><path
+d="M5 12h14"/><path d="M12 5v14"/>
+</svg></a><a href="javascript:resetFontSize()"><svg
+   width="20"
+   height="20"
+   viewBox="0 0 24 24"
+   fill="none"
+   stroke="\#0000ff"
+   stroke-width="2"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   class="lucide lucide-recycle-icon lucide-recycle"
+   version="1.1"
+   id="recycle"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <path
+     d="m 16.999577,19 h 2.185 a 1.83,1.83 0 0 0 1.57,-0.881 1.785,1.785 0 0 0 0.004,-1.784 l -3.955,-6.835"
+     id="path1" />
+  <path
+     d="M 12.999577,19 H 4.7965772 a 1.83,1.83 0 0 1 -1.556,-0.89 1.784,1.784 0 0 1 0,-1.775 l 1.226,-2.12"
+     id="path2" />
+  <path
+     d="m 9.9995772,16 2.9999998,3 -2.9999998,3"
+     id="path3" />
+  <path
+     d="m 15.706577,13.596 1.097,-4.096 4.096,1.098"
+     id="path4" />
+  <path
+     d="m 14.655577,5.811 -1.093,-1.892 a 1.83,1.83 0 0 0 -1.548,-0.919 1.784,1.784 0 0 0 -1.546,0.888 l -3.9429998,6.843"
+     id="path5" />
+  <path
+     d="m 10.621577,9.633 -4.0959998,1.098 -1.097,-4.096"
+     id="path6" />
+</svg></a><a href="javascript:adjustFontSize(false)"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="\#0000ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-minus-icon lucide-minus"><path d="M5 12h14"/></svg>
+</a>
+</td></tr>
+<tr style=height:10px></tr>
+<tr style="height:15px"><td align=center style="padding-right:0.3em;
+padding-left:0.1em">
+line width:
+</td></tr>
+<tr style="height:15px">
+<td align=center> 
+<a href="javascript:widthVerso(true)"><svg
+xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24
+24" fill="none" stroke="\#0000ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/>
+</svg></a><a href="javascript:defaultWidthVerso()"><svg
+   width="20"
+   height="20"
+   viewBox="0 0 24 24"
+   fill="none"
+   stroke="\#0000ff"
+   stroke-width="2"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   class="lucide lucide-recycle-icon lucide-recycle"
+   version="1.1"
+   id="recycle"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <path
+     d="m 16.999577,19 h 2.185 a 1.83,1.83 0 0 0 1.57,-0.881 1.785,1.785 0 0 0 0.004,-1.784 l -3.955,-6.835"
+     id="path1" />
+  <path
+     d="M 12.999577,19 H 4.7965772 a 1.83,1.83 0 0 1 -1.556,-0.89 1.784,1.784 0 0 1 0,-1.775 l 1.226,-2.12"
+     id="path2" />
+  <path
+     d="m 9.9995772,16 2.9999998,3 -2.9999998,3"
+     id="path3" />
+  <path
+     d="m 15.706577,13.596 1.097,-4.096 4.096,1.098"
+     id="path4" />
+  <path
+     d="m 14.655577,5.811 -1.093,-1.892 a 1.83,1.83 0 0 0 -1.548,-0.919 1.784,1.784 0 0 0 -1.546,0.888 l -3.9429998,6.843"
+     id="path5" />
+  <path
+     d="m 10.621577,9.633 -4.0959998,1.098 -1.097,-4.096"
+     id="path6" />
+</svg></a><a href="javascript:widthVerso(false)"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="\#0000ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-minus-icon lucide-minus"><path d="M5 12h14"/></svg>
+</a> 
+</td></tr>
+<tr style="height:30px"><td align=center> 
+ <a href="javascript:toggleJustify()"> (un)justify </a>
+</td></tr>
+<tr style="height:30px"><td align=center> 
+ <a href="javascript:rectoCopyAll()"> replicate </a>
+</td></tr>
+<tr style="height:30px"><td align=center> 
+ <a href="javascript:ToggleHighLight()">highlite</a> 
+</td></tr>
+<tr style="height:30px"><td align=center> 
+ <a href="javascript:rectoBib()">refs</a> 
+</td></tr>
+<tr style="height:30px"><td align=center> 
+ <a href="javascript:rectoToc()"> contents </a> 
+</td></tr>
+ <tr style="height:30px"><td align=center> 
+<a href="javascript:CloseWindows()"> purge </a> 
+</td></tr>
+</table> 
+</div>
+
+</div>
+<div id="recto"></div>
+<div id="TOC" style="display:none"><br>
+<h2>Contents</h2>\@starttoc{toc}
+</div>
+
+<div id="versoCell" class="uiresizable">
+<div id="verso">
+}
+}
+
+
+
+\makeatletter
+
+\def\papertype#1{\gdef\@papertype{#1}}
+\def\@papertype{\@latex@warning@no@line{No \noexpand\papertype given}}
+
+\def\@author#1{
+\warpHTMLonly{
+    <div class="authors author">#1</div>
+}
+}
+
+\def\@title#1{
+\warpHTMLonly{
+    <div id="TitleDocument">#1</div>
+}
+}
+
+\newcounter{author}
+\setcounter{author}\z@
+\renewcommand{\theauthor}{\arabic{author}}
+
+\def\authors#1{
+\warpHTMLonly{
+    <div class="authors author" style="text-align:center">#1</div><br><br>
+}
+}
+
+\def\Author#1#2{
+\warpHTMLonly{
+\refstepcounter{author}
+<span id="author\theauthor" class="authors Author rectolk"  
+onclick="ReverseDisplay('authorInfo\theauthor')">#1</span>
+<span id="authorInfo\theauthor" class="aInfo uidraggable hide">#2<span
+onclick="closeCite(this)"
+class="rightbottom">$\times$</span></span>
+}
+}
+
+%\def\@doi#1{
+%   <span style="font-size:10px" class="rectolk"> #1 </span>
+%   }
+
+
+
+\def\maketitle{
+\warpHTMLonly{
+<p style="clear:both;">
+<div id="HeadLine">
+<span id="amr">
+<a class="JournalTitle "href="https://amathr.org/">
+<img src="icons/amrlogo.png" style="height:48px; width:145px; float:left; inline;" />
+</a>
+</span>
+<span id="JournalTitle" style="line-height:1.5">
+<a class="JournalTitle" href="https://armj.math.stonybrook.edu/"> <span
+style="text-align:center; line-height:1.5" class="rectolk">{\large Arnold Mathematical
+Journal\\ Volume 11, Issue 1, 2025 }</span></a>
+</span>
+<span id="ims">
+<a class="JournalTitle
+"href="https://www.math.stonybrook.edu/institute-mathematical-sciences/">
+<img src="icons/imslogo1.png" style="height:48px; width:95px; float:right;" />
+</a></span>
+</div>
+<p style="clear:both;"><br>
+<span style="float:left"><b>\@papertype</b></span>
+%<span style="float:right">\doi</span>
+</p>
+<p style="clear:both;"><br>
+<span style="float:left;">\@date
+</span>
+</p><br>
+<p style="clear:both;">
+<h1 class="Title TitleDocument" >
+\@title</h1>
+%\authors
+}
+}
+
+
+
+
+
+\warpHTMLonly{
+\renewenvironment{abstract}[1]
+{<h4 class="Title TitleAbstract">
+<span onclick="ReverseDisplay('bOdYAbst'); rotateIcon(this);">
+<svg class="caret-right" overflow="hidden"
+height="14" width="16" viewbox="0 0 16 14"><use href="\#caret-right-16"/></svg></span>
+Abstract</h4>
+<div id="bOdYAbst" class="bOdY hide">#1}
+{</div>}
+}
+ 
+
+\def\subjclass{\@ifnextchar[\l@subjclass\@subjclass}
+
+\def\l@subjclass[#1]#2{
+\warpHTMLonly{
+<span class="subjclass" > 
+<span onclick="ReverseDisplay('bOdYsubjclass'); rotateIcon(this);" >
+<svg overflow="hidden" 
+height="14" width="16" viewbox="0 0 16 14"><use href="\#caret-right-16"/>
+</svg>
+</span>
+#1 \textit{Mathematics Subject Classification. }</span> 
+<span id="bOdYsubjclass" class="bOdY hide" > 
+ #2 </span></span>
+}
+\warpprintonly{
+
+{#1} \textit{ Mathematics Subject Classification. } #2
+
+}
+}
+
+
+\def\@subjclass#1{
+\warpHTMLonly{
+<span class="subjclass" >  
+<span onclick="ReverseDisplay('bOdYsubjclass'); rotateIcon(this);">
+<svg overflow="hidden"
+height="14" width="16" viewbox="0 0 16 14"><use href="\#caret-right-16"/></svg>
+</span>  
+\textit{Mathematics Subject Classification. }</span> 
+<span id="bOdYsubjclass" class="bOdY hide" > 
+ #1 </span></span>
+}
+\warpprintonly{
+
+\textit{Mathematics Subject Classification. }#1
+
+}
+}
+
+
+\def\keywords#1{
+\warpHTMLonly{
+<p><span class="keywords">
+<span onclick="ReverseDisplay('bOdYKeywords'); rotateIcon(this);">
+<svg overflow="hidden"
+height="14" width="16" viewbox="0 0 16 14"><use href="\#caret-right-16"/></svg>
+</span> 
+\textit{Key words and phrases. }</span> 
+ <span id="bOdYKeywords" class="bOdY hide" >
+#1</span></span>
+}
+\warpprintonly{
+
+\textit{Key words and phrases. }#1
+
+}
+}
+
+\setcounter{footnote}\z@
+\renewcommand{\thefootnote}{<sup>\arabic{footnote}</sup>}
+
+\renewcommand{\footnote}[1]{
+\refstepcounter{footnote}
+\warpHTMLonly{
+<span id="footnote\arabic{footnote}" 
+class="citeUp uidraggable" style="display:none">#1<span
+onclick="closeCite(this)"
+class="rightbottom">$\times$</span></span>
+<span id="foot\arabic{footnote}" 
+class="citeUp hide uidraggable" ></span>
+<span
+onclick="citeUp('footnote\arabic{footnote}','foot\arabic{footnote}')"
+class="rectolk">\thefootnote</span>
+}
+}
+
+\newcounter{sidenote}
+\setcounter{sidenote}\z@
+\renewcommand{\thesidenote}{(<sup>\arabic{sidenote}</sup>)}
+
+\newcommand{\sidenote}[1]{
+\refstepcounter{sidenote}
+<span id="sidenote\arabic{sidenote}" 
+class="noteUp uidraggable" style="display:none">#1<span
+onclick="closeCite(this)"
+class="rightbottom">$\times$</span></span>
+<span
+onclick="sideNote('sidenote\arabic{sidenote}')">\thesidenote</span>
+}
+
+
+\newcounter{proof}
+\setcounter{proof}\z@
+
+
+
+\newenvironment{proof}[1][\proofname]{ 
+\refstepcounter{proof}
+\warpHTMLonly{
+<h4 class="theoremheaderproof Runin">
+<span
+onclick="ReverseDisplay('bOdYPf\arabic{proof}'); rotateIcon(this);"
+ class="proofTitle">
+<svg class="caret-right" aria-hidden="true" height="14" width="16"><use
+href="\#caret-right-16"/></svg></span>
+#1. </h4>
+<div id="bOdYPf\arabic{proof}" class="theorembodyproof bOdY hide">
+}
+\warpprintonly{
+\proofname.
+}
+}
+{\warpHTMLonly{<span 
+onclick="javascript:ReverseDisplay('bOdYPf\arabic{proof}')"  
+class="theoremendmark"><img src="icons/square.png" width=14 height=14
+style="float:right; rectolk">
+</span></div>
+}
+\warpprintonly{\hfill$\square$
+}
+}
+
+\providecommand{\proofname}{Proof}
+
+\newcounter{cref}
+\setcounter{cref}\z@
+
+%\newcommand{\ocite}[1]{\refstepcounter{cref}%
+%<span id="cItE\thecref\cite{#1}"
+%class="citeUp hide uidraggable" ></span><span
+%onclick="citeUp('shadebib.\cite{#1}','cItE\thecref\cite{#1}')"
+%class="versolk">\cite{#1}</span>
+%}
+
+
+
+\def\ocite{\@ifnextchar[{\@lcite}{\@scite}}
+
+\def\@scite#1{\refstepcounter{cref}%
+\warpHTMLonly{
+<span id="cItE\thecref\cite{#1}"
+class="citeUp hide uidraggable" ></span><span
+onclick="citeUp('shadebib.\cite{#1}','cItE\thecref\cite{#1}')"
+class="rectolk">\cite{#1}</span>
+}
+\warpprintonly{\cite{#1}}%
+}
+
+\def\@lcite[#1]#2{\refstepcounter{cref}%
+\warpHTMLonly{
+<span id="cItE\thecref\cite{#2}"
+class="citeUp hide uidraggable" ></span><span
+onclick="citeUp('shadebib.\cite{#2}','cItE\thecref\cite{#2}')"
+class="rectolk">\cite{#2}, #1</span>
+}
+\warpprintonly{\cite{#2}, #1}%
+}
+
+\warpHTMLonly{
+\newenvironment{shadebibliography}
+{</div></section>
+<section id="shadebib"\  class="ShadeBib"\ style="display:none"\ >
+<ul class="Biblist" >
+}
+{</div></li>
+</ul></section>
+}
+}
+\warpprintonly{
+\newenvironment{shadebibliography}
+{\null}
+{\null}
+}
+
+
+\newcounter{shadebibblock}
+\setcounter{shadebibblock}\z@
+\renewcommand{\theshadebibblock}{\arabic{shadebibblock}}
+
+
+
+\def\shadebibblock{\@ifnextchar[\@lshadeblock\@shadeblock}
+
+\warpHTMLonly{
+\def\@lshadeblock[#1]#2{
+\ifnum\c@shadebibblock=\z@
+\else</span></li>\fi
+\refstepcounter{shadebibblock} 
+<li class="Bibitem"\ > 
+<span id="shadebib.[#1]"\ class="Bibblock"\ >
+<a onclick="closeCite(this)"
+class="rightbottom">\ $\times$</a>
+}
+}
+\warpprintonly{
+\def\@lshadeblock[#1]#2{\null}
+}
+
+\warpHTMLonly{
+\def\@shadeblock{
+\ifnum\c@shadebibblock=\z@
+\else</span></li>\fi
+\refstepcounter{shadebibblock} 
+<li class="Bibitem"> 
+<span id="shadebib.[\theshadebibblock]"\ class="Bibblock"\ >
+<a onclick="closeCite(this)"
+class="rightbottom"> $\times$</a>
+}
+}
+\warpprintonly{
+\def\@shadeblock{\null}
+}
+
+
+\newif \if@section \@sectionfalse
+\newif \if@sectionX \@sectionXfalse
+\newif \if@subsection \@subsectionfalse
+\newif \if@subsectionX \@subsectionXfalse
+\newif \if@subsubsection \@subsubsectionfalse
+\newif \if@subsubsectionX \@subsubsectionXfalse
+
+\setcounter{section}\z@
+
+\def\clsmk{
+\warpHTMLonly{</div>
+}
+\warpprintonly{
+
+}
+}
+
+\def\section{\@ifnextchar[{\cont@section}{\g@section}}
+
+\def\pre@section{
+\if@subsubsectionX
+\warpHTMLonly{
+</span></div></section>
+}
+\warpprintonly{}
+\addtocontents{toc}{\clsmk}
+\else\fi
+\@subsubsectionXfalse
+\if@subsubsection 
+\warpHTMLonly{
+</span></div></section>
+}
+\warpprintonly{}
+\addtocontents{toc}{\clsmk}
+\else\fi
+\@subsubsectionfalse
+\if@subsectionX
+\warpHTMLonly{ 
+</span></div></section>
+}
+\warpprintonly{}
+\addtocontents{toc}{\clsmk}
+\else\fi
+\@subsectionXfalse
+\if@subsection 
+\warpHTMLonly{
+</span></div></section>
+}
+\addtocontents{toc}{\clsmk}
+\else\fi
+\@subsectionfalse
+\if@sectionX
+\warpHTMLonly{
+</span></div></section>
+}
+\warpprintonly{}
+\addtocontents{toc}{\clsmk}
+\else\fi
+\@sectionXfalse
+\if@section 
+\warpHTMLonly{
+</span></div></section>
+}
+\warpprintonly{}
+\addtocontents{toc}{\clsmk}
+\@sectionfalse
+\else\fi
+\setcounter{subsectionX}\z@
+\setcounter{subsection}\z@ 
+}
+
+
+
+\def\cont@section[#1]#2{
+\pre@section
+\refstepcounter{section}
+\@sectiontrue
+\setcounter{subsection}\z@ 
+\warpHTMLonly{
+<section id="S\thesection" class="Section">
+<div id="#1"> 
+<h2 class="Title TitleSection">
+<span onclick="ReverseDisplay('bOdYS\thesection'); rotateIcon(this)">
+<svg class="caret-right" overflow="hidden" height="20" width="20"><use 
+href="\#caret-right"/></svg>
+</span>
+<span class="Tag TagSection">\thesection. </span>
+ #2 
+<span onclick="Cp2Recto('S\thesection')" class="versolk">
+<svg width="18" height="16" viewBox="0 0 20 20"><use href="\#rectoSm"></svg>
+</span> 
+</h2>
+\addtocontents{toc}{\addSect{#2}}
+<div id="bOdYS\thesection"; class="bOdY hide">
+}
+\warpprintonly{
+\medskip
+
+\centerline{\textsc{\large#2}}\medskip}
+}
+
+\def\addSect#1{
+<span onclick="ReverseDisplay('tOcS{#1}'); rotateIcon(this)">
+<svg class="caret-right" overflow="hidden" height="12" width="12"><use 
+href="\#caret-right-16"/></svg>
+</span>
+<span id="tocSection{#1}" onclick="LinkTo('S\thesection')">
+\thesection.  #1</span><br>
+<div id="tOcS{#1}" class="hide tOcSs tOc">       
+}
+
+
+\def\g@section#1{
+\pre@section
+\refstepcounter{section}
+\@sectiontrue
+\setcounter{subsection}\z@ 
+\addtocontents{toc}{\addSect{#1}}
+\warpHTMLonly{
+<section class="Section"> 
+<div  id="S\thesection">
+<h2 class="Title TitleSection"> 
+<span  onclick="ReverseDisplay('bOdYS\thesection'); rotateIcon(this)">
+<svg class="caret-right" overflow="hidden" height="20" width="20"><use 
+href="\#caret-right"/></svg>
+</span>
+<span class="Tag TagSection">\thesection. </span> 
+  #1
+<span onclick="Cp2Recto('S\thesection')" class="versolk">
+<svg width="18" height="16" viewBox="0 0 20 20"><use href="\#rectoSm"></svg>
+</span>
+</span> 
+</h2>
+<div id="bOdYS\thesection"; class="bOdY hide">
+}
+\warpprintonly{
+\section{#1}
+}
+}
+
+\newcounter{sectionX}
+\setcounter{sectionX}\z@
+
+\def\sectionX{\@ifnextchar[{\cont@sectionX}{\g@sectionX}}
+
+\def\cont@sectionX[#1]#2{
+\pre@section
+\refstepcounter{sectionX}
+\@sectionXtrue
+\setcounter{subsection}\z@ 
+\warpHTMLonly{
+<section id="#1" class="SectionX"> 
+<div  id="Sx\thesectionX">
+<h2 class="Title TitleSection">
+<span id="head{#1}" 
+onclick="ReverseDisplay('bOdYSx\thesectionX'); rotateIcon(this)">
+<svg class="caret-right" overflow="hidden" height="20" width="20"><use 
+href="\#caret-right"/></svg>
+</span>
+#2
+<span onclick="Cp2Recto('Sx\thesectionX')" class="versolk">
+<svg width="18" height="16" viewBox="0 0 20 20"><use href="\#rectoSm"></svg>
+</span> 
+</h2>
+\addtocontents{toc}{\addSectX{#2}}
+<div id="bOdYSx\thesectionX"; class="bOdY hide">
+}
+\warpprintonly{\medskip
+
+\centerline{\large\textsc{#2}}\label{#1}
+\medskip
+
+}
+}
+
+
+\def\addSectX#1{
+\warpHTMLonly{
+<span onclick="ReverseDisplay('tOcSx{#1}')">
+<img src="icons/panStart.png" height=12></span>
+<span id="tocSection{#1}" 
+onclick="LinkTo('Sx\thesectionX')">
+#1</span><br>
+<div id="tOcSx{#1}" class="hide tOcSs tOc">       
+}
+}
+
+\def\g@sectionX#1{
+\pre@section
+\refstepcounter{sectionX}
+\@sectionXtrue
+\setcounter{subsection}\z@ 
+<section  class="SectionX"> 
+<div id="Sx\thesectionX">
+<h2 class="Title TitleSection"> 
+<span onclick="ReverseDisplay('bOdYSx\thesectionX'); rotateIcon(this)">
+<svg class="caret-right" overflow="hidden" height="20" width="20"><use 
+href="\#caret-right"/></svg>
+</span>
+#1
+<span onclick="Cp2Recto('Sx\thesectionX')" class="versolk">
+<svg width="18" height="16" viewBox="0 0 20 20"><use href="\#rectoSm"></svg>
+</span> 
+</h2>
+\addtocontents{toc}{\addSectX{#1}}
+<div id="bOdYSx\thesectionX"; class="bOdY hide">
+}
+
+\def\@addpunct#1{%
+  \relax\ifhmode
+    \ifnum\spacefactor>\@m \else#1\fi
+  \fi}
+
+\setcounter{subsection}\z@
+
+\renewcommand{\thesubsection}{%
+\if@section
+\arabic{section}.\arabic{subsection}%
+\else%
+\if@sectionX\arabic{sectionX}.\arabic{subsection}%
+\else%
+\arabic{subsection}%
+\fi\fi}
+
+
+
+\def\subsection{\@ifnextchar[{\cont@subsection}{\g@subsection}}
+
+\def\pre@subsection{
+\if@subsubsectionX 
+</span></div></section>
+\addtocontents{toc}{\clsmk}
+\else\fi
+\@subsubsectionXfalse
+\if@subsubsection 
+</span></div></section>
+\addtocontents{toc}{\clsmk}
+\else\fi
+\@subsubsectionfalse
+\if@subsectionX 
+</span></div></section>
+\addtocontents{toc}{\clsmk}
+\@subsectionXfalse
+\else\fi
+\if@subsection
+</span></div></section>
+\addtocontents{toc}{\clsmk}
+\@subsectionfalse
+\else\fi
+} 
+
+
+\def\cont@subsection[#1]#2{
+\pre@subsection
+\refstepcounter{subsection}
+\@subsectiontrue
+\addtocontents{toc}{\addSsect{#2}}
+<section id="Ss\thesubsection" class="Subsection">
+<div id="#1">
+<h3  class="Title TitleSubsection Runin"> 
+<span onclick="ReverseDisplay('bOdYSs\thesubsection'); rotateIcon(this)"> 
+<svg class="caret-right" overflow="hidden" height="14" width="16"><use href="\#caret-right-16"/></svg>
+<span  class="Tag TagSubsection">\thesubsection. </span>
+#2\@addpunct.
+<span onclick="Cp2Recto('Ss\thesubsection')" class="versolk">
+<svg width="16" height="14" viewBox="0 0 20 20"><use href="\#rectoSm"></svg>
+</span> 
+</h3>
+<span id="bOdYSs\thesubsection" class="bOdY hide">
+}
+
+
+\def\addSsect#1{
+<span id="tocSubsection{#1}" onclick="LinkTo('Ss\thesubsection')">
+\thesubsection. #1</span>
+<div id="tOcSs{#1}" class="hide tOcSss tOc"> }
+
+
+\def\g@subsection#1{
+\pre@subsection
+\refstepcounter{subsection}
+\@subsectiontrue
+\addtocontents{toc}{\addSsect{#1}}
+<section class="Subsection">
+<div  id="Ss\thesubsection">
+<h3  class="Title TitleSubsection Runin"> 
+<span onclick="ReverseDisplay('bOdYSs\thesubsection'); rotateIcon(this)">
+<svg class="caret-right" overflow="hidden" height="14" width="16"><use
+href="\#caret-right-16"/></svg>
+</span>
+<span class="Tag TagSubsection">\thesubsection. </span>
+#1\@addpunct.</span>
+<span onclick="Cp2Recto('Ss\thesubsection')" class="versolk">
+<svg width="16" height="14" viewBox="0 0 20 20"><use href="\#rectoSm"></svg></span> 
+</h3>
+<span id="bOdYSs\thesubsection"; class="bOdY hide">    
+}
+
+\newcounter{subsectionX}
+\setcounter{subsectionX}\z@
+
+\renewcommand{\thesubsectionX}{%
+\if@section
+\arabic{section}.\arabic{subsectionX}%
+\else%
+\if@sectionX\arabic{sectionX}.\arabic{subsectionX}%
+\else%
+\arabic{subsectionX}%
+\fi\fi}
+
+\def\subsectionX{\@ifnextchar[{\cont@subsectionX}{\g@subsectionX}}
+
+\def\cont@subsectionX[#1]#2{
+\pre@subsection
+\refstepcounter{subsectionX}
+\@subsectionXtrue
+\addtocontents{toc}{\addSsect{#2}}
+<section id="SsX\thesubsectionX" class="SubsectionX">
+<div id="#1">
+<h3  class="Title TitleSubsection Runin"> 
+<span onclick="ReverseDisplay('bOdYSsX\thesubsectionX'); rotateIcon(this)">
+<svg class="caret-right" overflow="hidden" height="14" width="16"><use
+href="\#caret-right-16"/></svg>
+</span>
+#2\@addpunct.
+<span onclick="Cp2Recto('Ssx\thesubsectionX')" class="versolk">
+<svg width="16" height="14" viewBox="0 0 20 20"><use href="\#rectoSm"></svg></span> 
+</h3>
+<div id="bOdYSsx\thesubsectionX"; class="bOdY hide">    
+}
+
+\newcommand{\g@subsectionX}[1]{
+\pre@subsection
+\refstepcounter{subsectionX}
+\@subsectionXtrue
+<section class="SubsectionX"> 
+<div  id="Ssx\thesubsectionX">
+<h3  class="Title TitleSubsection Runin">   
+<span
+onclick="ReverseDisplay('bOdYSsx\protect\thesubsectionX'); rotateIcon(this)">
+<svg class="caret-right" overflow="hidden" height="14" width="16"><use
+href="\#caret-right-16"/></svg>
+</span>
+#1\@addpunct.
+<span onclick="Cp2Recto('Ssx\thesubsectionX')" class="versolk">
+<svg width="16" height="14" viewBox="0 0 20 20"><use href="\#rectoSm"></svg></span> 
+</h3>
+\addtocontents{toc}{\addSsectX{#1}}
+<div id="bOdYSsx\protect\thesubsectionX"; class="bOdY hide">    
+}
+
+\def\addSsectX#1{
+<span id="tocSubsectionX{#1}" 
+onclick="LinkTo('Ssx\thesubsectionX')"> 
+#1</span>     
+<div id="tOcSsx{#1}" class="hide tOcSss tOc">  }
+
+
+\setcounter{subsubsection}\z@
+\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+
+\def\subsubsection{\@ifnextchar[{\cont@subsubsection}{\g@subsubsection}}
+
+\def\pre@subsubsection{
+\if@subsubsectionX 
+</span></div></section> 
+\addtocontents{toc}{\clsmk}
+\@subsubsectionXfalse
+\else\fi
+\if@subsubsection
+</span></div></section>
+\addtocontents{toc}{\clsmk}
+\@subsubsectionfalse
+\else\fi
+} 
+
+\def\addSssect#1{
+<span id="tocSubsubsection{#1}" 
+onclick="LinkTo('Sss\thesubsubsection')"> 
+\thesubsubsection. #1</span>  
+<div id="tOcSss{#1}" class="hide tOcSsss tOc">}
+
+
+\def\cont@subsubsection[#1]#2{
+\pre@subsubsection
+\refstepcounter{subsubsection}
+\@subsubsectiontrue
+\addtocontents{toc}{
+\addSssect{#2}}
+<section id="Sss\thesubsubsection" class="Subsubsection">
+<div id="#1">
+<h4  class="Title TitleSubsubsection Runin"> 
+<span onclick="ReverseDisplay('bOdYSss\thesubsubsection'); rotateIcon(this)"> 
+<svg class="caret-right" overflow="hidden" height="14" width="16"><use
+href="\#Caret-Right-16"/></svg>
+</span>
+<span onclick="ReverseDisplay('bOdYSss\thesubsubsection')"> 
+#2\@addpunct.<span onclick="Cp2Recto('Sss\thesubsubsection')" class="versolk">
+<svg width="16" height="14" viewBox="0 0 20 20"><use href="\#rectoSm"></svg></span> 
+</h4>
+<span id="bOdYSss\thesubsubsection"; class="bOdY hide"> 
+}
+
+
+\def\g@subsubsection#1{
+\pre@subsubsection
+\refstepcounter{subsubsection}
+\@subsubsectiontrue
+\addtocontents{toc}{
+\addSssect{#1}}
+<section class="Subsubsection">
+<div  id="Sss\thesubsubsection">
+<h4  class="Title TitleSubsubsection"> 
+<span onclick="ReverseDisplay('bOdYSss\thesubsubsection'); rotateIcon(this)"> 
+<svg class="caret-right" overflow="hidden" height="14" width="16"><use
+href="\#caret-right-16"/></svg></span>
+<span class="Tag TagSubsubsection">\thesubsubsection. </span>
+#1\@addpunct.<span onclick="Cp2Recto('Sss\thesubsubsection')" class="versolk">
+<svg width="16" height="14" viewBox="0 0 20 20"><use href="\#rectoSm"></svg></span>
+</h4>
+<span id="bOdYSss\thesubsubsection"; class="bOdY hide"> 
+}
+
+\newcounter{subsubsectionX}
+\setcounter{subsubsectionX}\z@
+
+\renewcommand{\thesubsubsectionX}{%
+\if@section
+\if@subsection
+\arabic{section}.\arabic{subsection}.\arabic{subsubsectionX}% 
+\else%
+\arabic{section}.\arabic{subsectionX}.\arabic{subsubsectionX}
+\if@sectionX
+{\if@subsection
+\arabic{sectionX}.\arabic{subsection}\arabic{subsubsectionX}%
+\else%
+\arabic{sectionX}.\arabic{subsectionX}\arabic{subsubsectionX}}%
+\else%
+\if@subsection
+\arabic{subsection}.\arabic{subsubsectionX}%
+\else%
+\arabic{subsectionX}.\arabic{subsubsectionX}%
+\else%
+\arabic{subsubsectionX}%
+\fi\fi\fi\fi}
+
+\def\subsubsectionX{\@ifnextchar[{\cont@subsubsectionX}{\g@subsubsectionX}}
+
+\def\cont@subsubsectionX[#1]#2{
+\pre@subsubsection
+\refstepcounter{subsubsectionX}
+\@subsubsectionXtrue
+\addtocontents{toc}{
+\addSssect{#2}}
+<section id="SssX\thesubsubsectionX" class="SubsubsectionX">
+<div id="#1">
+<h4  class="Title TitleSubsection Runin"> 
+<span onclick="ReverseDisplay('bOdYSssX\thesubsubsectionX'); rotateIcon(this)"> 
+<svg class="caret-right" overflow="hidden" height="14" width="16"><use
+href="\#caret-right-16"/></svg></span>
+<span class="Tag TagSubsubsectionX">\thesubsubsectionX. </span>
+#1\@addpunct.<span onclick="Cp2Recto('Sssx\thesubsubsectionX')" class="versolk">
+<svg width="16" height="14" viewBox="0 0 20 20"><use href="\#rectoSm"></svg></span>
+</h4>
+<span id="bOdYSssx\thesubsubsectionX"; class="bOdY hide"> 
+}
+
+
+
+\newcommand{\g@subsubsectionX}[1]{
+\pre@subsubsection
+\refstepcounter{subsubsectionX}
+\@subsubsectionXtrue
+<section class="SubsubsectionX"> 
+<div  id="Sssx\thesubsubsectionX">
+<h4  class="Title TitleSubsubsection Runin">   
+<span onclick="ReverseDisplay('bOdYSssX\thesubsubsectionX'); rotateIcon(this)"> 
+<svg class="caret-right" overflow="hidden" height="14" width="16"><use
+href="\#caret-right-16"/></svg></span>
+<span class="Tag TagSubsubsectionX">\thesubsubsectionX. </span>
+#1\@addpunct. <span onclick="Cp2Recto('Sssx\thesubsubsectionX')" 
+class="versolk">
+<svg width="16" height="14" viewBox="0 0 20 20"><use href="\#rectoSm"></svg></span>
+</h4>
+\addtocontents{toc}{\addSsectX{#1}}
+<span id="bOdYSsx\protect\thesubsubsectionX"; class="bOdY hide">    
+}
+
+\def\addSssectX#1{
+%<span onclick="ReverseDisplay('tOcSssx{#1}')">  
+%<img src="icons/panStart.png" height=10></span>  
+<span id="tocSubsubsectionX{#1}" 
+onclick="LinkTo('SssX\thesubsubsection')"> 
+#1</span>    
+<div id="tOcSssx{#1}" class="hide tOcSsss tOc">  }
+
+
+\renewenvironment{thebibliography}[1]{%
+\pre@section
+<section class="Bibliography">
+<h2 class="Title TitleBibliography" >
+<span 
+id="oPeNBib"  
+onclick="ReverseDisplay('bOdYBib')" > 
+References</span></h2>
+<div
+ id="bOdYBib" 
+class="bOdY hide" >
+  \normalfont\labelsep .5em\relax
+  \renewcommand\theenumiv{\arabic{enumiv}}\let\p@enumiv\@empty
+  \list{\@biblabel{\theenumiv}}{\settowidth\labelwidth{\@biblabel{#1}}%
+    \leftmargin\labelwidth \advance\leftmargin\labelsep
+    \usecounter{enumiv}}%
+  \sloppy \clubpenalty\@M \widowpenalty\clubpenalty
+  \sfcode`\.=\@m
+}{%
+  \def\@noitemerr{\@latex@warning{Empty `thebibliography' environment}}%
+  \endlist
+</div></section>
+}
+
+
+%%%%% Theorems %%%%%
+\def\@thmcounterend{}
+
+
+\def\ifEqStrings#1#2{\def\testa{#1}\def\testb{#2}%
+\ifx\testa\testb}
+
+\def\newtheorem{\@ifstar{\@sthm}{\@Sthm}}
+
+% definition of \newtheorem with number
+
+\def\@nthm#1#2{%
+  \@ifnextchar[{\@xnthm{#1}{#2}}{\@ynthm{#1}{#2}}}
+
+\def\@Sthm#1{\@ifnextchar[{\@othm{#1}}{\@nthm{#1}}}
+
+\def\@xnthm#1#2[#3]#4#5{\expandafter\@ifdefinable\csname #1\endcsname
+   {\@definecounter{#1}\@addtoreset{#1}{#3}%
+   \expandafter\xdef\csname the#1\endcsname{\expandafter\noexpand
+     \csname the#3\endcsname \noexpand\@thmcountersep \@thmcounter{#1}}%
+   \expandafter\xdef\csname #1name\endcsname{#2}%
+   \global\@namedef{#1}{\@thm{#1}{\csname #1name\endcsname}{#4}{#5}}%
+                              \global\@namedef{end#1}{\@endtheorem}}}
+
+\def\@ynthm#1#2#3#4{\expandafter\@ifdefinable\csname #1\endcsname
+   {\@definecounter{#1}%
+   \expandafter\xdef\csname the#1\endcsname{\@thmcounter{#1}}%
+   \expandafter\xdef\csname #1name\endcsname{#2}%
+   \global\@namedef{#1}{\@thm{#1}{\csname #1name\endcsname}{#3}{#4}}%
+                               \global\@namedef{end#1}{\@endtheorem}}}
+
+\def\@othm#1[#2]#3#4#5{%
+  \@ifundefined{c@#2}{\@latexerr{No theorem environment `#2' defined}\@eha}%
+  {\expandafter\@ifdefinable\csname #1\endcsname
+  {\global\@namedef{the#1}{\@nameuse{the#2}}%
+  \expandafter\xdef\csname #1name\endcsname{#3}%
+  \global\@namedef{#1}{\@thm{#2}{\csname #1name\endcsname}{#4}{#5}}%
+  \global\@namedef{end#1}{\@endtheorem}}}}
+
+\def\@thm#1#2#3#4{%
+\refstepcounter{#1}%
+\@ifnextchar[{\@ythm{#1}{#2}{#3}{#4}}{\@xthm{#1}{#2}{#3}{#4}}}
+
+\def\@xthm#1#2#3#4{\@begintheorem{#2}{\csname the#1\endcsname}{#3}{#4}%
+                    \ignorespaces}
+
+\def\@ythm#1#2#3#4[#5]{\@opargbegintheorem{#2}{\csname
+       the#1\endcsname}{#5}{#3}{#4}\ignorespaces}
+
+\def\addTh#1#2{
+\warpHTMLonly{
+<span class="tOcMisc">
+         <span id="toc{#1}{#2}" onclick="LinkTo('#1 #2')">
+         {#1} {#2}</span></span>
+}
+}
+
+
+
+\def\normalthmheadings{\def\@begintheorem##1##2##3##4{%\trivlist\normalfont
+\warpHTMLonly{
+%\refstepcounter{container}%
+<div id="##1 ##2" class="Theorem TheoremMain">
+<h6 class="Title Runin  TitleTheorem 
+\ifEqStrings{##3}{\bf} textbf%
+\fi% 
+\ifEqStrings{##3}{\it} textit%
+\fi%
+\ifEqStrings{##3}{\rm} textnormal%
+\fi%
+">##1\ ##2\@addpunct. \ <span onclick="Cp2Recto('##1 ##2');
+rotateIcon(this);">
+<svg width="16" height="14" viewBox="0 0 20 20"><use href="\#rectoSm"></svg>
+</span>
+</h6> 
+<span class=
+\ifEqStrings{##4}{\bf} "textbf"%
+\fi 
+\ifEqStrings{##4}{\it} "textit"%
+\fi 
+\ifEqStrings{##4}{\rm} "textnormal"%
+\fi
+>
+\addtocontents{toc}{\addTh{##1} {##2}}
+}
+\warpprintonly{
+\trivlist\normalfont
+\item[\hskip\labelsep{##3##1\ ##2\@thmcounterend}]##4
+}
+}
+\def\@opargbegintheorem##1##2##3##4##5{%\trivlist
+\warpHTMLonly{
+%\refstepcounter{container}%
+<div id="##3">
+<div id="##1##3"
+ class="Theorem TheoremMain"> 
+~~<h6 class="Title Runin textbf TitleTheorem">
+##4##1 ##2 ##4(##3) ##5\@addpunct. \ 
+<span onclick="Cp2Recto('##3'); rotateIcon(this);"> 
+<svg width="16" height="14" viewBox="0 0 20 20"><use href="\#rectoSm"></svg></span>
+</h6>
+}
+\warpprintonly{\trivlist
+      \item[\hskip\labelsep{##4##1\ ##2}]{##4(##3)\@thmcounterend\ }##5
+}
+}}
+
+\normalthmheadings
+
+\def\reversethmheadings{\def\@begintheorem##1##2##3##4{
+\warpprintonly{\trivlist\normalfont
+                 \item[\hskip\labelsep{##3##2\ ##1\@thmcounterend}]##4
+}
+\warpHTMLonly{
+%\refstepcounter{container}%
+<div id="##1 ##2" class="Theorem TheoremMain">
+<h6 class="Title Runin  TitleTheorem 
+\ifEqStrings{##3}{\bf} textbf%
+\fi% 
+\ifEqStrings{##3}{\it} textit%
+\fi%
+\ifEqStrings{##3}{\rm} textnormal%
+\fi%
+">##2\ ##1\@addpuct. \ 
+<span onclick="Cp2Recto('##2 ##1'); rotateIcon(this);">
+<svg width="16" height="14" viewBox="0 0 20 20"><use href="\#rectoSm"></svg>
+</span></h6> 
+<span class=
+\ifEqStrings{##4}{\bf} "textbf"%
+\fi 
+\ifEqStrings{##4}{\it} "textit"%
+\fi 
+\ifEqStrings{##4}{\rm} "textnormal"%
+\fi
+>
+\addtocontents{toc}{\addTh{##1} {##2}}
+}
+}
+
+\def\@opargbegintheorem##1##2##3##4##5{\trivlist
+      \item[\hskip\labelsep{##4##2\ ##1}]{##4(##3)\@thmcounterend\ }##5}}
+
+\def\@endtheorem{
+\warpHTMLonly{</span></div>
+}
+}
+
+% definition of \newtheorem* without number
+
+\def\@sthm#1#2{\@Ynthm{#1}{#2}}
+
+\def\@Ynthm#1#2#3#4{\expandafter\@ifdefinable\csname #1\endcsname
+   {\global\@namedef{#1}{\@Thm{\csname #1name\endcsname}{#3}{#4}}%
+    \expandafter\xdef\csname #1name\endcsname{#2}%
+    \global\@namedef{end#1}{\@endtheorem}}}
+
+\def\@Thm#1#2#3{\topsep 7\p@ \@plus2\p@ \@minus4\p@
+\@ifnextchar[{\@Ythm{#1}{#2}{#3}}{\@Xthm{#1}{#2}{#3}}}
+
+\def\@Xthm#1#2#3{\@Begintheorem{#1}{#2}{#3}\ignorespaces}
+
+\def\@Ythm#1#2#3[#4]{\@Opargbegintheorem{#1}
+       {#4}{#2}{#3}\ignorespaces}
+
+\def\@Begintheorem#1#2#3{
+\warpHTMLonly{
+%\refstepcounter{container}%
+<div id="#1" class="Theorem TheoremMain"> 
+<h6 class="Title Runin  TitleTheorem 
+\ifEqStrings{#2}{\bf} textbf%
+\fi% 
+\ifEqStrings{#2}{\it} textit%
+\fi%
+\ifEqStrings{#2}{\rm} textnormal%
+\fi%
+">#1\@addpunct. \ 
+<span onclick="Cp2Recto('#1'); rotateIcon(this);">
+<svg width="16" height="14" viewBox="0 0 20 20"><use href="\#rectoSm"></svg>
+</span>
+</h6>
+~~<span class=
+\ifEqStrings{#3}{\bf} "textbf"%
+\fi 
+\ifEqStrings{#3}{\it} "textit"%
+\fi 
+\ifEqStrings{#3}{\rm} "textnormal"%
+\fi
+>
+}
+\warpprintonly{#3\trivlist
+                           \item[\hskip\labelsep{#2#1\@thmcounterend}]
+}
+}
+
+\def\@Opargbegintheorem#1#2#3#4{#4\trivlist
+      \item[\hskip\labelsep{#3#1}]{#3(#2)\@thmcounterend }}
+
+\def\ref#1{
+\warpHTMLonly{
+<span id="ref#1"
+onclick="lookUpRef('#1')" class="cp2recto">
+\expandafter\@setref\csname r@#1\endcsname\@firstoftwo{#1}</span>
+}
+}
+
+\def\zef[#1]#2{
+\warpHTMLonly{
+<span id="ref#2"
+onclick="lookUpRef('#2')" class="cp2recto">
+{#1}</span>
+}
+}
+
+\setlength\topsep{0pt}
+
+\newif \if@oitem \@oitemfalse
+
+
+\renewenvironment{itemize}%
+{<ul class="Itemize">\\}
+{\if@oitem</li>\else\fi
+\@oitemfalse</ul>\\}
+
+
+
+\newcommand{\oitem}{\@ifnextchar[\@loitem\@oitem}
+\def\@loitem[#1]#2{
+\if@oitem</li>\\
+\else\fi
+<li class="Item Tocentry">
+<span class="Tag">#1</span>
+#2}
+\def\@oitem#1{
+\if@oitem</li>\\
+\else\fi
+<li class="Item ">#1}
+
+\renewenvironment{enumerate}
+{<ol class="Enumerate">\\ }
+{\if@oitem</li>\else\fi
+\@oitemfalse</ol>\\}
+
+
+\renewcommand{\emph}[1]{
+\warpHTMLonly{
+<span class="emph">#1</span>
+}
+\warpprintonly{%
+{\em#1}%
+}%
+}
+
+\def\figurename{Figure}
+\setcounter{figure}0
+\def\thefigure{\arabic{figure}} 
+
+\renewenvironment{figure}
+         {\refstepcounter{figure}%
+          \def\captiontag{\figurename \ \thefigure.}% 
+         \warpHTMLonly{
+        <div id="fig\thefigure" class="figure" style="text-align:center">
+\addtocontents{toc}{<span class="tOcMisc">
+         <span id="tocFig\thefigure" onclick="LinkTo('fig\thefigure')">
+         Figure \thefigure</span> 
+         </span>}
+}           
+{
+\warpHTMLonly{
+</div>
+}
+}
+}
+
+
+\def\tablename{Table}
+\setcounter{table}0
+\def\thetable{\arabic{table}} 
+
+\renewenvironment{table}
+         {\refstepcounter{table}%
+          \def\captiontag{\tablename \ \thetable.}% 
+         \warpHTMLonly{
+        <div id="table\thetable" class="table" style="text-align:center">
+\addtocontents{toc}{<span class="tOcMisc">
+         <span id="tocTable\thetable" onclick="LinkTo('Table\thetable')">
+         Table \thetable</span> 
+         </span>}
+}           
+{
+\warpHTMLonly{
+</div>
+}
+}
+}
+
+
+\def\caption#1{
+\warpHTMLonly{
+<br><span class="caption">
+<span class="TagCaption">\captiontag</span> #1</span>
+}
+}
+
+\def\lpict#1{<div class="lpict">{#1}</div>}
+\def\rpict#1{<div class="rpict">{#1}</div>}
+
+\def\icon{\@ifnextchar[{\op@icon}{\noop@icon}}
+\def\noop@icon#1{
+<img src="#1" class="icon">}
+\def\op@icon[#1=#2]#3{
+<img src="#3" style="#1:#2" class="icon">}
+
+\newcommand{\url}[2]{
+<a href="{#1}">{#2}</a>}
+
+\newcounter{container}
+\def\thecontainer{\arabic{container}}
+\setcounter{container}\z@
+
+
+\newenvironment{container}[1]{
+\refstepcounter{container}%
+<div id="#1" class="container\thecontainer">}
+{</div>}
+
+\newenvironment{fContainer}[1]{
+\refstepcounter{container}%
+<div id="#1" class="fcontainer\thecontainer" style="text-align:center">}
+{</div>}
+
+
+\newenvironment{acknowledgements}{
+\pre@section
+<div class="Acknowledgements">
+<h6 class="Title TitleAcknowledgements">
+<span onclick="ReverseDisplay('bOdYackn')">Acknowledgements. </span></h6
+><span id="bOdYackn" class="bOdY hide">}
+{</span></div>}
+
+\def\qed{<span><img src="icons/square.png" width=14 height=14
+style="float:right"></span>}
+
+\def\floatnote#1#2{
+<span onclick="Cp2Recto('#2')" class="cp2recto">#1</span>}
+
+
+\makeatother
