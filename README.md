@@ -21,19 +21,25 @@ most of articles published in the first three years in the Arnold Mathematical
 Journal were transformed by a similar package. 
 
 The output of VersoTeX belongs to a new type of interface. Let me call it
-**TeXVizor**.  Technically, a TeXVizor file is an HTML file enhanced by some specific 
+**TeXVizor**. It emerged gradually in the process of working on VersoTeX. 
+Technically, a TeXVizor file is an HTML file enhanced by some specific 
 Java scripts. It can be handled by a web-browser.  The scripts add functionality 
 which facilitates reading and understanding the content. The
 main purpose of theis is to make convenient reading and a careful study of text. 
 For this TeXVizor provides opportunities unavailable for publishing on paper or 
 in the pdf format.
 
+TeXVizor has to be distanced from VersoTeX. VersoTeX transforms a LaTeX file
+to an html file enhanced by Java scripts. The result has properties defined by
+TeXVizor. TeXVizor is not about the transformation. It determines its goal.
+
 When reading a mathematical text, we meet numerous references to remote 
 parts of the text: to literature list, formulas, definitions, 
 statements of theorems, etc. Often the reader wants to see some of 
 them simultaneously with each other and the text which is currently 
 read. On the other hand, at first reading we prefer to move out of 
-the sight some details, like proofs. VersoTeX allows to do all of this.
+the sight some details, like proofs. TeXVizor prescribes specific ways
+of providing these and many other services.
 
 
 ## 1. Problems and Solutions ## 
@@ -103,7 +109,7 @@ Mathematical Functions](http://dlmf.nist.gov/)
 
 I use and agree with some design solutions coined in these projects,
 and disagree with others. Below I formulate a few of design principles 
-which I has come to and try to implement in VersoTeX and which have determine 
+which I has come to and try to implement by VersoTeX and which have determine 
 TeXVizor.
 
 **Dynamic design.** The same mathematical text is read with different 
@@ -211,8 +217,9 @@ Arnold Mathematical Journal. At the first stage, I used LaTeXML
 developed by Bruce R. Miller. In the HTML design I use many design solution 
 from his work. I am grateful for very inspiring and fruitful conversations 
 with Robert A. Beezer, David W. Farmer, Peter Krautzberger, Alexander 
-Shumakovitch and Al Viro.
-
+Shumakovitch and Al Viro. While working on VersoTeX-2, I got a substantial help 
+from Ivan Viro. 
+When
 
 ### 2. Instructions to a VersoTeX reader ###
 
@@ -236,7 +243,7 @@ drop-down menu. Indeed, clicking the icon unrolls a menu.
 
 #### 2.2. Verso #### 
 
- The verso field looks like the beginning of a mathematical paper
+When first open, the verso field looks like the beginning of a mathematical paper
 (including its abstract) followed by a table of contents. 
 In fact, this is not a table of contents, but rather the whole document
 *folded down*. Its blue items are clickable. Click the triangle next 
@@ -360,8 +367,8 @@ The source file may be virtually any LaTeX file. However, it should be adjusted.
 A good part of adjustments has to be done at the beginning of the file.
 
 The file is placed to its own directory. In what follows we assume that 
-the parent directory contains directory jquery with javascript libraries,
-files vt.css, vt.sty, vt.js of VersoTeX and a file myMathJax.txt from lwarp 
+the parent directory contains directory *jquery* with javascript libraries,
+files *vt.css, vt.sty, vt.js* of VersoTeX-2 and a file *myMathJax.txt* from lwarp 
 with references to java script files.
 
 For the best result, the document class of the paper should be article.
@@ -375,9 +382,9 @@ is necessagy. Overall, the source file should start with
 \CSSFilename{../vt.css}
 \MathJaxFilename{../myMathJax.txt}
 \usepackage{../vt}
-
- Right after that you may put
-\usepackage{} with the names of packages used in your TeX source file.
+```
+Right after that you may put
+\usepackage{} with the names of TeX packages used in your TeX source file.
 It makes sense to keep the list short. For example, amsthm is somehow
 duplicated in vt.sty. Customization of it works without amsthm.sty,
 but the \theoremstyle commands should be removed and the fonts for the title
