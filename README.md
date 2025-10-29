@@ -4,20 +4,29 @@
 
  VersoTeX prepares dynamical HTML documents for reading in a web browser. 
 A source file looks like a usual source LaTeX file. 
+
+This is a new version. It differs in two ways: 
+1. the design has been developed and many new features added,
+2. technically it got a new backend base, lwarp, which makes it applicable
+   to wider set of LaTeX source files.  
+
  VersoTeX can be applied to an article written in a plain LaTeX article
 style. If you write your articles in TeX, you can adjust any of them to
 VersoTeX. Although most of more sophisticated styles are not yet supported,
 virtually any LaTeX file after appropriate adjustments can be handled by
-VersoTeX. Indeed, the last 15 articles published in the 
-[Arnold Mathematical Journal](http://armj.math.stonybrook.edu)
+VersoTeX. Indeed, all the articles published in the 
+[Arnold Mathematical Journal](http://armj.math.stonybrook.edu) in 2025
 have been transformed into a dynamical HTML format by VersoTeX, and
-most of articles published in the first two years in the Arnold Mathematical
+most of articles published in the first three years in the Arnold Mathematical
 Journal were transformed by a similar package. 
 
-VersoTeX has a number of features. They are described below. The
-main purpose of them is to make reading and a careful study of text 
-convenient. For this dynamic HTML provides opportunities 
-unavailable for publishing on paper or in the pdf format.
+The output of VersoTeX belongs to a new type of interface. Let me call it
+**TeXVizor**.  Technically, a TeXVizor file is an HTML file enhanced by some specific 
+Java scripts. It can be handled by a web-browser.  The scripts add functionality 
+which facilitates reading and understanding the content. The
+main purpose of theis is to make convenient reading and a careful study of text. 
+For this TeXVizor provides opportunities unavailable for publishing on paper or 
+in the pdf format.
 
 When reading a mathematical text, we meet numerous references to remote 
 parts of the text: to literature list, formulas, definitions, 
@@ -94,7 +103,8 @@ Mathematical Functions](http://dlmf.nist.gov/)
 
 I use and agree with some design solutions coined in these projects,
 and disagree with others. Below I formulate a few of design principles 
-which I has come to and try to implement in VersoTeX.
+which I has come to and try to implement in VersoTeX and which have determine 
+TeXVizor.
 
 **Dynamic design.** The same mathematical text is read with different 
 purposes, even by the same reader. For example, when you see a text for 
@@ -132,7 +142,7 @@ should not stay on your way. Ideally, if the total width of the browser
 allows, they should be **placed in a separate area 
 free of the main text**.
 
-### 1.3. LaTeX for HTML ###
+### 1.3. LaTeX for TeXVizor ###
 
 The tools for preparation of dynamic online documents are not
 writer-friendly. The very notion of a writer-friendly tool depends on the
@@ -166,7 +176,7 @@ literal static HTML copies of the paper. They are configurable, but
 changes are not easy due to poor documentation. The most profound 
 difficulty, which all
 converters faced, is a huge amount of style packages providing modifications
-and additions in TeX.
+and additions to TeX.
 
 The most convenient converter that I could find so far is LaTeXML. I
 used it for making online version of the first two volumes of
@@ -208,83 +218,59 @@ Shumakovitch and Al Viro.
 
 #### 2.1. Three fields ####
 
-A web browser window with an
-HTML document prepared as a TeX file with VersoTeX,
+A web browser window with a TeXVizor document,
 has three major fields: **menu**, **verso** and **recto**. 
 Verso and recto are the names of left and right pages in an open book,
 see [Wikipedia, Recto and verso](https://en.wikipedia.org/wiki/Recto_and_verso).
 
 If the browser window is not wide enough, the three fields overlap.
 
-The *menu* field is about 40 pixels wide, it is positioned on the left hand 
+The *menu* field is a vertical strip about 40 pixels wide, it is positioned on the left hand 
 side. The *verso* field is of about 740 pixels wide. 
 
  On the top of the menu field, there is an icon formed of three horizontal
 lines. Usually such an icon hides a
 drop-down menu. Indeed, clicking the icon unrolls a menu. 
 
-
- When you open an HTML document, the recto field is empty.
+ When a TeXVizor document first opens, the recto field is empty.
 
 #### 2.2. Verso #### 
 
  The verso field looks like the beginning of a mathematical paper
 (including its abstract) followed by a table of contents. 
-In fact, this is not a table of contents, but rather the whole article 
-*folded down*. Its blue lines are clickable. 
-A click on the word "Abstract" folds down the text of abstract
-leaving visible out of it only the word Abstract.
+In fact, this is not a table of contents, but rather the whole document
+*folded down*. Its blue items are clickable. Click the triangle next 
+to word "Abstract" to reveal its text; click again to collapse it.
+
+Below are section titles. Click the triangle to expand a section. 
+Subsections, if present, remain folded. You can unfold them with additional clicks.
+
+This folding system — familiar from code editors or document viewers — lets 
+you to keep out of sight parts of the text that are not of interest at the moment.
+
+Unfolding everything manually takes time, but an impatient reader can expand or 
+collapse the entire document with just two clicks: open the menu and select 
+"open all" or "fold all."
+
+By default, special sections like *References, Acknowledgements, Keywords, 
+Mathematics Subject Classification,* and all *proofs* are folded.
+
+Proofs are, of course, vital — but sometimes skipped during a first pass. 
+Click the triangle before “Proof” to reveal it. Click the end-of-proof square 
+to collapse it.
+
+References appear in blue and are clickable. Clicking opens a floating window 
+with full bibliographic info; click again to dismiss it.
+These windows are draggable—a helpful feature when multiple references overlap. 
+Just drag them apart.
+
+Footnotes work similarly. Instead of jumping to the bottom of the page, a footnote 
+appears right where you clicked — no scrolling needed.
 
 
-The lines below the abstract are titles of sections. A click on each of
-them unrolls the section. If the section contains subsections, 
-then each of the subsections is still folded and is represented by its 
-title. Clicking the title unfold their content. Clicking the title of an 
-open fold folds it down. 
-
-The folding format is broadly used in programmer editors and in online
-tables of content. It allows to keep out of sight parts of the text that 
-are not of interest at the moment. 
-
- It takes time to unfold a text section by section. An inpatient reader
-may open all the folds by at most two mouse clicks by opening the menu (this
-requires a click if the menu was not open) and clicking an appropriate
-icon. The next icon closes all the folds (including the abstract) at a 
-single click. 
-
- At the bottom of each open fold there is a thin (one pixel thick) blue
-line. Under mouse it becomes thicker. When clicked, it folds down the fold
-above it. So, if you have read a section (or a subsection) and want to 
-close the fold, you can use this line instead of clicking the title of 
-the section after going all the way up to it.
-
-In addition to sections, subsections and subsubsections, there are other
-parts of the text which can be folded and which by default are folded 
-when you open the document. These are special sections, like 
-*References, Acknowledgements, Keywords, Mathematics Subject Classification*, and, besides, folds of a different nature: *proofs*. 
-Of course, proofs are very important, but at the first reading we often 
-do not want to go into details.
-
-The title of a proof is blue and clickable. The click unfolds the proof.
-At the end of an unfolded proof, we see a square symbolizing the end of 
-the proof. Clicking the square closes the text of the proof.
-
-Literature references are also blue and clickable. A click at a reference 
-raises a small window with the relevant bibliographical data. The next 
-click at the same reference deletes the window. 
-
-The window is draggable. Draggability is handy, because when you
-click several references that are close to each other on the page the windows
-may overlap, and you have to separate them by dragging.
-
-A similar mechanism is implemented for footnotes. Thus a footnote
-becomes a flying note and flies quite close to the place where you clicked 
-to the reference (so, you do not need to look at the bottom of the page 
-or even at the bottom of the next page).
-    
 #### 2.3. Recto ####
 
-At the opening of a document, the recto is empty. It's your choice, 
+At first opening of a document, the recto is empty. It's your choice, 
 what to bring there. 
 
 ##### 2.3.1. Table of Contents #####
@@ -318,34 +304,31 @@ copy of the section/subsection/subsubsection.
     
 #### 2.4. Menu #### 
 
-You can open a copy of the whole document on the recto, by clicking
-an icon in the menu. This gives a useful opportunity to reed side by 
-side different parts of the document.
+Click "replicate" in the menu to copy the entire document into the recto. 
+This allows you to read two different sections side by side.
 
-The icon Bib in the menu creates on the recto a window with a copy
-of the whole bibliography.
+Clicking "refs" opens the complete bibliography in the recto.
 
-If you have got tired of these windows flying on recto or verso, you
-may kill all of them by a single click on an icon in the
-menu. Killing of a single window can be done also by clicking a cross 
-icon on its upper right corner. 
+To close all floating windows at once, click "purge." You can also close 
+individual windows via their top-right "×" icon.
 
-A special menu icon highlights all the pieces emphasized in the source 
-TeX file by the command \em
+Clicking "highlite" highlights all segments in the document marked by the LaTeX 
+command \em. This can help you spot emphasized phrases or important ideas quickly.
 
-#### 2.5. The environment for reading VersoTeX html article ####
+#### 2.5. The environment for reading a TeXVizor article ####
 
- Of course, a modern web-browser is needed. This may be Firefox or
+ You'll need  a modern web-browser - Firefox or
 any other clone of Mozilla, Chrome, Safari, Opera, Microsoft Edge, or even
-Internet Explorer. 
+Internet Explorer will do. To read a TeXVizor article, open the appropriate file
+with extension .html in the web-browser.
 
-The VersoTeX relies on MathJax, an open source display engine for
+The TeXVizor relies on MathJax, an open source display engine for
 mathematical formulas. MathJax can work from a distributed network service,
 but, in order to use it in this way, one needs a web access. Also, one can
 install MathJax in a local computer. See 
  [www.mathjax.org](https://www.mathjax.org/)
 
-To a much lesser extent, VersoTeX uses jquery javascript libraries. They
+To a much lesser extent, TeXVizor uses jquery javascript libraries. They
 also can work directly from the web, or can be downloaded to computer and
 work locally. [jquery.com](https://jquery.com/) and
 [jqueryui.com](https://jqueryui.com/). 
@@ -353,8 +336,8 @@ work locally. [jquery.com](https://jquery.com/) and
 In the setup provided here, we assume using content delivery networks.
 In this version, displaying html files compiled by VersoTeX requires a 
 web access. Besides, the following files are required:
-- *vo.js*, a collection of javascript marcos; 
-- *vo.css*, a Cascading Style Sheets for displaying html files 
+- *vt.js*, a collection of javascript marcos; 
+- *vt.css*, a Cascading Style Sheets for displaying html files 
 produced by VersoTex; 
 -  a directory *icons* with a few icons. 
 
@@ -365,170 +348,126 @@ be needed.
 
 ## 3. Instructions to a VersoTeX runner ##
 
-This section is addressed to a person who wants to run VersoTeX. First, 
-it was called *Instructions to an author*. 
+This section is addressed to a person who wants to run the second version of
+VersoTeX for making TeXVizor file. First, it was called *Instructions to an author*. 
 But besides authors, other people also can find it useful. If you have
 downloaded a paper from ArXiv with a serious intention to study it 
-carefully, you may also want to improve its readability by VersoTeX.
+carefully, you may also want to improve its readability by coverting it to TeXVizor.
 
 ### 3.1. Adjust the source file ###
 
+The source file may be virtually any LaTeX file. However, it should be adjusted.
+A good part of adjustments has to be done at the beginning of the file.
+
+The file is placed to its own directory. In what follows we assume that 
+the parent directory contains directory jquery with javascript libraries,
+files vt.css, vt.sty, vt.js of VersoTeX and a file myMathJax.txt from lwarp 
+with references to java script files.
+
 For the best result, the document class of the paper should be article.
-So the source file should start with
+In TeX compilation, it should use the package lwarp with option mathjax.
+Two CSS files should be mentioned. Then the new VersoTeX package vt.sty
+is necessagy. Overall, the source file should start with
 ```
 \documentclass{article}
-\usepackage{verbatim,amssymb,amsmath,array}
-\usepackage{vo}
-\pagestyle{empty}
-```
- Right after that you may put 
+\usepackage[mathjax]{lwarp}
+\CSSFilename{../jqueryui/jquery-ui.css}
+\CSSFilename{../vt.css}
+\MathJaxFilename{../myMathJax.txt}
+\usepackage{../vt}
+
+ Right after that you may put
+\usepackage{} with the names of packages used in your TeX source file.
+It makes sense to keep the list short. For example, amsthm is somehow
+duplicated in vt.sty. Customization of it works without amsthm.sty,
+but the \theoremstyle commands should be removed and the fonts for the title
+and the text of theorem are to be specified for each type of theorems.
+For example,
+\newtheorem{Th}{Theorem}[section]{\bf}{\it}
+\newtheorem{rem}[Th]{Remark}{\bf}{\rm}.
+
+Due to requirement of lwarp, custom definitions used in mathematical formulas
+should be repeated. The second copy should be the argument of the command
+\CustomizeMathJax. For example, the original custom definition
+\def\R{\mathbb R} is repeated as \CustomizeMathJax{\def\RR{\mathbb R}}
+
 ```
 \begin{document}
-```
-Then it's a good place to introduce your customer commands for
-mathematical formulas. Something like that:
-```
-\hide{\$ \newcommand{\Q}{\mathbb Q}\$}
-\hide{\$ \newcommand\p{\partial}\$}
-```
-
-Contrary to the usual practice, these definitions must be surrounded
-with the dollar signs. The command `\hide{}` is not necessary, but 
-recommended. If you do not put it, the definitions will be seen while 
-the MathJax will be loading.
-
-Then it's a right place to define your Theorem environments. The
-`amsthm.sty` is not yet supported. Instead, the original LaTeX commands can
-be used. Something like that:
-```
-\spnewtheorem{Th}{Theorem}[section]{\bf}{\it}
-\renewcommand{\theTh}{\thesection.\Alph{Th}}
-\spnewtheorem{rem}[Th]{Remark}{\bf}{\rm}
 ``` 
 
 The environment proof is taken care of by VersoTeX, hence you do not
 need to define them here.
 
-Abstract is a command rather than environment:
-```
-\abstract{The text of the abstract.}
-```
-
 The syntax for the commands 
 ```
 \title, \author, \date, \maketitle, \section, \subsection, \subsubsection,
-\label, \ref, \cite, \footnote
+\label, \ref, \footnote
 ```
 is usual. Inside math formulas everything is usual, or, to be more
 precise, as MathJax requires. 
 
-VersoTeX is good for handling files that are not too long. I plan to
-work out a book version of VersoTeX, in which this restriction will be 
-lifted. If a paper version of the file is about 50 pages or longer, then 
-it's better to split it prior to feeding to the present VersoTeX. This 
-restriction comes from MathJax. For a long files it takes too long to 
-load MathJax. 
+LaTeX commands \cite and \item are to be replaced by \ocite and \oitem, respectively.
+Each command \ocite must refer to a single bibliographic item. So, commands \cite{X,Y,...}
+with several bibliographic items X,Y,... must be split to \ocite{X}, \ocite{Y}, ...
+This splitting is annoying but unavoidable, because after compilation each \ocite
+turns into a pop up command with a single reference.
+
+The source LaTeX file is assumed to contain the bibliogrphy part and references made by bibtex.
+
+The rest of preparations are done by several search-replace command. They are collected 
+in a file vt.vim formed of macros in the VIM macro language.
+Let me remind that Vim is a programmer's text editor, a
+clone of Vi. Vim is freely available for any operating system, see 
+[www.vim.org](http://www.vim.org). 
 
 Answers to other TeX questions can be found in a few sample files of
 articles by the author which you can find in this directory. 
 
 Enjoy!
 
-### 3.2. The environment neededcfor running VersoTeX ### 
+### 3.2. The environment needed for running VersoTeX ### 
 
 First of all, the TeX should be installed and working. Any major TeX
-distribution, like TeX Live, Mac TeX or MikTex, should work. 
+distribution, like TeX Live, Mac TeX or MikTex, should work.  
 
-A TeX distribution usually contains a little program 
-*catdvi*. If this is not the case, install it separately: it is needed. 
-
-The process of compilation is organized by macros written in the Vim
-macro language. Let me remind that Vim is a programmer's text editor, a
-clone of Vi. Vim is freely available for any operating system, see 
-[www.vim.org](http://www.vim.org). 
-
-Compiling a VersoTeX article requires an installed VIM editor and
+Compiling a TeXVizor article by VersoTeX-2 requires an installed VIM editor and
 two files:
-- *vo.vim*, a collection of macros in the VIM macro language; 
-- *vo.sty*, a LaTeX style file. 
+- *vt.vim*, a collection of macros in the VIM macro language; 
+- *vt.sty*, a LaTeX style file. 
 
 ### 3.3. Running VersoTeX ###
 
 Compilation of a LaTeX source file is performed as follows. The source
-file, say *article.tex*, is open in Vim. Then, the macros from *vo.vim* 
+file, say *article.tex*, ajusted as described above in section 3.1, is open in Vim. 
+Then, the macros from *vt.vim* 
 are to be run in Vim. You just need to type in the command mode
-``` :source vo.vim``` 
-Here we assume that vo.vim is located in the same directory as
-the source TeX file. Then vo.vim organizes the whole compilation. We
-consider the process of compilation in the next section. In a regular 
-situation, the process of compilation does not require any user's action, 
-except for pressing bar, when Vim says "more", and enter, when Vim 
-requires.
+``` :source vt.vim``` 
+Here we assume that vt.vim is located in the same directory as
+the source TeX file. 
 
-Vim shows red complain lines, when it fails to find a regular expression,
-which had to be replaced. The user should not care about these warnings. 
-At the end of the process, we find Vim open with the resulting file 
-*article.html* open and this file saved in the directory, where *article.tex*  was taken from.
+Then you have to run pdflatex on the result. Surely, this compilation 
+would fail. It is needed for running lwarp. It can be done as described in 
+lwarp documentation, see, e.g., https://latex.us/macros/latex/contrib/lwarp/lwarp.pdf. 
+It can be done by lwarp commands:
 
-## 4. Under the hood ## 
+lwarpmk print
+lwarpmk htlm
 
-Technically, VersoTeX is a LaTeX style supplemented with a few macros in 
-the Vim macro language. This choice of tools was determined by the 
-experience and expertise of the author, who is not a programmer, but a 
-mathematician. Perhaps, a programmer would use, instead of Vim, a more 
-conventional engine, like PERL. As for the use of TeX engine, it has 
-definite advantages. We will discuss them later. 
+The command *lwarpmk print* would not succeed, but it is necessary for running *lwarpmk html*.
+The latter may succeed. If not, run *lwarpmk pdftohtml*. It should produce lots of files.
+In particular, *article.html*. You may try to open it in a browser. 
 
-As was mentioned above, a VersoTeX compilation of a TeX source
-file, say article.tex, starts with opening article.tex in Vim and typing
-```:source vo.vim.``` 
-The macros collected in *vo.vim* then do the following: 
+In order to work with it in browser, you have to make a few changes in it.
+1. Delete from article.html two commands containg  <nav  and </nav
+2. Replace each character ’ with character '. This can be done in Vim by the command :%s/’/'/g.
+3. Also in Vim apply the search-replace command  :%s/Home\%(.\{-}\)</</cg and say n (no) for the first two opportunities
+   and a (all) to make all the subsequent substitutions.
+4. Also in Vim apply the search-replace command :%s/index-0.html//cg.
+5. Unity all lines. In Vim it can be done by the command  :%s/\n/ /g|w
 
-1. Remove the files built by the preceding runs of *vo.vim* (if any). 
-2. Remove or replace a few TeX commands. 
-3. Localize mathematical formulas in *article.tex*, surround them
-with a special markers, numerate formulas and insert in the beginning 
-of each of them a special code containing the number of the formula. 
-4. Save the result as two files, *M1-article.tex* and *T-article.tex*, 
-identical to each other. 
-5. Open file *M1-article.tex* and erase in it everything besides the formulas' codes and the formulas. 
-6. Each line in *M1-article.tex* is converted to a Vim macro which would
-replace the formula's code by the formula. After that the file consisting of
-these Vim macros is saved as *M1-article.vim*. 
-7. In *M1-article.tex*, all lines, which contain no label, are erased, 
-each line with a label turned into a Vim macro for placing two copies of 
-the label around the formula code. The result is saved as *M1-article.tex*. 
-8. In *T-article.tex* the mathematical formulas are erased. Only the 
-formula's code is left in the place of each of the formulas. The codes of 
-formulas that were labeled are equipped with the copies of labels (using 
-the macros prepared in *M1-article.tex*), 
-9. In *T-article.tex*, around each environment with a label, *vo.vim* 
-creates a germ of div container whose id is the environment's label. 
-10. In T-article.tex, the tabular environment is enhanced by inserting 
-the commands which will force TeX to insert into each cell the information 
-about its HTML class. 
-11. In *T-article.tex* the list of bibliography is duplicated and the TeX
-commands in one of the lists are modified. 
-12. Some of the low level TeX commands are replaced. In particular, the font 
-type commands (like `\bf` and `\it`) are replaced with commands, whose 
-arguments are surrounded with braces (like `\textbf` and `\textit`
-). 
-13. Then vo.vim three times executes latex on *T-article.tex. 
-14. *vo.vim* executes the command *catdvi* on *T-article.dvi* and saves 
-the result as *article.html*. 
-15. In *article.html*, *vo.vim* makes the last cosmetic changes: unites the 
-pages, removes unneeded brackets in references, insert the horizontal lines 
-into tables.
-16. Finally, *vo.vim* inserts mathematical formulas into *article.html* 
-by running *M1-article.vim* on it. 
+After that the article.html file would open in a browser as TeXVizor file. Unless there was a crucial mistake in the
+process of conversion described above. Lwarp has a wounderfull adaptation ability. So, repeated usage of 
+*lwarpmk html* may fix some compilation problems. If not, read the section on troubleshooting below.
+So far, all the article accepted to Arnold Mathematical Journal in 2025 was converted to TeXVizor files.
 
-
-After this, the result is saved as *article.html* and stays open in Vim.
-A number auxiliary files are left: `M1-article.tex, M1-article.vim, 
-T-article.tex, T-article.toc, T-article.toc` and `T-article.log`. 
-They may be useful only for debugging. 
-
-Most of the job is done by TeX. The style file *vo.sty* redefines many
-usual LaTeX commands, so that they force TeX to draw, instead of usual
-typographical pages, an HTML file based on the same source file.
 
