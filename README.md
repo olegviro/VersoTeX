@@ -438,18 +438,19 @@ First of all, the TeX should be installed and working. Any major TeX
 distribution, like TeX Live, Mac TeX or MikTex, should work.  
 
 Compiling a TeXVizor article by VersoTeX-2 requires an installed VIM editor and
-two files:
-- *vt.vim*, a collection of macros in the VIM macro language; 
-- *vt.sty*, a LaTeX style file. 
+three files:
+- *vt.sty*, a LaTeX style file;
+- *prelwarp.vim*, a collection of macros in the VIM macro language for preparation of LaTeX file; 
+- *postlwarp.vim*, a collection of macros in the VIM macro language for work with the html file after compilation. 
 
 ### 3.3. Running VersoTeX ###
 
 Compilation of a LaTeX source file is performed as follows. The source
 file, say *article.tex*, ajusted as described above in section 3.1, is open in Vim. 
-Then, the macros from *vt.vim* 
+Then, the macros from *prelwarp.vim* 
 are to be run in Vim. You just need to type in the command mode
-``` :source vt.vim``` 
-Here we assume that vt.vim is located in the same directory as
+``` :source prelwarp.vim``` 
+Here we assume that prelwarp.vim is located in the same directory as
 the source TeX file. 
 
 Then you have to run pdflatex on the result. Surely, this compilation 
